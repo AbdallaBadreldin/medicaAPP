@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">pills manager</string>
+    <string name="inter">ali</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
