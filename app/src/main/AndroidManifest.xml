@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillsManager" >
         <activity
-            android:name=".MainActivity"
+            android:theme="@style/Theme.PillsManager.NoActionBar"
+        android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".LoginAtivity"

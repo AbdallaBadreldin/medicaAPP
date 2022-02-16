@@ -3,19 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/activity_calender.xml" value="0.259375" />
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/activity_home.xml" value="0.2441123188405797" />
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/activity_login_ativity.xml" value="0.259375" />
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/activity_splash.xml" value="0.1" />
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/medlist.xml" value="0.259375" />
-        <entry key="..\:/ITI/Android/project/myApp/medicaAPP/app/src/main/res/layout/welcome_screen.xml" value="0.176" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.124" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/drawable/ic_launcher_background.xml" value="0.124" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/drawable/side_nav_bar.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/activity_login_ativity.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/app_bar_main.xml" value="0.16799999999999998" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/choose_user.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/feragment_invite_friend.xml" value="0.1421875" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_about.xml" value="0.1421875" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_add_dependent.xml" value="0.1421875" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_pick_dependent.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/menu/activity_main_drawer.xml" value="0.11076923076923077" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/menu/main.xml" value="0.1" />
       </map>
     </option>
-  </component>
-  <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />

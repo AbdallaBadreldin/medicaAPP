@@ -3,4 +3,18 @@
     <string name="inter">ali</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Here insert username @id/userName</string>
+    <string name="nav_header_subtitle">Edit Profile @id/editUserName</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="add_dependent">add dependent</string>
+    <string name="profile">profiles</string>
+    <string name="invite_friend">invite friends</string>
+    <string name="logout">logout</string>
+    <string name="about">about</string>
+    <string name="pick_dependent">pick dependent</string>
 </resources>
