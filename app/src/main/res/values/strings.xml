@@ -17,4 +17,5 @@
     <string name="logout">logout</string>
     <string name="about">about</string>
     <string name="pick_dependent">pick dependent</string>
+    <string name="welcome_to_app">Welcome To Med App</string>
 </resources>
