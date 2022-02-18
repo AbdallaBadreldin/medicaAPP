@@ -17,6 +17,20 @@
             android:name=".LoginAtivity"
             android:exported="false" />
         <activity
+            android:name=".EditDrug.Edit_medActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addDrug.view.AddMedActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditDrug.EditMedActivitySecond"
+            android:exported="false" />
+        <activity
+            android:name=".addDrug.view.AddMedActivitySecond"
+            android:exported="true" />
+
+        <activity
             android:name=".SplashActivity"
             android:exported="true" >
             <intent-filter>
