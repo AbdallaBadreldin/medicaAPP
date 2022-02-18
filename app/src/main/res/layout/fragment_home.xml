@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     >
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    >
+    android:orientation="vertical"
+        >
 
         <!--on below line we are creating our calendar view
             selector color is use as a indicator for selected date
@@ -23,6 +24,15 @@
             app:textColorNormal="@color/purple_200"
             app:textColorSelected="@color/purple_200" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/home_tempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:text="Temporary for test search for @id/home_tempo"
+            >
+
+        </TextView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

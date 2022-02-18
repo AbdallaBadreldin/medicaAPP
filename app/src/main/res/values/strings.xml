@@ -18,4 +18,8 @@
     <string name="about">about</string>
     <string name="pick_dependent">pick dependent</string>
     <string name="welcome_to_app">Welcome To Med App</string>
+    <string name="drug_name_text">add drug name in +id/drug_name</string>
+    <string name="drug_dose_id">add drug dose in @+id/drug_dose</string>
+    <string name="refill">refill</string>
+    <string name="mediciations">mediciations</string>
 </resources>
