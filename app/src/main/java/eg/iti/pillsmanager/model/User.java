@@ -10,7 +10,7 @@ public class User {
     @PrimaryKey
     @NonNull
     private String user;
-    
+
 
     @NonNull
     public String getUser() {

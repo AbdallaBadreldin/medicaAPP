@@ -35,4 +35,14 @@
     <string name="treatment_duration">Treatment_duration</string>
     <string name="save">save</string>
     <string name="back">back</string>
+    <string name="gender">Gender</string>
+    <string name="first_name">first name</string>
+    <string name="second_name">second name</string>
+    <string name="birth_date">birth date</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="other">other</string>
+    <string name="done">done</string>
+    <string name="todo">TODO</string>
+    <string name="edit_dependent">edit dependent</string>
 </resources>
