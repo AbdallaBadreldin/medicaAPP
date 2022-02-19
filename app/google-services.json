@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "800838201837",
+    "firebase_url": "https://tmreeeeed.firebaseio.com",
+    "project_id": "tmreeeeed",
+    "storage_bucket": "tmreeeeed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800838201837:android:38937d796fe3039b2537e4",
+        "android_client_info": {
+          "package_name": "eg.iti.pillsmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800838201837-936c9r3v5edqn3io733td0hnd5aehhnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuOBV7sQJ11NyZHOsNDFtZBNe3vDX3w2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800838201837-936c9r3v5edqn3io733td0hnd5aehhnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800838201837:android:5a9cae9b63a31eca",
+        "android_client_info": {
+          "package_name": "team.tmred.fstech.tmreeeeed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800838201837-npg64ukrbjjv1st7cqr64cl5skd67ve4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "team.tmred.fstech.tmreeeeed",
+            "certificate_hash": "5773d25800d64549e94876edb30189f4812909fb"
+          }
+        },
+        {
+          "client_id": "800838201837-936c9r3v5edqn3io733td0hnd5aehhnj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuOBV7sQJ11NyZHOsNDFtZBNe3vDX3w2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800838201837-936c9r3v5edqn3io733td0hnd5aehhnj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

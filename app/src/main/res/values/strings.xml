@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">pills manager</string>
+    <string name="inter">ali</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+
+
+    <string name="menu_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Here insert username @id/userName</string>
+    <string name="nav_header_subtitle">Edit Profile @id/editUserName</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="add_dependent">add dependent</string>
+    <string name="profile">profiles</string>
+    <string name="invite_friend">invite friends</string>
+    <string name="logout">logout</string>
+    <string name="about">about</string>
+    <string name="pick_dependent">pick dependent</string>
+    <string name="welcome_to_app">Welcome To Med App</string>
+    <string name="drug_name_text">add drug name in +id/drug_name</string>
+    <string name="drug_dose_id">add drug dose in @+id/drug_dose</string>
+    <string name="refill">refill</string>
+    <string name="mediciations">mediciations</string>
+    <string name="name_of_medicine">Name Of Medicine</string>
+    <string name="form_of_med">Form Of Med</string>
+    <string name="reason_of_taking_medecine">Reason_of_Taking_Medecine</string>
+    <string name="alarm_name">Name_of_alarm</string>
+    <string name="add">Add</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="every_day">Every day</string>
+    <string name="every_week">Every Week</string>
+    <string name="every_month">Every Month</string>
+    <string name="treatment_duration">Treatment_duration</string>
+    <string name="save">save</string>
+    <string name="back">back</string>
 </resources>

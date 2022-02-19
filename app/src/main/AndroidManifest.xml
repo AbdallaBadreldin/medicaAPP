@@ -9,8 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PillsManager">
+<!--        SplashActivity and DisplayDrug-->
+        <activity
+            android:name=".displaydrug.view.DisplayDrug"
+            android:exported="false"
+            android:theme="@style/Theme.PillsManager.NoActionBar" />
         <activity
             android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PillsManager.NoActionBar" />
+        <activity
+            android:name=".LoginAtivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditDrug.Edit_medActivity"
+            android:exported="false" />
+        <activity
+            android:name=".addDrug.view.AddMedActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EditDrug.EditMedActivitySecond"
+            android:exported="false" />
+        <activity
+            android:name=".addDrug.view.AddMedActivitySecond"
+            android:exported="true" />
+
+        <activity
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
