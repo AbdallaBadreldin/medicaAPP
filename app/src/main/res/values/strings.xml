@@ -31,4 +31,6 @@
     <string name="treatment_duration">Treatment_duration</string>
     <string name="save">save</string>
     <string name="back">back</string>
+    <string name="start_date">1</string>
+    <string name="end_date">2</string>
 </resources>
