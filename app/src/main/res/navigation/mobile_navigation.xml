@@ -73,5 +73,16 @@
             app:destination="@id/editMedFragmentOne" />
     </fragment>
 
+    <fragment
+        android:id="@+id/navigation_refill"
+        android:name="eg.iti.pillsmanager.refill.view.Refill"
+        android:label="@string/refill"
+        tools:layout="@layout/fragment_refill" />
+
+    <fragment
+        android:id="@+id/navigation_mediciation"
+        android:name="eg.iti.pillsmanager.medicinces.view.Medicine"
+        android:label="@string/mediciations"
+        tools:layout="@layout/fragment_medicine" />
 
 </navigation>
