@@ -1,12 +1,18 @@
 package eg.iti.pillsmanager;
 
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +20,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
@@ -28,14 +36,16 @@ import java.util.Calendar;
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
 import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 import eg.iti.pillsmanager.databinding.ActivityMainBinding;
+import eg.iti.pillsmanager.editdependent.view.EditDependentFragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private  AppBarConfiguration mappBottomBarConfiguration;
+//    private  AppBarConfiguration mappBottomBarConfiguration;
     private ActivityMainBinding binding;
     private Calendar startDate;
+    private Navigation nav;
 
     private HorizontalCalendar horizontalCalendar;
     @Override
@@ -86,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
     private void createNavigationSideBar(){
 
         setSupportActionBar(binding.appBarMain.toolbar);
+
+
+
 //        binding.appBarMain.fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -96,26 +109,52 @@ public class MainActivity extends AppCompatActivity {
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         BottomNavigationView bottomNavView = findViewById(R.id.bottm_nav_view);
-
+//        NavigationView bottomNavigationView = findViewById(R.id.bottm_nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-
-         mappBottomBarConfiguration = new AppBarConfiguration.Builder()
-//                R.id.nav_home
+/*
+         mappBottomBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home)
 //                 , R.id.navigation_refill, R.id.navigation_mediciation)
                 .build();
-
+*/
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.navigation_refill, R.id.navigation_mediciation)
+                R.id.navigation_home, R.id.navigation_refill, R.id.navigation_mediciation)
 //                , R.id.nav_gallery, R.id.nav_slideshow)   //it's about hiding back button
                 .setOpenableLayout(drawer)
+
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
 
-        NavigationUI.setupActionBarWithNavController(this, navController, mappBottomBarConfiguration);
+
+//        NavigationUI.setupActionBarWithNavController(this, navController, mappBottomBarConfiguration);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavView, navController);  //bottom navigation view
         NavigationUI.setupWithNavController(navigationView, navController);  // navigation view
+
+
+//        TextView txt = drawer.getRootView().requireViewById(R.id.userName);
+//        txt.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                navigateUpTo(new Intent(getApplicationContext(),EditDependentFragment.class));
+//            }
+//        });
+
+      View headerView=  navigationView.getHeaderView(0);
+//        ImageView image = headerView.findViewById(R.id.imageView);
+        headerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                navigateUpTo(new Intent(getApplicationContext(),EditDependentFragment.class));
+//                Toast.makeText(MainActivity.this, "Hi you pressed edit", Toast.LENGTH_SHORT).show();
+//                NavDirections action =
+//                        SpecifyAmountFragmentDirections
+//                                .actionSpecifyAmountFragmentToConfirmationFragment();
+//                Navigation.findNavController(view).navigate(action);
+
+            }
+        });
 
     }
 

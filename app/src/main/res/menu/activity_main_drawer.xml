@@ -5,39 +5,36 @@
 
     <group android:checkableBehavior="single">
 
-
         <item
             android:id="@+id/text1"
             android:title="@string/profile" />
 
         <item
-            android:id="@+id/add_dependent"
+            android:id="@+id/navigation_add_dependent"
             android:icon="@drawable/side_nav_bar"
             android:title="@string/add_dependent" />
 
         <item
-            android:id="@+id/pick_dependent"
+            android:id="@+id/navigation_pick_dependent"
             android:icon="@drawable/side_nav_bar"
             android:title="@string/pick_dependent" />
-
 
 
         <item
             android:id="@+id/text2"
             android:title="@string/profile" />
         <item
-            android:id="@+id/invite_friend"
+            android:id="@+id/navigation_invite_friend"
             android:icon="@drawable/side_nav_bar"
             android:title="@string/invite_friend" />
         <item
-            android:id="@+id/logout"
+            android:id="@+id/navigation_logout"
             android:icon="@drawable/ic_circle_white_8dp"
             android:title="@string/logout" />
         <item
-            android:id="@+id/about"
+            android:id="@+id/navigation_about"
             android:icon="@drawable/ic_circle_white_8dp"
             android:title="@string/about" />
-
 
 
     </group>

@@ -1,7 +1,5 @@
-package eg.iti.pillsmanager.adddependent.view;
+package eg.iti.pillsmanager.editdependent.view;
 
-import android.app.ActionBar;
-import android.opengl.Visibility;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,14 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 
 import eg.iti.pillsmanager.R;
 
-public class AddDependentFragment extends Fragment {
+public class EditDependentFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
