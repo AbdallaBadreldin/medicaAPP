@@ -6,8 +6,11 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import eg.iti.pillsmanager.database.medicineTable.MedicineDao;
+import eg.iti.pillsmanager.database.medicineTable.MedicineDataBase;
 import eg.iti.pillsmanager.database.userTable.UserDao;
 import eg.iti.pillsmanager.database.userTable.UserDataBase;
+import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.User;
 
 //here we add all Daos as we will create new daos
@@ -16,6 +19,10 @@ public class ConcreteLocalClass implements LocalSource {
     private final LiveData<List<User>> storedUsers;
     private static ConcreteLocalClass concreteLocalClass = null;
 
+    private final MedicineDao medicineDao;
+    private final LiveData<List<Medicine>> storedMedicine;
+//    private static ConcreteLocalClass concreteLocalClass = null;
+
     //for future use
 //    private final AlarmDao movieDao;
 //    private final MedicineDao movieDao;
@@ -23,9 +30,15 @@ public class ConcreteLocalClass implements LocalSource {
 
     //once we add new daos we will edit this constractor
     public ConcreteLocalClass(Context context) {
-      UserDataBase userDataBase = UserDataBase.getUserDataBaseInstance(context.getApplicationContext());
+//        users things
+        UserDataBase userDataBase = UserDataBase.getUserDataBaseInstance(context.getApplicationContext());
         userDao = userDataBase.getUserDao();
-    storedUsers = userDao.getAllUsers();
+        storedUsers = userDao.getAllUsers();
+
+        //medicine things
+        MedicineDataBase medicineDataBase = MedicineDataBase.getMedicineDataBaseInstance(context.getApplicationContext());
+        medicineDao = medicineDataBase.getMedicineDao();
+        storedMedicine = medicineDao.getAllMedicine();
     }
 
     //we don't have to edit this
