@@ -141,7 +141,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="34dp"
-            android:text="refillReminder:when i have 1 meds"
+            android:text="@string/when_to_refill_txt"
             app:layout_constraintStart_toStartOf="@+id/pills_left"
             app:layout_constraintTop_toBottomOf="@+id/pills_left" />
 
