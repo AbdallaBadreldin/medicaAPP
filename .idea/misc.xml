@@ -36,7 +36,7 @@
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/feragment_invite_friend.xml" value="0.1421875" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_about.xml" value="0.1421875" />
-        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_add_dependent.xml" value="0.27941176470588236" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_add_dependent.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_edit_dependent.xml" value="0.115625" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_invite_friend.xml" value="0.11302083333333333" />
@@ -54,6 +54,7 @@
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -1,129 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="8"
     android:orientation="vertical"
-    tools:context=".EditDrug.EditMedActivitySecond">
-    <LinearLayout
-        android:orientation="vertical"
+    tools:context=".EditDrug.Edit_medActivity">
+    <RadioGroup
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/every_day"
+            android:id="@+id/every_day"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/select_days_from_week"
+            android:text="@string/select_days_from_week"
+            android:layout_weight="1"/>
+        <RadioButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/select_month"
+            android:text="@string/select_month"/>
+    </RadioGroup>
+    <TimePicker
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8">
-
-        <TimePicker
-            android:id="@+id/time_Picker"
-            android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:id="@+id/time_of_med"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="7"
+        android:layout_marginBottom="10dp">
+        <CheckBox
+            android:id="@+id/sat_day"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:timePickerMode="spinner">
-
-        </TimePicker>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginBottom="5dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="5dp"
-                android:paddingTop="5dp"
-                android:text="@string/alarm_name"
-                android:textStyle="bold"
-                android:id="@+id/textView3" />
-
-            <EditText
-                android:id="@+id/name_Alarm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/textView3"
-                android:layout_alignStart="@+id/textView3"
-                android:hint="@string/app_name"
-                android:inputType="textAutoComplete"
-                android:paddingTop="5dp" />
-            <ToggleButton
-                android:id="@+id/toggle_Alarm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="15dp" />
-
-
-        </RelativeLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:text="@string/sat_day" />
+        <CheckBox
+            android:id="@+id/sun_day"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:weightSum="3"
-            android:orientation="horizontal">
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/every_day"
-                />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/every_week"
-                />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/every_month"
-                />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="@string/sun_day" />
+        <CheckBox
+            android:id="@+id/mon_day"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/treatment_duration"/>
-            <androidx.appcompat.widget.AppCompatEditText
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"/>
+            android:layout_weight="1"
+            android:text="@string/mon_day" />
+        <CheckBox
+            android:id="@+id/tue_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tue_day" />
+        <CheckBox
+            android:id="@+id/wed_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/wed_day" />
+        <CheckBox
+            android:id="@+id/thu_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/thu_day" />
+        <CheckBox
+            android:id="@+id/fri_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/fri_day" />
 
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <Button
-                android:id="@+id/addAlarm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="30dp"
-                android:text="@string/add" />
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/save"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="30dp"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/back"
-                android:layout_marginLeft="50dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"/>
-        </LinearLayout>
     </LinearLayout>
 
 
-</ScrollView>
+    <DatePicker
+        android:id="@+id/day_of_month"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+
+        android:layout_weight="3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/dose_quantity"
+            android:layout_height="wrap_content"
+            android:text="@string/dose_quantity"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"/>
+        <Spinner
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/dose_num"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btn_next_add_second"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btn_back_add_two"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"/>
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btn_add_edit_second"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

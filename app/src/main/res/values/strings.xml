@@ -18,7 +18,7 @@
     <string name="about">about</string>
     <string name="pick_dependent">pick dependent</string>
     <string name="welcome_to_app">Welcome To Med App</string>
-    <string name="drug_name_text">add drug name in +id/drug_name</string>
+    <string name="drug_name_text">adol</string>
     <string name="drug_dose_id">add drug dose in @+id/drug_dose</string>
     <string name="refill">refill</string>
     <string name="mediciations">mediciations</string>
@@ -27,7 +27,7 @@
     <string name="reason_of_taking_medecine">Reason_of_Taking_Medecine</string>
     <string name="alarm_name">Name_of_alarm</string>
     <string name="add">Add</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="every_day">Every day</string>
     <string name="every_week">Every Week</string>
@@ -45,9 +45,32 @@
     <string name="done">done</string>
     <string name="todo">TODO</string>
     <string name="edit_dependent">edit dependent</string>
-    <string name="empty"></string>
+    <string name="empty" />
     <string name="password_is_missing">Password is Missing</string>
     <string name="email_is_missing">Email is Missing</string>
     <string name="fullname_is_missing">Full Name is Missing</string>
     <string name="password_donot_match">Password Do Not Match</string>
+    <string name="start_date">17 march 2021</string>
+    <string name="end_date">16 april 2022</string>
+    <string name="reminders">Reminders</string>
+    <string name="reason">Reason Of Med</string>
+    <string name="reason_val">Cancer</string>
+    <string name="prescription_refill">Prescription Refill</string>
+    <string name="pills_left">6 pills left</string>
+    <string name="when_to_refill_txt">refill Reminder:when i have 1 meds</string>
+    <string name="select_days_from_week">Select days from week</string>
+    <string name="select_month">select month</string>
+    <string name="sat_day">sat</string>
+    <string name="sun_day">sun</string>
+    <string name="mon_day">mon</string>
+    <string name="tue_day">tue</string>
+    <string name="wed_day">wed</string>
+    <string name="thu_day">thu</string>
+    <string name="fri_day">fri</string>
+    <string name="dose_quantity">dose quantity</string>
+    <string name="next">next</string>
+    <string name="name_of_medecine">name of med</string>
+    <string name="form_of_medicine">form of med</string>
+    <string name="reason_of_med">reason of med</string>
+    <string name="strength_of_medecine">strength of medecine</string>
 </resources>
