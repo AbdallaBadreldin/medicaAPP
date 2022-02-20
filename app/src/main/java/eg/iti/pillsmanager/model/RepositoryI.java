@@ -12,26 +12,4 @@ public interface RepositoryI {
     public void resetPassword(AsyncCallBackI asyncCallBack, String email);
     public void signOut(AsyncCallBackI asyncCallBack);
 
-
-    //firebase realtime DataBase
-
-
-
-
-
-
-
-    /*local*/ //--------------------------------------------------------
-
-    //medicine
-
-
-    //dose
-
-
-
-    //user
-
-
-
 }

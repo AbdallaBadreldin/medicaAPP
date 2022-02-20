@@ -25,7 +25,7 @@
             android:exported="false"
             android:theme="@style/Theme.PillsManager.NoActionBar" />
 
-            android:name=".EditDrug.Edit_medActivity"
+         <activity   android:name=".EditDrug.Edit_medActivity"
             android:exported="false" />
         <activity
             android:name=".addDrug.view.AddMedActivity"
