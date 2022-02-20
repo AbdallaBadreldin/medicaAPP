@@ -28,7 +28,7 @@ public class ConcreteLocalClass implements LocalSource {
     storedUsers = userDao.getAllUsers();
     }
 
-    //we don't have to editi this
+    //we don't have to edit this
     public static ConcreteLocalClass getConcreteLocalClassInstance(Context context) {
         if (concreteLocalClass == null) {
             concreteLocalClass = new ConcreteLocalClass(context);

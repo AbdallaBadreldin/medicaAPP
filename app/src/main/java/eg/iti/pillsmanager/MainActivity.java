@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavView, navController);  //bottom navigation view
         NavigationUI.setupWithNavController(navigationView, navController);  // navigation view
+
         View headerView=  navigationView.getHeaderView(0);
         headerView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +92,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+//        View headerViewLogout=  navigationView.getHeaderView(4);
+//        headerViewLogout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(MainActivity.this, "sfdsf", Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
 
     }
 
