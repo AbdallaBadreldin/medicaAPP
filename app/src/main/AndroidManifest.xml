@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eg.iti.pillsmanager">
+    package="eg.iti.pillsmanager" >
 
     <application
         android:allowBackup="true"
@@ -8,16 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PillsManager">
-<!--        SplashActivity and DisplayDrug-->
+        android:theme="@style/Theme.PillsManager" >
         <activity
-            android:name=".displaydrug.view.DisplayDrug"
-            android:exported="false"
-            android:theme="@style/Theme.PillsManager.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:theme="@style/Theme.PillsManager.NoActionBar" />
+            android:theme="@style/Theme.PillsManager.NoActionBar"
+        android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginAtivity"
             android:exported="false" />
@@ -29,15 +24,8 @@
             android:exported="false" />
 
         <activity
-            android:name=".EditDrug.EditMedActivitySecond"
-            android:exported="false" />
-        <activity
-            android:name=".addDrug.view.AddMedActivitySecond"
-            android:exported="true" />
-
-        <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
