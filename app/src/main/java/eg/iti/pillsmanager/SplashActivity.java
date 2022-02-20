@@ -7,6 +7,8 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import eg.iti.pillsmanager.singnIn.view.SignInActivity;
+
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -22,8 +24,8 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, LoginAtivity.class));
+                startActivity(new Intent(SplashActivity.this, SignInActivity.class));
             }
-        }, 1000);
+        }, 5000);
     }
 }

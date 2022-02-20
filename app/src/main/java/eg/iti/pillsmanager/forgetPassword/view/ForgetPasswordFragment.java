@@ -1,9 +1,6 @@
-package com.example.test.forgetPassword.view;
+package eg.iti.pillsmanager.forgetPassword.view;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +9,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.test.AsyncCallBackI;
-import com.example.test.R;
-import com.example.test.forgetPassword.presenter.ForgetPasswordPresenter;
-import com.example.test.singnIn.view.MainActivity;
+import androidx.fragment.app.Fragment;
+
+
+import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.forgetPassword.presenter.ForgetPasswordPresenter;
+import eg.iti.pillsmanager.singnIn.view.SignInActivity;
 
 public class ForgetPasswordFragment extends Fragment implements AsyncCallBackI {
     EditText forgetPasswordEmail;
@@ -36,7 +36,7 @@ public class ForgetPasswordFragment extends Fragment implements AsyncCallBackI {
         goToSingintxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.showFragmentSignIn();
+                SignInActivity.showFragmentSignIn();
             }
         });
 

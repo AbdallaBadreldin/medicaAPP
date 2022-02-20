@@ -10,7 +10,7 @@ import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.forgetPassword.view.ForgetPasswordFragment;
 import eg.iti.pillsmanager.singnUp.view.view.SignupFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class SignInActivity extends AppCompatActivity {
     private static FragmentManager fragmentManager;
 
     @Override

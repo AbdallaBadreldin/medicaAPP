@@ -1,7 +1,6 @@
-package com.example.test.singnUp.presenter;
-
-import com.example.test.AsyncCallBackI;
-import com.example.test.model.User;
+package eg.iti.pillsmanager.singnUp.presenter;
+import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.model.User;
 
 public interface SignUpPresenterI {
     public void signUp(User user, AsyncCallBackI asyncCallBack);

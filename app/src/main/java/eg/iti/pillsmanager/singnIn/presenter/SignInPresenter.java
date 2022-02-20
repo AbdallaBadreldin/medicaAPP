@@ -1,7 +1,7 @@
-package com.example.test.singnIn.presenter;
+package eg.iti.pillsmanager.singnIn.presenter;
 
-import com.example.test.AsyncCallBackI;
-import com.example.test.model.Repository;
+import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.model.Repository;
 
 public class SignInPresenter implements SignInpresenterI {
     Repository repository;
@@ -14,7 +14,4 @@ public class SignInPresenter implements SignInpresenterI {
     public void signIn(String email, String password, AsyncCallBackI asyncCallBackI) {
         repository.signIn(email, password, asyncCallBackI);
     }
-
-
-
 }

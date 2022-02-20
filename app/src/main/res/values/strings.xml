@@ -45,4 +45,9 @@
     <string name="done">done</string>
     <string name="todo">TODO</string>
     <string name="edit_dependent">edit dependent</string>
+    <string name="empty"></string>
+    <string name="password_is_missing">Password is Missing</string>
+    <string name="email_is_missing">Email is Missing</string>
+    <string name="fullname_is_missing">Full Name is Missing</string>
+    <string name="password_donot_match">Password Do Not Match</string>
 </resources>

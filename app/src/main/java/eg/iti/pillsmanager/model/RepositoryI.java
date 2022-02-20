@@ -1,6 +1,6 @@
-package com.example.test.model;
+package eg.iti.pillsmanager.model;
 
-import com.example.test.AsyncCallBackI;
+import eg.iti.pillsmanager.AsyncCallBackI;
 
 public interface RepositoryI {
 

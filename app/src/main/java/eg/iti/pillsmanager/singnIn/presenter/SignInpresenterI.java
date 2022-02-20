@@ -1,6 +1,8 @@
-package com.example.test.singnIn.presenter;
+package eg.iti.pillsmanager.singnIn.presenter;
 
-import com.example.test.AsyncCallBackI;
+
+
+import eg.iti.pillsmanager.AsyncCallBackI;
 
 public interface SignInpresenterI {
 

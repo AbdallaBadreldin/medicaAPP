@@ -1,13 +1,15 @@
-package com.example.test.model;
+package eg.iti.pillsmanager.model;
 
 import androidx.annotation.NonNull;
 
-import com.example.test.AsyncCallBackI;
-import com.example.test.network.FirebaseDB;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.network.FirebaseDB;
 
 public class Repository implements RepositoryI{
     private static Repository repository;

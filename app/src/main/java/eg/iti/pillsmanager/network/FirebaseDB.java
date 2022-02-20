@@ -1,18 +1,8 @@
-package com.example.test.network;
-
-import static android.content.ContentValues.TAG;
-
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
-import com.example.test.AsyncCallBackI;
-import com.example.test.model.User;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.database.DataSnapshot;
+package eg.iti.pillsmanager.network;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import eg.iti.pillsmanager.model.User;
 
 public class FirebaseDB {
     private static FirebaseDB firebaseDB;
@@ -34,6 +24,8 @@ public class FirebaseDB {
     }
 
     public void addUser(User user){
+        getInstance();
+        initialize();
         mDatabase = database.getReference();
         mDatabase.child("users").child(user.getUserID()).setValue(user);
     }

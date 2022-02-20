@@ -1,8 +1,7 @@
-package com.example.test.singnIn.view;
+package eg.iti.pillsmanager.singnIn.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.example.test.AsyncCallBackI;
-import com.example.test.R;
-import com.example.test.singnIn.MainActivity2;
-import com.example.test.singnIn.presenter.SignInPresenter;
+import androidx.fragment.app.Fragment;
+import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.MainActivity;
+import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.singnIn.presenter.SignInPresenter;
 
 public class SigninFragment extends Fragment implements AsyncCallBackI {
     EditText signInEmail, signInPassword;
@@ -39,14 +38,14 @@ public class SigninFragment extends Fragment implements AsyncCallBackI {
         signInRegisterTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.showFragmentSignUp();
+                SignInActivity.showFragmentSignUp();
             }
         });
 
         signInForgetPasswordTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.showFragmentForgetPassword();
+                SignInActivity.showFragmentForgetPassword();
             }
         });
 
@@ -62,11 +61,12 @@ public class SigninFragment extends Fragment implements AsyncCallBackI {
                     signInPassword.setError(getString(R.string.password_is_missing));
                     return;
                 }
+
                 signInPresenter.signIn(signInEmail.getText().toString().trim(),
                                         signInPassword.getText().toString().trim(),
                                        signinFragment);
-                signInEmail.setText(getString(R.string.empty_string));
-                signInPassword.setText(getString(R.string.empty_string));
+              /*  signInEmail.setText(getString(R.string.empty));
+                signInPassword.setText(getString(R.string.empty));*/
             }
         });
 
@@ -75,7 +75,7 @@ public class SigninFragment extends Fragment implements AsyncCallBackI {
 
     @Override
     public void onSuccess(String actionType) {
-        startActivity(new Intent(getActivity(), MainActivity2.class ));
+        startActivity(new Intent(getActivity(), MainActivity.class ));
     }
 
     @Override

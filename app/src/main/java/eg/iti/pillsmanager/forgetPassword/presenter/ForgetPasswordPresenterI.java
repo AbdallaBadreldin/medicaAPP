@@ -1,6 +1,6 @@
-package com.example.test.forgetPassword.presenter;
+package eg.iti.pillsmanager.forgetPassword.presenter;
 
-import com.example.test.AsyncCallBackI;
+import eg.iti.pillsmanager.AsyncCallBackI;
 
 public interface ForgetPasswordPresenterI {
     public void resetPassword(AsyncCallBackI asyncCallBack, String email);

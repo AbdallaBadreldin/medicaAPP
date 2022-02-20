@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".singnIn.view.SigninFragment">
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/signin_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Email Address"
+            android:inputType="textEmailAddress"/>
+
+        <EditText
+            android:id="@+id/signin_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+
+        <TextView
+            android:id="@+id/signin_forgetpasswordtxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="forget password?"
+            android:gravity="right"
+            android:textStyle="bold"
+            android:layout_margin="16dp"
+            android:textColor="@color/purple_700"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/signin_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <TextView
+            android:id="@+id/signin_registertxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="create new account"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/purple_700"
+            android:layout_marginTop="16dp"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

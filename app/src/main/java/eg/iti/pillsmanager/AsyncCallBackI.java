@@ -1,4 +1,4 @@
-package com.example.test;
+package eg.iti.pillsmanager;
 
 public interface AsyncCallBackI {
     public void onSuccess(String actionType);
