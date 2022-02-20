@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/activity_add_drug.xml" value="0.1" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/activity_add_med_second.xml" value="0.1" />
+        <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/activity_display_drug.xml" value="0.18" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/activity_edit_med.xml" value="0.1" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/activity_edit_med_second.xml" value="0.1" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/activity_login_ativity.xml" value="0.1" />
@@ -15,7 +16,7 @@
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/feragment_invite_friend.xml" value="0.1" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/fragment_add_dependent.xml" value="0.1" />
-        <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/fragment_add_med_second.xml" value="0.25" />
+        <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/fragment_add_med_second.xml" value="0.13703703703703704" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/fragment_add_med_three.xml" value="0.1" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/fragment_add_medication.xml" value="0.25" />
         <entry key="..\:/MedicalReminder/medicaAPP/app/src/main/res/layout/fragment_edit_med2.xml" value="0.1" />

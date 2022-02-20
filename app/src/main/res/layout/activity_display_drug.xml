@@ -82,103 +82,69 @@
         android:layout_weight="3">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/Reminders"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
             android:layout_marginTop="16dp"
-            android:text="TextView"
+            android:text="@string/reminders"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/reminders_val"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            android:text="8Am"
+            app:layout_constraintStart_toStartOf="@+id/Reminders"
+            app:layout_constraintTop_toBottomOf="@+id/Reminders" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/reason_of_take_med"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="118dp" />
+            android:layout_marginTop="40dp"
+            android:text="@string/reason"
+            app:layout_constraintStart_toStartOf="@+id/reminders_val"
+            app:layout_constraintTop_toBottomOf="@+id/reminders_val" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/reason_val"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="64dp"
-            tools:layout_editor_absoluteY="161dp" />
+            android:layout_marginTop="23dp"
+            android:text="@string/reason_val"
+            app:layout_constraintStart_toStartOf="@+id/reason_of_take_med"
+            app:layout_constraintTop_toBottomOf="@+id/reason_of_take_med" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/prescription_refill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="66dp"
-            tools:layout_editor_absoluteY="186dp" />
+            android:layout_marginTop="29dp"
+            android:text="@string/prescription_refill"
+            app:layout_constraintStart_toStartOf="@+id/reason_val"
+            app:layout_constraintTop_toBottomOf="@+id/reason_val" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/pills_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="257dp" />
+            android:layout_marginTop="29dp"
+            android:text="@string/pills_left"
+            app:layout_constraintStart_toStartOf="@+id/prescription_refill"
+            app:layout_constraintTop_toBottomOf="@+id/prescription_refill" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/when_to_refill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="286dp" />
+            android:layout_marginTop="34dp"
+            android:text="refillReminder:when i have 1 meds"
+            app:layout_constraintStart_toStartOf="@+id/pills_left"
+            app:layout_constraintTop_toBottomOf="@+id/pills_left" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="78dp"
-            tools:layout_editor_absoluteY="340dp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="82dp"
-            tools:layout_editor_absoluteY="375dp" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="82dp"
-            tools:layout_editor_absoluteY="402dp" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="82dp"
-            tools:layout_editor_absoluteY="458dp" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="75dp"
-            tools:layout_editor_absoluteY="481dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

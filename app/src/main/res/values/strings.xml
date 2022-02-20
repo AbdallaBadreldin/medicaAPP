@@ -33,4 +33,26 @@
     <string name="back">back</string>
     <string name="start_date">1</string>
     <string name="end_date">2</string>
+    <string name="drug_name_text">drug name</string>
+    <string name="drug_dose_id">50g</string>
+    <string name="reminders">reminders</string>
+    <string name="reason">Reason</string>
+    <string name="reason_val">pressure</string>
+    <string name="prescription_refill">prescription Refill</string>
+    <string name="pills_left">6 pills left</string>
+    <string name="select_days_from_week">select days from week</string>
+    <string name="select_month">select month</string>
+    <string name="sat_day">sat</string>
+    <string name="sun_day">sun</string>
+    <string name="mon_day">mon</string>
+    <string name="tue_day">tue</string>
+    <string name="wed_day">wed</string>
+    <string name="thu_day">thu</string>
+    <string name="fri_day">fri</string>
+    <string name="dose_quantity">dose quantity</string>
+    <string name="next">next</string>
+    <string name="name_of_medecine">name of medecine</string>
+    <string name="form_of_medicine">form of medecine</string>
+    <string name="reason_of_med">reason of med</string>
+    <string name="strength_of_medecine">strength of med</string>
 </resources>
