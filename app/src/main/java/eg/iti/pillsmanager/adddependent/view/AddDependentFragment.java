@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +24,11 @@ public class AddDependentFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View in =inflater.inflate(R.layout.fragment_add_dependent, container, false);
+//        TextView txt = in.findViewById(R.id.editTextTextPersonFirstName);
+//        txt.setText("hi hih ihihihihiihhihi");
 
+//        logout
+//                startActivty(login);
           return in;
     }
 

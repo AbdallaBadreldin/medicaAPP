@@ -11,12 +11,13 @@ import androidx.fragment.app.Fragment;
 import eg.iti.pillsmanager.R;
 
 
-//todo create row
+
 //todo create adapter view
 //todo create two on click listeners
+
 //todo create presenter
 //todo create interfaces
-public class Medicine extends Fragment {
+public class MedicineActivity extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
