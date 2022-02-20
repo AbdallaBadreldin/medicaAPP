@@ -10,13 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillsManager" >
         <activity
-            android:theme="@style/Theme.PillsManager.NoActionBar"
-        android:name=".MainActivity"
-            android:exported="false" />
+            android:name=".displaydrug.view.DisplayDrug"
+            android:exported="false"
+            android:theme="@style/Theme.PillsManager.NoActionBar" />
+
         <activity
-            android:name=".LoginAtivity"
-            android:exported="false" />
+            android:name=".singnIn.view.SignInActivity"
+            android:exported="false">
+        </activity>
+
         <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.PillsManager.NoActionBar" />
+
             android:name=".EditDrug.Edit_medActivity"
             android:exported="false" />
         <activity
