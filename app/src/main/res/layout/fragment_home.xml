@@ -9,13 +9,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-    android:orientation="vertical"
-        >
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-83dp"
+        tools:layout_editor_absoluteY="-157dp">
 
         <!--on below line we are creating our calendar view
             selector color is use as a indicator for selected date
             text color normal is use to give text color to unselected date
             text color selected is use to give text color to selected date-->
+
         <devs.mulham.horizontalcalendar.HorizontalCalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
@@ -29,10 +31,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="24dp"
-            android:text="Temporary for test search for @id/home_tempo"
-            >
+            android:text="Temporary for test search for @id/home_tempo">
+
 
         </TextView>
+
+
     </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_medication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
