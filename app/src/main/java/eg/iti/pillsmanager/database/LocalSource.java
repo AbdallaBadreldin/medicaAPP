@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
+import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.User;
 
 // here we add our interface for all local data
@@ -21,9 +22,13 @@ public interface LocalSource {
 
 
     //interface for medicine table
-
+    LiveData<List<Medicine>> getAllMedicine();
+    void insertMedicine(Medicine medicine);
+    void deleteMedicine(Medicine medicine);
 
 
     //interface for alarm table
-
+//    LiveData<List<User>> getAllUsers();
+//    void insertUser(User user);
+//    void deleteUser(User user);
 }

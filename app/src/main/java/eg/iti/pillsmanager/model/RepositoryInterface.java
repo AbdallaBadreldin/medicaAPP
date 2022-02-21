@@ -7,11 +7,27 @@ import java.util.List;
 import eg.iti.pillsmanager.network.NetworkDelegate;
 
 public interface RepositoryInterface {
-    //DB
+
+  //DB MEDICINE//*****************************
+    //DB ROOM
     LiveData<List<Medicine>> getStoredMedicines();
+
+    //DB ROOM
+    void insertMedicine(Medicine medicine);
+    void deleteMedicine(Medicine medicine);
+    //---------------------------------------------------------
+
+    //DB USERS
+    //DB ROOM
+    LiveData<List<User>> getStoredUsers();
+
+    //DB ROOM
+    void insetUser(User user);
+    void deleteUser(User user);
+
+
+    //***************************************************
     //network
-    void getAllMovies(NetworkDelegate networkDelegate);
-    //DB
-    void insertMovie(Medicine medicine);
-    void deleteMovie(Medicine medicine);
+    void getAllMedicine(NetworkDelegate networkDelegate);
+
 }

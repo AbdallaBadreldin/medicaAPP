@@ -26,23 +26,43 @@ public class Repository implements RepositoryInterface {
         return repository;
     }
 
+    //room medicine
     @Override
     public LiveData<List<Medicine>> getStoredMedicines() {
+
+        return localSource.getAllMedicine();
+    }
+
+    @Override
+    public void insertMedicine(Medicine medicine) {
+
+    }
+
+    @Override
+    public void deleteMedicine(Medicine medicine) {
+
+    }
+//***************************************************************
+    //room user
+    @Override
+    public LiveData<List<User>> getStoredUsers() {
         return null;
     }
 
     @Override
-    public void getAllMovies(NetworkDelegate networkDelegate) {
+    public void insetUser(User user) {
 
     }
 
     @Override
-    public void insertMovie(Medicine medicine) {
+    public void deleteUser(User user) {
 
     }
 
+
+    //network-------------------------------------------
     @Override
-    public void deleteMovie(Medicine medicine) {
+    public void getAllMedicine(NetworkDelegate networkDelegate) {
 
     }
 }

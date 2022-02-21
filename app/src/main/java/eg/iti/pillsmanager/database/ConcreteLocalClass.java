@@ -75,6 +75,24 @@ public class ConcreteLocalClass implements LocalSource {
 
 
 
+
+    //medicine
+    @Override
+    public LiveData<List<Medicine>> getAllMedicine() {
+        return null;
+    }
+
+    @Override
+    public void insertMedicine(Medicine medicine) {
+
+    }
+
+    @Override
+    public void deleteMedicine(Medicine medicine) {
+
+    }
+
+
     //Mediciene dao
 
 

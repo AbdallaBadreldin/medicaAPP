@@ -35,7 +35,8 @@
 <!--        we changed this with splash screen-->
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.PillsManager.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

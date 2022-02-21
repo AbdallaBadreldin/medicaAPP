@@ -69,10 +69,10 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
                     return;
                 }
 
-                String fullName = signUpFullName.getText().toString().trim();
+                String firstName = signUpFullName.getText().toString().trim();
                 String email = signUpEmail.getText().toString().trim();
                 String password = signUpPassword.getText().toString().trim();
-                User user = new User(fullName, email, password, "");
+                User user = new User(firstName,getString(R.string.empty) ,0, email, password, getString(R.string.empty));  //todo needs attention from ali
                 signUpPresenter.signUp(user, signupFragment);
                 signUpFullName.setText(getString(R.string.empty));
                 signUpEmail.setText(getString(R.string.empty));

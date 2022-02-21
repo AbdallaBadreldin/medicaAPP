@@ -4,35 +4,50 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "user")
+@Entity(tableName = "user" ,primaryKeys = {"firstName","secondName"} )
 public class User {
-    @PrimaryKey @NonNull
-    private String fullname;
+     @NonNull
+    private String firstName;
+     @NonNull
+    private String secondName;
+    private long age;
     private String email;
     private String password;
     private String userID;
 
-    public User(String fullname, String email, String password, String userID) {
-        this.fullname = fullname;
+    public User(@NonNull String firstName, @NonNull String secondName, long age, String email, String password, String userID) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.age = age;
         this.email = email;
         this.password = password;
         this.userID = userID;
     }
 
-    public String getUserID() {
-        return userID;
+    @NonNull
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public void setFirstName(@NonNull String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getFullname() {
-        return fullname;
+    @NonNull
+    public String getSecondName() {
+        return secondName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setSecondName(@NonNull String secondName) {
+        this.secondName = secondName;
+    }
+
+    public long getAge() {
+        return age;
+    }
+
+    public void setAge(long age) {
+        this.age = age;
     }
 
     public String getEmail() {
@@ -49,5 +64,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserID() {
+        return userID;
+    }
+
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 }
