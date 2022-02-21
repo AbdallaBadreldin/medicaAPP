@@ -2,14 +2,15 @@ package eg.iti.pillsmanager.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity(tableName = "medecine")
+@Entity( tableName = "medicine",primaryKeys = {"medicineName", "username"} )
 public class Medicine {
-    @PrimaryKey@NonNull
+
+    @NonNull
     String username;
-    @PrimaryKey@NonNull
-    String medecineName;
+
+    @NonNull
+    String medicineName;
     boolean active;
     String reason;
     String form;
@@ -21,9 +22,9 @@ public class Medicine {
     int quantityRemindAt;
     boolean activeRefillReminder;
 
-    public Medicine(@NonNull String username, @NonNull String medecineName, boolean active, String reason, String form, int strengthValue, String strength, long treatmentDuration, int totalQuantity, int lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder) {
+    public Medicine(@NonNull String username, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, long treatmentDuration, int totalQuantity, int lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder) {
         this.username = username;
-        this.medecineName = medecineName;
+        this.medicineName = medicineName;
         this.active = active;
         this.reason = reason;
         this.form = form;
@@ -41,7 +42,7 @@ public class Medicine {
     }
 
     public void setMedecineName(@NonNull String medecineName) {
-        this.medecineName = medecineName;
+        this.medicineName = medecineName;
     }
 
     public void setActive(boolean active) {
@@ -91,7 +92,7 @@ public class Medicine {
 
     @NonNull
     public String getMedecineName() {
-        return medecineName;
+        return medicineName;
     }
 
     public boolean isActive() {

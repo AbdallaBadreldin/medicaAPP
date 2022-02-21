@@ -106,6 +106,8 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
     }
 
 
+    //when we add photo for icon
+
 //    public void setImageUsingGlide(String imageUrl, ImageView imageView) {
 //        Glide.with(context)
 //                .load(imageUrl)
@@ -116,6 +118,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
 
     public void applyChanges(@NonNull ViewHolder holder, @NonNull Medicine movieDetails) {
         imageView = holder.medicineIcon;
+
 
 //        setImageUsingGlide(movieDetails.getImageURL(), imageView);
 

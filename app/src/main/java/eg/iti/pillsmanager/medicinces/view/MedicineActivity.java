@@ -8,8 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import eg.iti.pillsmanager.R;
+import java.util.List;
 
+import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.model.Medicine;
 
 
 //todo create adapter view
@@ -17,7 +19,7 @@ import eg.iti.pillsmanager.R;
 
 //todo create presenter
 //todo create interfaces
-public class MedicineActivity extends Fragment {
+public class MedicineActivity extends Fragment implements MedicineViewInterface {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -30,5 +32,11 @@ public class MedicineActivity extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
 //        binding = null;
+    }
+
+
+    @Override
+    public void showData(List<Medicine> medicines) {
+
     }
 }
