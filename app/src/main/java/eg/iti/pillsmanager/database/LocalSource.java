@@ -16,12 +16,6 @@ we will modify localSource
  */
 public interface LocalSource {
 
-    //interface for medecine table
-    LiveData<List<Medicine>>getAllMedicine();
-    void insertMedicine(Medicine medicine);
-    void deleteMedicine(Medicine medicine
-    );
-    void updateMedicine(Medicine medicine);
 
 
     //interface for user table
@@ -44,7 +38,7 @@ public interface LocalSource {
     LiveData<List<Medicine>> getAllInactiveMedicine();
     void insertMedicine(Medicine medicine);
     void deleteMedicine(Medicine medicine);
-
+    void updateMedicine(Medicine medicine);
 
     //interface for alarm table
 //    LiveData<List<User>> getAllUsers();

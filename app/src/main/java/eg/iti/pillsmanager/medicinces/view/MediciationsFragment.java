@@ -1,6 +1,9 @@
 package eg.iti.pillsmanager.medicinces.view;
 
+import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
+
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +14,12 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.List;
 
 import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.database.ConcreteLocalClass;
 import eg.iti.pillsmanager.medicinces.presenter.MedicinePresenter;
 import eg.iti.pillsmanager.medicinces.presenter.MedicinePresenterInterface;
@@ -23,8 +29,8 @@ import eg.iti.pillsmanager.network.MedicineClient;
 
 
 
-public class AllMedicineActivity extends Fragment implements AllMedicineViewInterface,OnMedicineClickListener {
-
+public class MediciationsFragment extends Fragment implements AllMedicineViewInterface,OnMedicineClickListener {
+    FloatingActionButton add_alarm;
     RecyclerView recyclerViewActiveMedicines;
     RecyclerView recyclerViewInactiveMedicines;
     ActiveMedicineAdapter activeMedicineAdapter;
@@ -40,6 +46,17 @@ public class AllMedicineActivity extends Fragment implements AllMedicineViewInte
                              ViewGroup container, Bundle savedInstanceState) {
 
         View in =inflater.inflate(R.layout.fragment_medicine, container, false);
+
+
+        add_alarm = in.findViewById(R.id.btn_add_medication);
+        add_alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddMedActivity.class);
+                intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+                startActivity(intent);
+            }
+        });
 
         recyclerViewActiveMedicines = in.findViewById(R.id.medicine_recycler_view_active);
         recyclerViewActiveMedicines.setHasFixedSize(true);

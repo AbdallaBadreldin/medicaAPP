@@ -1,5 +1,6 @@
 package eg.iti.pillsmanager.addDrug.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 
 
@@ -30,8 +32,8 @@ public class AddMedicationFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_add_medication, container, false);
-        next = v.findViewById(R.id.btn_next_add_second);
-        back = v.findViewById(R.id.btn_back_add_first);
+        next = v.findViewById(R.id.btn_go_to_fragment_two);
+        back = v.findViewById(R.id.btn_go_to_madication_activity);
 /////////////////////////////////////////////////////////////\
         name_of_med = v.findViewById(R.id.name_of_med);
         form_of_med = v.findViewById(R.id.form_of_med);
@@ -53,7 +55,8 @@ public class AddMedicationFragment extends Fragment {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                AddMedActivity.showFragmentMedication();
             }
         });
         return v;

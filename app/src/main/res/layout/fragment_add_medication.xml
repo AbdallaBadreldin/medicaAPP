@@ -103,14 +103,14 @@
         android:layout_weight="1"
         android:orientation="horizontal">
         <Button
-            android:id="@+id/btn_next_add_second"
+            android:id="@+id/btn_go_to_fragment_two"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/next"
             android:layout_marginLeft="16dp"
             android:layout_weight="1" />
         <Button
-            android:id="@+id/btn_back_add_first"
+            android:id="@+id/btn_go_to_madication_activity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

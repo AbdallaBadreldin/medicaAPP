@@ -138,36 +138,6 @@ public class ConcreteLocalClass implements LocalSource {
         }.start();
     }
 
-
-
-    @Override
-    public LiveData<List<Medicine>> getAllMedicine() {
-        return storedMedicine;
-    }
-
-    @Override
-    public void insertMedicine(Medicine medicine) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                medicineDao.insertMedicine(medicine);
-
-            }
-        }).start();
-
-    }
-
-    @Override
-    public void deleteMedicine(Medicine medicine) {
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                medicineDao.deleteMedicine(medicine);
-
-            }
-        }).start();
-    }
     @Override
     public void updateMedicine(Medicine medicine) {
         new Thread(new Runnable() {
