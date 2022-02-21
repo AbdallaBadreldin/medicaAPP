@@ -5,9 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,14 +13,15 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.model.Medicine;
 
-public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHolder> {
+public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAdapter.ViewHolder> {
 
     final Context context;
-    ArrayList<Medicine> medicinesList;
+    List<Medicine> medicinesList;
 
     Medicine medicineDetails;
     String genre = "";
@@ -30,14 +29,14 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
     ImageView imageView;
     OnMedicineClickListener listener;
 
-    public MedicineAdapter(Context context, OnMedicineClickListener listener) {
+    public ActiveMedicineAdapter(Context context, OnMedicineClickListener listener) {
         medicinesList = new ArrayList<>();
         this.context = context;
         this.listener = listener;
         Log.i("Tag", "AllMedicineAdapter: ");
     }
 
-    public void setMedicinesList(ArrayList<Medicine> medicines) {
+    public void setActiveMedicinesList(List<Medicine> medicines) {
         this.medicinesList = medicines;
         Log.i("Tag", "setMedicineList: " + medicinesList.size());
     }
@@ -74,7 +73,7 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
 
     @NonNull
     @Override
-    public MedicineAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup recycleView, int viewType) {
+    public ActiveMedicineAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup recycleView, int viewType) {
         Log.i("TAG", "onCreateViewHolder: " + viewType);
         LayoutInflater inflater = LayoutInflater.from(recycleView.getContext());
         View v = inflater.inflate(R.layout.custom_row_medicine, recycleView, false);
@@ -120,8 +119,8 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
 
         imageView = holder.medicineIcon;
         holder.txtFirst.setText(String.valueOf(medicineDetails.getMedicineName()));
-        holder.txtFirst.setText(String.valueOf(medicineDetails.getTotalQuantity()));
-        holder.txtFirst.setText(String.valueOf(medicineDetails.getStrength())+String.valueOf(medicineDetails.getStrengthValue()));
+        holder.txtSecond.setText(String.valueOf(medicineDetails.getTotalQuantity()));
+        holder.txtThird.setText(String.valueOf(medicineDetails.getStrength())+String.valueOf(medicineDetails.getStrengthValue()));
 
 //        setImageUsingGlide(medicineDetails.getImageURL(), imageView);
 
