@@ -108,9 +108,6 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 //        binding = null;
     }
 
-
-
-
     @Override
     public void openAlarms(Medicine medicine) {
         //startActivity(in alarms);

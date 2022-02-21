@@ -65,5 +65,9 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$room_version"
 
 
+    def work_version = "2.7.1"
+
+    // (Java only) start work manager
+    implementation "androidx.work:work-runtime:$work_version"
 
 }
