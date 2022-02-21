@@ -3,7 +3,6 @@ package eg.iti.pillsmanager.database.DoseDao;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
-import androidx.room.Dao;
 import androidx.room.Database;
 import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
@@ -12,8 +11,8 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import eg.iti.pillsmanager.model.Dose;
 
-@Database(entities = {Dose.class}, version = 1)
-public  abstract class DoseDataBase extends RoomDatabase {
+@Database(entities = {Dose.class}, version = 2)
+public abstract class DoseDataBase extends RoomDatabase {
     public static DoseDataBase doseDataBase = null;
 
     public static synchronized DoseDataBase getDoseDataBaseInstance(Context context) {

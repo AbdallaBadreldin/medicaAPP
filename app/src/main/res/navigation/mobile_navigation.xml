@@ -88,7 +88,7 @@
 
     <fragment
         android:id="@+id/navigation_mediciation"
-        android:name="eg.iti.pillsmanager.medicinces.view.AllMedicineActivity"
+        android:name="eg.iti.pillsmanager.medicinces.view.MediciationsFragment"
         android:label="@string/mediciations"
         tools:layout="@layout/fragment_medicine" />
 

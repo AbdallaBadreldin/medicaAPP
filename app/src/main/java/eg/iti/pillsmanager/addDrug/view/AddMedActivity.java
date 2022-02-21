@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 
 import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.medicinces.view.MediciationsFragment;
 
 
 public class AddMedActivity extends AppCompatActivity {
@@ -34,6 +35,11 @@ public class AddMedActivity extends AppCompatActivity {
     public static void showFragmentThree(){
         AddMedFragmentThree addMedFragmentThree = new AddMedFragmentThree();
         showFragment(addMedFragmentThree);
+    }
+
+    public static void showFragmentMedication(){
+        MediciationsFragment mediciationsFragment = new MediciationsFragment();
+        showFragment(mediciationsFragment);
     }
 
     private static void showFragment(Fragment fragment){

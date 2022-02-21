@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         //createCalendar();
     }
 
-    private void createCalendar() {
+    /*private void createCalendar() {
         startDate = Calendar.getInstance();
         startDate.add(Calendar.MONTH, -1);
         Calendar endDate = Calendar.getInstance();
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("TAG", "CURRENT DATE IS " + date);
             }
         });
-    }
+    }*/
 
 
     private void createNavigationSideBar(){
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
 
-        createCalendar();
+       // createCalendar();
     }
 
     @Nullable
