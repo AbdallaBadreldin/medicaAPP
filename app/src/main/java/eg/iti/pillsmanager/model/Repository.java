@@ -3,13 +3,16 @@ package eg.iti.pillsmanager.model;
 import android.content.Context;
 
 import androidx.annotation.NonNull;
+
 import androidx.lifecycle.LiveData;
 
-
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.List;
+
+import eg.iti.pillsmanager.database.LocalSource;
+import eg.iti.pillsmanager.network.NetworkDelegate;
+import eg.iti.pillsmanager.network.RemoteSource;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,77 +32,59 @@ public class Repository implements RepositoryI{
     private Repository( LocalSource localSource, Context context){
         this.localSource = localSource;
         this.context=context;
+
+public class Repository implements RepositoryInterface {
+
+    private final LocalSource localSource;
+    private final RemoteSource remoteSource;
+    private static Repository repository = null;
+
+    private Repository(RemoteSource remoteSource, LocalSource localSource) {
+        this.remoteSource = remoteSource;
+        this.localSource = localSource;
     }
     public static Repository getInstance(LocalSource localSource,Context context) {
         if (repository == null) {
             repository =new Repository(localSource,context);
 
+    public static Repository getRepositoryInstance(RemoteSource remoteSource, LocalSource localSource) {
+        if (repository == null) {
+            repository = new Repository(remoteSource, localSource);
+
         }
         return repository;
     }
 
-    public static FirebaseAuth getInstanceOfFirebase(){
-        if( firebaseAuth== null)
-            firebaseAuth = FirebaseAuth.getInstance();
-        return firebaseAuth;
+    //room medicine
+    @Override
+    public LiveData<List<Medicine>> getStoredMedicines() {
+        return localSource.getAllMedicine();
     }
 
     @Override
-    public void signIn(String email, String password, AsyncCallBackI asyncCallBack) {
-        getInstanceOfFirebase();
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-                    @Override
-                    public void onSuccess(AuthResult authResult) {
-                        asyncCallBack.onSuccess("signIn");
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                asyncCallBack.onFailure(e.getMessage());
-            }
-        });
+    public LiveData<List<Medicine>> getStoredActiveMedicines() {
+        return localSource.getAllActiveMedicine();
     }
 
     @Override
-    public void signUp(User user, AsyncCallBackI asyncCallBack) {
-        getInstanceOfFirebase();
-        firebaseAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
-            @Override
-            public void onSuccess(AuthResult authResult) {
-                user.setUserID(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                FirebaseDB.getInstance().addUser(user);
-                asyncCallBack.onSuccess("signUp");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                asyncCallBack.onFailure(e.getMessage());
-            }
-        });
+    public LiveData<List<Medicine>> getStoredInactiveMedicines() {
+        return localSource.getAllInactiveMedicine();
     }
 
     @Override
-    public void resetPassword(AsyncCallBackI asyncCallBack, String email) {
-        getInstanceOfFirebase();
-        firebaseAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void unused) {
-                asyncCallBack.onSuccess("resetPassword");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                asyncCallBack.onFailure(e.getLocalizedMessage());
-            }
-        });
+    public void insertMedicine(Medicine medicine) {
+         localSource.insertMedicine(medicine);
     }
 
     @Override
-    public  void signOut(AsyncCallBackI asyncCallBack) {
-        getInstanceOfFirebase();
-        firebaseAuth.signOut();
-        asyncCallBack.onSuccess("SIGN_OUT_ACTION");
+    public void deleteMedicine(Medicine medicine) {
+        localSource.deleteMedicine(medicine);
+    }
+//***************************************************************
+    //room user
+    @Override
+    public LiveData<List<User>> getStoredUsers() {
+        return getStoredUsers();
     }
 
     @Override
@@ -148,10 +133,19 @@ public class Repository implements RepositoryI{
 
 /*
     @Override
-    public String getCurrentUserUID(){
-        if(firebaseAuth != null && firebaseAuth.getCurrentUser() != null)
-            return firebaseAuth.getCurrentUser().getUid();
-        return null;
+    public void insetUser(User user) {
+localSource.insertUser(user);
     }
- */
+
+    @Override
+    public void deleteUser(User user) {
+localSource.deleteUser(user);
+    }
+
+
+    //network-------------------------------------------
+    @Override
+    public void getAllMedicine(NetworkDelegate networkDelegate) {
+
+    }
 }

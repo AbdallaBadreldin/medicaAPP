@@ -20,6 +20,10 @@ public interface MedicineDao {
 
     @Query("Select * From Medicine")
     LiveData<List<Medicine>> getAllMedicine();
+    @Query("Select * From Medicine WHERE active LIKE 1  ")
+    LiveData<List<Medicine>> getAllActiveMedicine();
+    @Query("Select * From Medicine WHERE active LIKE 0 ")
+    LiveData<List<Medicine>> getAllInactiveMedicine();
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertMedicine(Medicine medicine);

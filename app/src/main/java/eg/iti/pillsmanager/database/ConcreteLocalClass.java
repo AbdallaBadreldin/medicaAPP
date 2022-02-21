@@ -16,12 +16,17 @@ import eg.iti.pillsmanager.model.User;
 
 //here we add all Daos as we will create new daos
 public class ConcreteLocalClass implements LocalSource {
+    private static ConcreteLocalClass concreteLocalClass = null;
+
+
     private final UserDao userDao;
     private final LiveData<List<User>> storedUsers;
-    private static ConcreteLocalClass concreteLocalClass = null;
 
     private final MedicineDao medicineDao;
     private final LiveData<List<Medicine>> storedMedicine;
+    private final LiveData<List<Medicine>> storedActiveMedicine;
+    private final LiveData<List<Medicine>> storedInactiveMedicine;
+//    private static ConcreteLocalClass concreteLocalClass = null;
 
 //    private static ConcreteLocalClass concreteLocalClass = null;
     private final DoseDao doseDao;
@@ -46,6 +51,9 @@ public class ConcreteLocalClass implements LocalSource {
         DoseDataBase DoseDataBase = eg.iti.pillsmanager.database.DoseDao.DoseDataBase.getDoseDataBaseInstance(context.getApplicationContext());
         doseDao = DoseDataBase.getDoseDao();
         storedDose =doseDao.getAllDoses();
+        storedActiveMedicine = medicineDao.getAllActiveMedicine();
+        storedInactiveMedicine = medicineDao.getAllInactiveMedicine();
+
     }
 
     //we don't have to edit this
@@ -87,6 +95,50 @@ public class ConcreteLocalClass implements LocalSource {
 
 
     //Mediciene dao
+    //medicine
+    // 1 get all users data
+    // 2 insert user
+    // 3 delete user
+    // 4 get all active users data
+    // 5 get all inactive users data
+    @Override
+    public LiveData<List<Medicine>> getAllMedicine() {
+        return storedMedicine;
+    }
+
+    @Override
+    public LiveData<List<Medicine>> getAllActiveMedicine() {
+       return storedActiveMedicine;
+    }
+
+    @Override
+    public LiveData<List<Medicine>> getAllInactiveMedicine() {
+        return storedInactiveMedicine;
+    }
+
+    @Override
+    public void insertMedicine(Medicine medicine) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                medicineDao.insertMedicine(medicine);
+            }
+        }.start();
+    }
+
+    @Override
+    public void deleteMedicine(Medicine medicine) {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                medicineDao.deleteMedicine(medicine);
+            }
+        }.start();
+    }
+
+
 
     @Override
     public LiveData<List<Medicine>> getAllMedicine() {

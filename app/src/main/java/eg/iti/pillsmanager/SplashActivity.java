@@ -7,7 +7,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import eg.iti.pillsmanager.singnIn.view.SignInActivity;
+import eg.iti.pillsmanager.auth.singnIn.view.SignInActivity;
 
 
 public class SplashActivity extends AppCompatActivity {

@@ -15,7 +15,7 @@
             android:theme="@style/Theme.PillsManager.NoActionBar" />
 
         <activity
-            android:name=".singnIn.view.SignInActivity"
+            android:name=".auth.singnIn.view.SignInActivity"
             android:exported="false">
         </activity>
 
@@ -35,7 +35,8 @@
 <!--        we changed this with splash screen-->
         <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.PillsManager.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

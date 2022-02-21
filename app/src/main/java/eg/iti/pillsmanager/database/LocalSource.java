@@ -38,4 +38,16 @@ public interface LocalSource {
     void updateDose(Dose dose);
 
 
+    //interface for medicine table
+    LiveData<List<Medicine>> getAllMedicine();
+    LiveData<List<Medicine>> getAllActiveMedicine();
+    LiveData<List<Medicine>> getAllInactiveMedicine();
+    void insertMedicine(Medicine medicine);
+    void deleteMedicine(Medicine medicine);
+
+
+    //interface for alarm table
+//    LiveData<List<User>> getAllUsers();
+//    void insertUser(User user);
+//    void deleteUser(User user);
 }

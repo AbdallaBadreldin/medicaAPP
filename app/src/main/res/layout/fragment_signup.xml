@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".singnUp.view.view.SignupFragment">
+    tools:context=".auth.singnUp.view.view.SignupFragment">
 
     <LinearLayout
         android:layout_centerVertical="true"

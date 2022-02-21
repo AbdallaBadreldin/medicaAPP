@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import eg.iti.pillsmanager.AsyncCallBackI;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.model.Repository;
 
 public class Logout extends Fragment  {
 

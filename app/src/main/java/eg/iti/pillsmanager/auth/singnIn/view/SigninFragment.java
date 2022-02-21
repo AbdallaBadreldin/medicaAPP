@@ -1,4 +1,4 @@
-package eg.iti.pillsmanager.singnIn.view;
+package eg.iti.pillsmanager.auth.singnIn.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.fragment.app.Fragment;
-import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.singnIn.presenter.SignInPresenter;
+import eg.iti.pillsmanager.auth.singnIn.presenter.SignInPresenter;
 
-public class SigninFragment extends Fragment implements AsyncCallBackI {
+public class SigninFragment extends Fragment implements AuthAsyncCallBackI {
     EditText signInEmail, signInPassword;
     TextView signInForgetPasswordTxt, signInRegisterTxt;
     Button signInBtn;
@@ -65,8 +65,8 @@ public class SigninFragment extends Fragment implements AsyncCallBackI {
                 signInPresenter.signIn(signInEmail.getText().toString().trim(),
                                         signInPassword.getText().toString().trim(),
                                        signinFragment);
-              /*  signInEmail.setText(getString(R.string.empty));
-                signInPassword.setText(getString(R.string.empty));*/
+               signInEmail.setText(getString(R.string.empty));
+               signInPassword.setText(getString(R.string.empty));
             }
         });
 
