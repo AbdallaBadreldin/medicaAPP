@@ -1,6 +1,6 @@
 package eg.iti.pillsmanager.auth.singnUp.presenter;
 import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
-import eg.iti.pillsmanager.model.Authentication;
+import eg.iti.pillsmanager.network.Authentication;
 import eg.iti.pillsmanager.model.User;
 
 public class SignUpPresenter implements SignUpPresenterI{

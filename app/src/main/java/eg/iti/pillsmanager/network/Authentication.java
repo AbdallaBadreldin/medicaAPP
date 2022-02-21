@@ -1,4 +1,4 @@
-package eg.iti.pillsmanager.model;
+package eg.iti.pillsmanager.network;
 
 import androidx.annotation.NonNull;
 
@@ -9,7 +9,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
-import eg.iti.pillsmanager.network.FirebaseDB;
+import eg.iti.pillsmanager.model.User;
 
 public class Authentication implements AuthenticationI {
     private static Authentication authentication;

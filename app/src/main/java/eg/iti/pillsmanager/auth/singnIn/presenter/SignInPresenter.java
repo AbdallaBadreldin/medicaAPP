@@ -1,7 +1,7 @@
 package eg.iti.pillsmanager.auth.singnIn.presenter;
 
 import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
-import eg.iti.pillsmanager.model.Authentication;
+import eg.iti.pillsmanager.network.Authentication;
 
 public class SignInPresenter implements SignInpresenterI {
     Authentication authentication;

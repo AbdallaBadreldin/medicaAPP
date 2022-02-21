@@ -1,7 +1,7 @@
 package eg.iti.pillsmanager.auth.resetPassword.presenter;
 
 import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
-import eg.iti.pillsmanager.model.Authentication;
+import eg.iti.pillsmanager.network.Authentication;
 
 public class ResetPasswordPresenter implements ResetPasswordPresenterI {
     Authentication authentication;

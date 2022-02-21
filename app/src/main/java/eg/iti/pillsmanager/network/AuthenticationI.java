@@ -1,6 +1,7 @@
-package eg.iti.pillsmanager.model;
+package eg.iti.pillsmanager.network;
 
 import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
+import eg.iti.pillsmanager.model.User;
 
 public interface AuthenticationI {
 
