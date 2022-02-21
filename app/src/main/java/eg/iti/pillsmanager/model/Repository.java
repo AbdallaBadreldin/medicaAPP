@@ -1,6 +1,9 @@
 package eg.iti.pillsmanager.model;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
 
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -8,19 +11,30 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.database.LocalSource;
+import eg.iti.pillsmanager.database.medicineTable.MedicineDao;
 import eg.iti.pillsmanager.network.FirebaseDB;
 
 public class Repository implements RepositoryI{
     private static Repository repository;
     private static FirebaseAuth firebaseAuth;
-
-    public Repository(){
+    LocalSource localSource;//db room
+    private Context context;
+    MedicineDao medicineDao;
+    //////////////////////////////////
+    private Repository( LocalSource localSource, Context context){
+        this.localSource = localSource;
+        this.context=context;
     }
+    public static Repository getInstance(LocalSource localSource,Context context) {
+        if (repository == null) {
+            repository =new Repository(localSource,context);
 
-    public static Repository getInstance(){
-        if(repository == null)
-            repository = new Repository();
+        }
         return repository;
     }
 
@@ -87,6 +101,50 @@ public class Repository implements RepositoryI{
         firebaseAuth.signOut();
         asyncCallBack.onSuccess("SIGN_OUT_ACTION");
     }
+
+    @Override
+    public LiveData<List<Dose>> getAllDoses() {
+        return localSource.getAllDoses();
+    }
+
+    @Override
+    public void insertDose(Dose dose) {
+      localSource.insertDose(dose);
+    }
+
+    @Override
+    public void deleteDose(Dose dose) {
+      localSource.deleteDose(dose);
+    }
+
+    @Override
+    public void updateDose(Dose dose) {
+        localSource.updateDose(dose);
+    }
+
+
+    @Override
+    public LiveData<List<Medicine>> getAllMedicine() {
+        return localSource.getAllMedicine();
+    }
+
+    @Override
+    public void insertMedicine(Medicine medicine) {
+         localSource.insertMedicine(medicine);
+    }
+
+    @Override
+    public void deleteMedicine(Medicine medicine) {
+          localSource.deleteMedicine(medicine);
+    }
+
+    @Override
+    public void updateMedicine(Medicine medicine) {
+      localSource.updateMedicine(medicine);
+    }
+
+
+
 
 /*
     @Override

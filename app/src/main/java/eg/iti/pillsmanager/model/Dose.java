@@ -3,9 +3,8 @@ package eg.iti.pillsmanager.model;
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-@Entity(tableName = "dose")
+@Entity(tableName = "Dose")
 public class Dose {
-    @PrimaryKey  @NonNull
     String user;
     @PrimaryKey  @NonNull
     String medecine;

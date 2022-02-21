@@ -7,7 +7,7 @@ public class ForgetPasswordPresenter implements ForgetPasswordPresenterI{
     Repository repository;
 
     public ForgetPasswordPresenter() {
-        repository = Repository.getInstance();
+        //repository = Repository.getInstance();
     }
 
     @Override

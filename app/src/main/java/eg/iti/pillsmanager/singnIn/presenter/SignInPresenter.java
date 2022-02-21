@@ -1,13 +1,18 @@
 package eg.iti.pillsmanager.singnIn.presenter;
 
+import com.google.firebase.database.core.Context;
+
 import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.database.LocalSource;
 import eg.iti.pillsmanager.model.Repository;
 
 public class SignInPresenter implements SignInpresenterI {
     Repository repository;
+    LocalSource localSource;
+    Context context;
 
    public SignInPresenter(){
-        repository = Repository.getInstance();
+        //repository = Repository.getInstance(localSource,context);
     }
 
     @Override

@@ -69,6 +69,7 @@
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/doses_left"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"

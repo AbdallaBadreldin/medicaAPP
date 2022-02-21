@@ -6,9 +6,11 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
+import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.User;
 
@@ -24,6 +26,8 @@ public interface MedicineDao {
 
     @Delete
     void deleteMedicine(Medicine medicine);
+    @Update
+    void updateMedicine(Medicine medicine);
 
 //    @Delete(Select * From user)
 //    void deleteAllUsers();

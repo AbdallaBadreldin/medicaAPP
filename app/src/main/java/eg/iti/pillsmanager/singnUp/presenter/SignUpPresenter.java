@@ -7,7 +7,7 @@ public class SignUpPresenter implements SignUpPresenterI{
     Repository repository;
 
     public SignUpPresenter() {
-        repository = Repository.getInstance();
+        //repository = Repository.getInstance();
     }
 
     @Override

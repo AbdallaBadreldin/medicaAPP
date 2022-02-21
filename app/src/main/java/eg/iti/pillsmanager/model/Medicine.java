@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "medecine")
+@Entity( tableName = "medicine",primaryKeys = {"medicineName", "firstName","secondName"} )
 public class Medicine {
-    @PrimaryKey@NonNull
-    String username;
-    @PrimaryKey@NonNull
-    String medecineName;
+    @NonNull
+    String firstName;
+    @NonNull
+    String secondName;
+    @NonNull
+    String medicineName;
     boolean active;
     String reason;
     String form;
@@ -21,9 +23,10 @@ public class Medicine {
     int quantityRemindAt;
     boolean activeRefillReminder;
 
-    public Medicine(@NonNull String username, @NonNull String medecineName, boolean active, String reason, String form, int strengthValue, String strength, long treatmentDuration, int totalQuantity, int lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder) {
-        this.username = username;
-        this.medecineName = medecineName;
+    public Medicine(@NonNull String firstName, @NonNull String secondName, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, long treatmentDuration, int totalQuantity, int lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.medicineName = medicineName;
         this.active = active;
         this.reason = reason;
         this.form = form;
@@ -36,101 +39,110 @@ public class Medicine {
         this.activeRefillReminder = activeRefillReminder;
     }
 
-    public void setUsername(@NonNull String username) {
-        this.username = username;
+    @NonNull
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setMedecineName(@NonNull String medecineName) {
-        this.medecineName = medecineName;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public void setForm(String form) {
-        this.form = form;
-    }
-
-    public void setStrengthValue(int strengthValue) {
-        this.strengthValue = strengthValue;
-    }
-
-    public void setStrength(String strength) {
-        this.strength = strength;
-    }
-
-    public void setTreatmentDuration(long treatmentDuration) {
-        this.treatmentDuration = treatmentDuration;
-    }
-
-    public void setTotalQuantity(int totalQuantity) {
-        this.totalQuantity = totalQuantity;
-    }
-
-    public void setLastdoseQuantity(int lastdoseQuantity) {
-        this.lastdoseQuantity = lastdoseQuantity;
-    }
-
-    public void setQuantityRemindAt(int quantityRemindAt) {
-        this.quantityRemindAt = quantityRemindAt;
-    }
-
-    public void setActiveRefillReminder(boolean activeRefillReminder) {
-        this.activeRefillReminder = activeRefillReminder;
+    public void setFirstName(@NonNull String firstName) {
+        this.firstName = firstName;
     }
 
     @NonNull
-    public String getUsername() {
-        return username;
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(@NonNull String secondName) {
+        this.secondName = secondName;
     }
 
     @NonNull
-    public String getMedecineName() {
-        return medecineName;
+    public String getMedicineName() {
+        return medicineName;
+    }
+
+    public void setMedicineName(@NonNull String medicineName) {
+        this.medicineName = medicineName;
     }
 
     public boolean isActive() {
         return active;
     }
 
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public String getReason() {
         return reason;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public String getForm() {
         return form;
     }
 
+    public void setForm(String form) {
+        this.form = form;
+    }
+
     public int getStrengthValue() {
         return strengthValue;
+    }
+
+    public void setStrengthValue(int strengthValue) {
+        this.strengthValue = strengthValue;
     }
 
     public String getStrength() {
         return strength;
     }
 
+    public void setStrength(String strength) {
+        this.strength = strength;
+    }
+
     public long getTreatmentDuration() {
         return treatmentDuration;
+    }
+
+    public void setTreatmentDuration(long treatmentDuration) {
+        this.treatmentDuration = treatmentDuration;
     }
 
     public int getTotalQuantity() {
         return totalQuantity;
     }
 
+    public void setTotalQuantity(int totalQuantity) {
+        this.totalQuantity = totalQuantity;
+    }
+
     public int getLastdoseQuantity() {
         return lastdoseQuantity;
+    }
+
+    public void setLastdoseQuantity(int lastdoseQuantity) {
+        this.lastdoseQuantity = lastdoseQuantity;
     }
 
     public int getQuantityRemindAt() {
         return quantityRemindAt;
     }
 
+    public void setQuantityRemindAt(int quantityRemindAt) {
+        this.quantityRemindAt = quantityRemindAt;
+    }
+
     public boolean isActiveRefillReminder() {
         return activeRefillReminder;
+    }
+
+    public void setActiveRefillReminder(boolean activeRefillReminder) {
+        this.activeRefillReminder = activeRefillReminder;
     }
 }

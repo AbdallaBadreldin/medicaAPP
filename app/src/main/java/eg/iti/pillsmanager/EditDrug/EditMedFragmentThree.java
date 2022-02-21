@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import eg.iti.pillsmanager.R;
@@ -16,8 +17,9 @@ import eg.iti.pillsmanager.addDrug.view.DatePickerFragment;
 
 
 public class EditMedFragmentThree extends Fragment {
-    TextView start_date,end_date;
-    Button back,save;
+    TextView start_date,end_date,treatment_duration,quantity_of_med,med_value;
+    Button save_btn,back_btn;
+    EditText doses_left;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,9 +33,15 @@ public class EditMedFragmentThree extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_edit_med_three, container, false);
         start_date=view.findViewById(R.id.start_date);
-        save = view.findViewById(R.id.btn_save_add_three);
-        back = view.findViewById(R.id.btn_back_add_two);
         end_date=view.findViewById(R.id.end_date);
+        //////////////////////////////////////////////////
+        save_btn=view.findViewById(R.id.btn_save_add_three);
+        back_btn=view.findViewById(R.id.btn_back_add_two);
+///////////////////////////////////////////////////////////////////
+        treatment_duration=view.findViewById(R.id.treatment_duration);
+        quantity_of_med=view.findViewById(R.id.Quantity_of_med);
+        med_value=view.findViewById(R.id.Quantity_of_med_value);
+        doses_left=view.findViewById(R.id.doses_left);
 
         end_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,13 +55,13 @@ public class EditMedFragmentThree extends Fragment {
                 showDatePickerDialog(view);
             }
         });
-        back.setOnClickListener(new View.OnClickListener() {
+        back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Edit_medActivity.showFragmentSecond();
             }
         });
-        save.setOnClickListener(new View.OnClickListener() {
+        save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

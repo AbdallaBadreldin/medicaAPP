@@ -3,13 +3,14 @@ package eg.iti.pillsmanager.database;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
-
 import java.util.List;
-
+import eg.iti.pillsmanager.database.DoseDao.DoseDao;
+import eg.iti.pillsmanager.database.DoseDao.DoseDataBase;
 import eg.iti.pillsmanager.database.medicineTable.MedicineDao;
 import eg.iti.pillsmanager.database.medicineTable.MedicineDataBase;
 import eg.iti.pillsmanager.database.userTable.UserDao;
 import eg.iti.pillsmanager.database.userTable.UserDataBase;
+import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.User;
 
@@ -21,8 +22,10 @@ public class ConcreteLocalClass implements LocalSource {
 
     private final MedicineDao medicineDao;
     private final LiveData<List<Medicine>> storedMedicine;
-//    private static ConcreteLocalClass concreteLocalClass = null;
 
+//    private static ConcreteLocalClass concreteLocalClass = null;
+    private final DoseDao doseDao;
+    private final LiveData<List<Dose>> storedDose;
     //for future use
 //    private final AlarmDao movieDao;
 //    private final MedicineDao movieDao;
@@ -39,6 +42,10 @@ public class ConcreteLocalClass implements LocalSource {
         MedicineDataBase medicineDataBase = MedicineDataBase.getMedicineDataBaseInstance(context.getApplicationContext());
         medicineDao = medicineDataBase.getMedicineDao();
         storedMedicine = medicineDao.getAllMedicine();
+        //dose things
+        DoseDataBase DoseDataBase = eg.iti.pillsmanager.database.DoseDao.DoseDataBase.getDoseDataBaseInstance(context.getApplicationContext());
+        doseDao = DoseDataBase.getDoseDao();
+        storedDose =doseDao.getAllDoses();
     }
 
     //we don't have to edit this
@@ -54,6 +61,8 @@ public class ConcreteLocalClass implements LocalSource {
    //once we edited old daos we will mopdifiy localSource then we will modifiy this
    //hint don't forget to mofify constructor if you added new tables
 
+
+
     //User dao methods
     // 1 get all users data
     // 2 insert user
@@ -65,6 +74,7 @@ public class ConcreteLocalClass implements LocalSource {
 
     @Override
     public void insertUser(User user) {
+
         userDao.insertUser(user);
     }
 
@@ -75,14 +85,90 @@ public class ConcreteLocalClass implements LocalSource {
 
 
 
+
     //Mediciene dao
 
+    @Override
+    public LiveData<List<Medicine>> getAllMedicine() {
+        return storedMedicine;
+    }
+
+    @Override
+    public void insertMedicine(Medicine medicine) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                medicineDao.insertMedicine(medicine);
+
+            }
+        }).start();
+
+    }
+
+    @Override
+    public void deleteMedicine(Medicine medicine) {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                medicineDao.deleteMedicine(medicine);
+
+            }
+        }).start();
+    }
+    @Override
+    public void updateMedicine(Medicine medicine) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                medicineDao.updateMedicine(medicine);
+
+            }
+        }).start();
+    }
 
 
 
 
+    //dose dao
+    @Override
+    public LiveData<List<Dose>> getAllDoses() {
+        return storedDose;
+    }
 
-    //alarm dao
+    @Override
+    public void insertDose(Dose dose) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                doseDao.insertDose(dose);
+
+            }
+        }).start();
+
+    }
+
+    @Override
+    public void deleteDose(Dose dose) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                doseDao.deleteDose(dose);
+
+            }
+        }).start();
+
+    }
+    @Override
+    public void updateDose(Dose dose) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                doseDao.updateDose(dose);
+
+            }
+        }).start();
+    }
 }
 
 
