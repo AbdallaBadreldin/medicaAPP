@@ -19,19 +19,22 @@
             android:exported="false">
         </activity>
 
+<!--        convert this with main activity-->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="false"
             android:theme="@style/Theme.PillsManager.NoActionBar" />
 
-            android:name=".EditDrug.Edit_medActivity"
+         <activity   android:name=".EditDrug.Edit_medActivity"
             android:exported="false" />
         <activity
             android:name=".addDrug.view.AddMedActivity"
             android:exported="false" />
 
+
+<!--        we changed this with splash screen-->
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
