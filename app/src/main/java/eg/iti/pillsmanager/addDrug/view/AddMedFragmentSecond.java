@@ -50,13 +50,13 @@ Spinner dose_value;
         select_days_from_week=view.findViewById(R.id.select_days_from_week);
 ////////////////////////////////////////////////////////
         time_of_med=view.findViewById(R.id.time_of_med);
-        sat_day=view.findViewById(R.id.select_days_from_week);
-        sun_day=view.findViewById(R.id.select_days_from_week);
-        mon_day=view.findViewById(R.id.select_days_from_week);
-        tue_day=view.findViewById(R.id.select_days_from_week);
-        wen_day=view.findViewById(R.id.select_days_from_week);
-        thu_day=view.findViewById(R.id.select_days_from_week);
-        fri_day=view.findViewById(R.id.select_days_from_week);
+        sat_day=view.findViewById(R.id.sat_day);
+        sun_day=view.findViewById(R.id.sun_day);
+        mon_day=view.findViewById(R.id.mon_day);
+        tue_day=view.findViewById(R.id.tue_day);
+        wen_day=view.findViewById(R.id.wed_day);
+        thu_day=view.findViewById(R.id.thu_day);
+        fri_day=view.findViewById(R.id.fri_day);
         ///////////////////////////////////////////////////////////////
         date_of_med=view.findViewById(R.id.day_of_month);
         //////////////////////////////////////////////////
