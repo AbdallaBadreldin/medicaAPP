@@ -8,20 +8,20 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
 import eg.iti.pillsmanager.network.FirebaseDB;
 
-public class Repository implements RepositoryI{
-    private static Repository repository;
+public class Authentication implements AuthenticationI {
+    private static Authentication authentication;
     private static FirebaseAuth firebaseAuth;
 
-    public Repository(){
+    public Authentication(){
     }
 
-    public static Repository getInstance(){
-        if(repository == null)
-            repository = new Repository();
-        return repository;
+    public static Authentication getInstance(){
+        if(authentication == null)
+            authentication = new Authentication();
+        return authentication;
     }
 
     public static FirebaseAuth getInstanceOfFirebase(){
@@ -31,7 +31,7 @@ public class Repository implements RepositoryI{
     }
 
     @Override
-    public void signIn(String email, String password, AsyncCallBackI asyncCallBack) {
+    public void signIn(String email, String password, AuthAsyncCallBackI asyncCallBack) {
         getInstanceOfFirebase();
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
@@ -48,7 +48,7 @@ public class Repository implements RepositoryI{
     }
 
     @Override
-    public void signUp(User user, AsyncCallBackI asyncCallBack) {
+    public void signUp(User user, AuthAsyncCallBackI asyncCallBack) {
         getInstanceOfFirebase();
         firebaseAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
@@ -66,7 +66,7 @@ public class Repository implements RepositoryI{
     }
 
     @Override
-    public void resetPassword(AsyncCallBackI asyncCallBack, String email) {
+    public void resetPassword(AuthAsyncCallBackI asyncCallBack, String email) {
         getInstanceOfFirebase();
         firebaseAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -82,7 +82,7 @@ public class Repository implements RepositoryI{
     }
 
     @Override
-    public  void signOut(AsyncCallBackI asyncCallBack) {
+    public  void signOut(AuthAsyncCallBackI asyncCallBack) {
         getInstanceOfFirebase();
         firebaseAuth.signOut();
         asyncCallBack.onSuccess("SIGN_OUT_ACTION");

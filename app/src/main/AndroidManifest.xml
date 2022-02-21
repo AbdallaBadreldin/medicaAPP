@@ -15,7 +15,7 @@
             android:theme="@style/Theme.PillsManager.NoActionBar" />
 
         <activity
-            android:name=".singnIn.view.SignInActivity"
+            android:name=".auth.singnIn.view.SignInActivity"
             android:exported="false">
         </activity>
 

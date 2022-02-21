@@ -1,4 +1,4 @@
-package eg.iti.pillsmanager.singnUp.view.view;
+package eg.iti.pillsmanager.auth.singnUp.view.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,15 +12,15 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import eg.iti.pillsmanager.AsyncCallBackI;
+import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.model.User;
-import eg.iti.pillsmanager.singnIn.view.SignInActivity;
-import eg.iti.pillsmanager.singnUp.presenter.SignUpPresenter;
+import eg.iti.pillsmanager.auth.singnIn.view.SignInActivity;
+import eg.iti.pillsmanager.auth.singnUp.presenter.SignUpPresenter;
 
 
-public class SignupFragment extends Fragment implements AsyncCallBackI {
+public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
     EditText signUpFullName,signUpEmail,signUpPassword,signUpConfirmPassword;
     Button buttonRegister;
     TextView goToLoginRegister;

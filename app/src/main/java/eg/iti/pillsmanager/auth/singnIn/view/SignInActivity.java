@@ -1,4 +1,4 @@
-package eg.iti.pillsmanager.singnIn.view;
+package eg.iti.pillsmanager.auth.singnIn.view;
 
 import android.os.Bundle;
 
@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.forgetPassword.view.ForgetPasswordFragment;
-import eg.iti.pillsmanager.singnUp.view.view.SignupFragment;
+import eg.iti.pillsmanager.auth.resetPassword.view.ResetPasswordFragment;
+import eg.iti.pillsmanager.auth.singnUp.view.view.SignupFragment;
 
 public class SignInActivity extends AppCompatActivity {
     private static FragmentManager fragmentManager;
@@ -32,8 +32,8 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public static void showFragmentForgetPassword(){
-        ForgetPasswordFragment forgetPasswordFragment = new ForgetPasswordFragment();
-        showFragment(forgetPasswordFragment);
+        ResetPasswordFragment resetPasswordFragment = new ResetPasswordFragment();
+        showFragment(resetPasswordFragment);
     }
 
     private static void showFragment(Fragment fragment){

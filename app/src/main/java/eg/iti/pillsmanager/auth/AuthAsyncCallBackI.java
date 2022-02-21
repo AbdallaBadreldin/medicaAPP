@@ -1,6 +1,6 @@
-package eg.iti.pillsmanager;
+package eg.iti.pillsmanager.auth;
 
-public interface AsyncCallBackI {
+public interface AuthAsyncCallBackI {
     public void onSuccess(String actionType);
     public void onFailure(String erorrMessage);
 }
