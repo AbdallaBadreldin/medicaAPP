@@ -9,19 +9,20 @@ import eg.iti.pillsmanager.network.NetworkDelegate;
 public interface RepositoryInterface {
 
   //DB MEDICINE//*****************************
-    //DB ROOM
-    LiveData<List<Medicine>> getStoredMedicines();
+  //DB ROOM
+  LiveData<List<Medicine>> getStoredMedicines();
+  LiveData<List<Medicine>> getStoredActiveMedicines();
+  LiveData<List<Medicine>> getStoredInactiveMedicines();
 
-    //DB ROOM
+  //DB ROOM
     void insertMedicine(Medicine medicine);
     void deleteMedicine(Medicine medicine);
+
     //---------------------------------------------------------
 
-    //DB USERS
+    //DB USERS*****************************
     //DB ROOM
     LiveData<List<User>> getStoredUsers();
-
-    //DB ROOM
     void insetUser(User user);
     void deleteUser(User user);
 

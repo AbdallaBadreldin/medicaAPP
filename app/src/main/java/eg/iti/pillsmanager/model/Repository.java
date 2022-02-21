@@ -29,34 +29,43 @@ public class Repository implements RepositoryInterface {
     //room medicine
     @Override
     public LiveData<List<Medicine>> getStoredMedicines() {
-
         return localSource.getAllMedicine();
     }
 
     @Override
-    public void insertMedicine(Medicine medicine) {
+    public LiveData<List<Medicine>> getStoredActiveMedicines() {
+        return localSource.getAllActiveMedicine();
+    }
 
+    @Override
+    public LiveData<List<Medicine>> getStoredInactiveMedicines() {
+        return localSource.getAllInactiveMedicine();
+    }
+
+    @Override
+    public void insertMedicine(Medicine medicine) {
+         localSource.insertMedicine(medicine);
     }
 
     @Override
     public void deleteMedicine(Medicine medicine) {
-
+        localSource.deleteMedicine(medicine);
     }
 //***************************************************************
     //room user
     @Override
     public LiveData<List<User>> getStoredUsers() {
-        return null;
+        return getStoredUsers();
     }
 
     @Override
     public void insetUser(User user) {
-
+localSource.insertUser(user);
     }
 
     @Override
     public void deleteUser(User user) {
-
+localSource.deleteUser(user);
     }
 
 

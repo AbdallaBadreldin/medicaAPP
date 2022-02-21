@@ -1,6 +1,11 @@
 package eg.iti.pillsmanager.medicinces.presenter;
 
+import androidx.lifecycle.LifecycleOwner;
+
+import java.util.List;
+
 import eg.iti.pillsmanager.medicinces.view.MedicineViewInterface;
+import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
 
 public class MedicinePresenter implements MedicinePresenterInterface{
@@ -13,12 +18,12 @@ public class MedicinePresenter implements MedicinePresenterInterface{
     }
 
     @Override
-    public void getActiveMedication() {
-
+    public void getActiveMedication(LifecycleOwner owner) {
+//        medicineViewInterface.showData((List<Medicine>) repository.getAllMedicine(owner));
     }
 
     @Override
-    public void getInActiveMedication() {
+    public void getInActiveMedication(LifecycleOwner owner) {
 
     }
 }

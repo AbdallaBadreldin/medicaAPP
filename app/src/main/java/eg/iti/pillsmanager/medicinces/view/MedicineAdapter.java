@@ -34,12 +34,12 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
         medicinesList = new ArrayList<>();
         this.context = context;
         this.listener = listener;
-        Log.i("Tag", "AllMoviesAdapter: ");
+        Log.i("Tag", "AllMedicineAdapter: ");
     }
 
-    public void setMoviesList(ArrayList<Medicine> medicines) {
+    public void setMedicinesList(ArrayList<Medicine> medicines) {
         this.medicinesList = medicines;
-        Log.i("Tag", "setMoviesList: " + medicinesList.size());
+        Log.i("Tag", "setMedicineList: " + medicinesList.size());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -116,11 +116,14 @@ public class MedicineAdapter extends RecyclerView.Adapter<MedicineAdapter.ViewHo
 //                .error(R.drawable.ic_launcher_foreground).into(imageView);
 //    }
 
-    public void applyChanges(@NonNull ViewHolder holder, @NonNull Medicine movieDetails) {
+    public void applyChanges(@NonNull ViewHolder holder, @NonNull Medicine medicineDetails) {
+
         imageView = holder.medicineIcon;
+        holder.txtFirst.setText(String.valueOf(medicineDetails.getMedicineName()));
+        holder.txtFirst.setText(String.valueOf(medicineDetails.getTotalQuantity()));
+        holder.txtFirst.setText(String.valueOf(medicineDetails.getStrength())+String.valueOf(medicineDetails.getStrengthValue()));
 
-
-//        setImageUsingGlide(movieDetails.getImageURL(), imageView);
+//        setImageUsingGlide(medicineDetails.getImageURL(), imageView);
 
         //this piece of code get genereArray and make it one nice String to show it
 //        for (int j = 0; j < movieDetails.getGenre().size(); j++) {

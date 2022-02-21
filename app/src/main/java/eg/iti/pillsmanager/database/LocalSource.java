@@ -23,6 +23,8 @@ public interface LocalSource {
 
     //interface for medicine table
     LiveData<List<Medicine>> getAllMedicine();
+    LiveData<List<Medicine>> getAllActiveMedicine();
+    LiveData<List<Medicine>> getAllInactiveMedicine();
     void insertMedicine(Medicine medicine);
     void deleteMedicine(Medicine medicine);
 
