@@ -2,6 +2,7 @@ package eg.iti.pillsmanager.model;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 @Entity(tableName = "Dose")
 public class Dose {
@@ -17,6 +18,8 @@ public class Dose {
     long startTime;
     long endTime;
     int lastOne;
+    @Ignore
+    public  Dose(){}
     public Dose(@NonNull String user, @NonNull String medecine, int day, int month, int year, int doseQuantity, int totalQuantity, boolean active, long startTime, long endTime, int lastOne) {
         this.user = user;
         this.medecine = medecine;

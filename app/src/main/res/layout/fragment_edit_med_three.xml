@@ -20,23 +20,27 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:layout_weight="1">
-        <TextView
+        <EditText
             android:id="@+id/start_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/start_date"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="16dp"
-            android:onClick="showDatePickerDialog"
-            android:layout_weight="1"/>
-        <TextView
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:inputType="date"
+            android:minHeight="48dp" />
+        <!--        android:onClick="showDatePickerDialog"-->
+
+        <EditText
+            android:id="@+id/end_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/end_date"
-            android:text="1"
-            android:onClick="showDatePickerDialog"
             android:layout_marginRight="16dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:inputType="date"
+            android:minHeight="48dp" />
+        <!--        android:onClick="showDatePickerDialog"-->
+        <!--        android:text="@string/end_date"-->
 
 
     </LinearLayout>

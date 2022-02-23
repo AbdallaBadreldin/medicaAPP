@@ -56,7 +56,9 @@ public class AddMedFragmentThree extends Fragment {
         start_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 showDatePickerDialog(view);
+                start_date.setText(start_date.getText());
             }
         });
 
@@ -71,23 +73,24 @@ public class AddMedFragmentThree extends Fragment {
             public void onClick(View view) {
                 Bundle bundle = getArguments();
                 Medicine medicine = bundle.getParcelable("med2");
-
+                medicine.setFirstName("esraa");
+                medicine.setSecondName("khaled");
                 medicine.setStart_date(start_date.getText().toString());
                 medicine.setEnd_date(end_date.getText().toString());
                 medicine.setLastdoseQuantity( doses_left.getText().toString());
                 Toast.makeText(getContext(),"ssssssssssssss",Toast.LENGTH_LONG).show();
 
 
-                Medicine m =new Medicine("string","secondname","nsadas",true,"because iam sick","form","weak","strong","5547791","986486",456,"56",1000,true,212598,2272022);
+               // Medicine m =new Medicine("string","secondname","nsadas",true,"because iam sick","form","weak","strong","5547791","986486",456,"56",1000,true,212598,2272022);
 
 
-                new ConcreteLocalClass(getContext()).insertMedicine(m);
+               /* new ConcreteLocalClass(getContext()).insertMedicine(m);
 
                 ConcreteLocalClass.getConcreteLocalClassInstance(getActivity()).insertMedicine(m);
-                Toast.makeText(getContext(),"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(),"rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",Toast.LENGTH_LONG).show();*/
 
                 repo= Repository.getInstance(remoteSource,localSource,getContext());
-                repo.insertMedicine(m);
+                repo.insertMedicine(medicine);
 
 
 //                medicinePresenterInterface.addMedicineToDataBase(medicine);
@@ -103,7 +106,8 @@ public class AddMedFragmentThree extends Fragment {
         return view;
     }
     public void showDatePickerDialog(View v) {
-        DialogFragment newFragment = new DatePickerFragment();
+        DatePickerFragment newFragment = new DatePickerFragment();
         newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
+
     }
 }
