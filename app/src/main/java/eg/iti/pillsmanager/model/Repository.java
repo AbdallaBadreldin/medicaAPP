@@ -1,6 +1,7 @@
 package eg.iti.pillsmanager.model;
 
 import android.content.Context;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 
@@ -34,26 +35,25 @@ import eg.iti.pillsmanager.network.FirebaseDB;
 
 public class Repository implements RepositoryInterface {
 
-    private final LocalSource localSource;
-    private final RemoteSource remoteSource;
-    private static Repository repository = null;
+    private static Repository repository=null;
+    RemoteSource remoteResource;//API
+    LocalSource localSource;//db
+    private Context context;
+//    MovieDAO movieDAO;
 
-    private Repository(RemoteSource remoteSource, LocalSource localSource) {
-        this.remoteSource = remoteSource;
+    private Repository(RemoteSource remoteResource, LocalSource localSource, Context context){
+        this.remoteResource = remoteResource;
         this.localSource = localSource;
+        this.context=context;
     }
-//    public static Repository getInstance(LocalSource localSource,Context context) {
-//        if (repository == null) {
-//            repository = new Repository(localSource, context);
-
-    public static Repository getRepositoryInstance(RemoteSource remoteSource, LocalSource
-            localSource) {
+    public static Repository getInstance(RemoteSource remoteResource,LocalSource localSource,Context context) {
         if (repository == null) {
-            repository = new Repository(remoteSource, localSource);
+            repository =new Repository(remoteResource,localSource,context);
 
         }
         return repository;
     }
+
 
     //room medicine
     @Override
@@ -72,6 +72,11 @@ public class Repository implements RepositoryInterface {
     }
 
     @Override
+    public LiveData<List<Medicine>> getAllMedicine() {
+        return null;
+    }
+
+    @Override
     public void insertMedicine(Medicine medicine) {
         localSource.insertMedicine(medicine);
     }
@@ -79,6 +84,11 @@ public class Repository implements RepositoryInterface {
     @Override
     public void deleteMedicine(Medicine medicine) {
 localSource.deleteMedicine(medicine);
+    }
+
+    @Override
+    public void updateMedicine(Medicine medicine) {
+
     }
 
     @Override
@@ -106,5 +116,25 @@ localSource.deleteUser(user);
     @Override
     public void getAllMedicine(NetworkDelegate networkDelegate) {
 localSource.getAllMedicine();
+    }
+
+    @Override
+    public LiveData<List<Dose>> getAllDoses() {
+        return null;
+    }
+
+    @Override
+    public void insertDose(Dose dose) {
+
+    }
+
+    @Override
+    public void deleteDose(Dose dose) {
+
+    }
+
+    @Override
+    public void updateDose(Dose dose) {
+
     }
 }

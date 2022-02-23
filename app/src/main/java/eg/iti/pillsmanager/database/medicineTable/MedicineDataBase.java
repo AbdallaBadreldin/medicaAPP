@@ -6,6 +6,7 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.room.Database;
 import androidx.room.DatabaseConfiguration;
+import androidx.room.Ignore;
 import androidx.room.InvalidationTracker;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
@@ -16,7 +17,7 @@ import eg.iti.pillsmanager.model.Medicine;
 
 
 //table of users modifiy it if we will modifiy UserDao so as results we will modifit localSource for sure
-@Database(entities = {Medicine.class}, version = 2)
+@Database(entities = {Medicine.class}, version = 3)
 public abstract class MedicineDataBase extends RoomDatabase {
 
     public static MedicineDataBase medicineDataBase = null;
@@ -28,7 +29,7 @@ public abstract class MedicineDataBase extends RoomDatabase {
         }
         return medicineDataBase;
     }
-
+    @Ignore
     public abstract MedicineDao getMedicineDao();
 
 

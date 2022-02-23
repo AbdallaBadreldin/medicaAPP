@@ -13,11 +13,10 @@ public interface RepositoryInterface {
   LiveData<List<Medicine>> getStoredMedicines();
   LiveData<List<Medicine>> getStoredActiveMedicines();
   LiveData<List<Medicine>> getStoredInactiveMedicines();
-
-  //DB ROOM
-    void insertMedicine(Medicine medicine);
-    void deleteMedicine(Medicine medicine);
-
+  LiveData<List<Medicine>> getAllMedicine();
+  void insertMedicine(Medicine medicine);
+  void deleteMedicine(Medicine medicine);
+  void updateMedicine(Medicine medicine);
     //---------------------------------------------------------
 
     //DB USERS*****************************
@@ -30,5 +29,14 @@ public interface RepositoryInterface {
     //***************************************************
     //network
     void getAllMedicine(NetworkDelegate networkDelegate);
+
+
+  ////////////////////////////////////////////////////////////
+  LiveData<List<Dose>> getAllDoses();
+  void insertDose(Dose dose);
+  void deleteDose(Dose dose);
+  void updateDose(Dose dose);
+  ////////////////////////////////////////////////////////////
+
 
 }

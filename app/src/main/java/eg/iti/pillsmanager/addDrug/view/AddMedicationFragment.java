@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -14,19 +15,16 @@ import androidx.fragment.app.Fragment;
 
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.model.Medicine;
 
 
-public class AddMedicationFragment extends Fragment {
+public class AddMedicationFragment extends Fragment  {
    Button next,back;
    TextView name_of_med,form_of_med,reason_of_med,strength_of_med;
    EditText name_med_value,reason_med_value,form_med_value;
    Spinner strength_num,strength_unit;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
+   Medicine med;
+   Bundle bundle;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,7 +32,7 @@ public class AddMedicationFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_add_medication, container, false);
         next = v.findViewById(R.id.btn_go_to_fragment_two);
         back = v.findViewById(R.id.btn_go_to_madication_activity);
-/////////////////////////////////////////////////////////////\
+/////////////////////////////////////////////////////////////
         name_of_med = v.findViewById(R.id.name_of_med);
         form_of_med = v.findViewById(R.id.form_of_med);
         reason_of_med = v.findViewById(R.id.reason_of_med);
@@ -45,18 +43,44 @@ public class AddMedicationFragment extends Fragment {
         form_med_value=v.findViewById(R.id.form_of_med_value);
         ///////////////////////////////////////////////////////////
         strength_num=v.findViewById(R.id.med_concentration_num);
+        String[] arraySpinner = new String[] {
+                "100", "200", "300", "400", "500", "600", "700"
+        };
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item, arraySpinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        strength_num.setAdapter(adapter);
+        /////////////////////////////////////
         strength_unit=v.findViewById(R.id.med_concentration_symbol);
+        String[] arraySpinner2 = new String[] {
+                "g", "IU", "mcg"
+        };
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item, arraySpinner2);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        strength_unit.setAdapter(adapter2);
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AddMedActivity.showFragmentSecond();
+                Medicine med = new Medicine();
+                bundle = new Bundle();
+                med.setMedicineName(name_med_value.getText().toString());
+                med.setForm(form_med_value.getText().toString());
+                med.setReason(reason_med_value.getText().toString());
+                med.setStrengthValue(strength_num.getSelectedItem().toString());
+                med.setStrength(strength_unit.getSelectedItem().toString());
+                bundle.putParcelable("med1",med);
+                AddMedActivity.showFragmentSecond(bundle);
+
             }
         });
+
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), MainActivity.class));
-                AddMedActivity.showFragmentMedication();
+               // AddMedActivity.showFragmentMedication();
             }
         });
         return v;

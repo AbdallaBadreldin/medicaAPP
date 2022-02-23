@@ -7,31 +7,35 @@
         android:orientation="vertical"
         android:weightSum="8"
         tools:context=".addDrug.view.AddMedFragmentSecond">
-        <RadioGroup
-            android:layout_height="0dp"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_weight="1">
 
-            <RadioButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/every_day"
-                android:id="@+id/every_day"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/select_days_from_week"
-                android:text="@string/select_days_from_week"
-                android:layout_weight="1"/>
-            <RadioButton
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/select_month"
-                android:text="@string/select_month"/>
-        </RadioGroup>
+    <RadioGroup
+        android:id="@+id/select_days"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/every_day"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/every_day" />
+
+        <RadioButton
+            android:id="@+id/select_days_from_week"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/select_days_from_week" />
+
+        <RadioButton
+            android:id="@+id/select_month"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/select_month" />
+    </RadioGroup>
         <TimePicker
             android:layout_width="match_parent"
             android:layout_height="0dp"

@@ -89,7 +89,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 
         concreteLocalClass = ConcreteLocalClass.getConcreteLocalClassInstance(in.getContext());
 
-        repository = Repository.getRepositoryInstance(new MedicineClient.getMovieClientInstance(), concreteLocalClass);
+        repository = Repository.getInstance(new MedicineClient.getMovieClientInstance(), concreteLocalClass,getContext());
 
         medicinePresenterInterface = new MedicinePresenter(this, repository);
         medicinePresenterInterface.getActiveMedication(this);
