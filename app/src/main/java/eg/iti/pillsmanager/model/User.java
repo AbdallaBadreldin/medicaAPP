@@ -14,14 +14,16 @@ public class User {
     private String email;
     private String password;
     private String userID;
+    private String gender;
 
-    public User(@NonNull String firstName, @NonNull String secondName, long age, String email, String password, String userID) {
+    public User(@NonNull String firstName, @NonNull String secondName, long age, String email, String password, String userID, String gender) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.age = age;
         this.email = email;
         this.password = password;
         this.userID = userID;
+        this.gender = gender;
     }
 
     @NonNull
@@ -72,5 +74,13 @@ public class User {
 
     public void setUserID(String userID) {
         this.userID = userID;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 }

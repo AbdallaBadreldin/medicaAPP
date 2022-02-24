@@ -32,9 +32,15 @@ android {
 }
 
 dependencies {
+    //firebase
     implementation 'com.google.firebase:firebase-database:20.0.3'
-    implementation 'androidx.room:room-common:2.4.1'
+    implementation 'com.google.firebase:firebase-analytics:20.1.0'
+
+
+    //room database
     def room_version = "2.4.1"
+    implementation 'androidx.room:room-common:2.4.1'
+
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -65,9 +71,16 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$room_version"
 
 
-    def work_version = "2.7.1"
 
     // (Java only) start work manager
+    def work_version = "2.7.1"
     implementation "androidx.work:work-runtime:$work_version"
+
+
+
+    //notification
+    def core_version = "1.6.0"
+    implementation "androidx.core:core:$core_version"
+
 
 }

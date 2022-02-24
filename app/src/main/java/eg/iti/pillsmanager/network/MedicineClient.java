@@ -34,7 +34,7 @@ public class MedicineClient implements RemoteSource {
 //        call.clone().enqueue(new Callback<ArrayList<Movie>>() {
     }
 
-    public static class getMovieClientInstance implements RemoteSource {
+    public static class getMedicineClientInstancee implements RemoteSource {
         @Override
         public void enqueue(NetworkDelegate networkDelegate) {
 

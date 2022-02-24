@@ -18,7 +18,6 @@ public interface DoseDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertDose(Dose dose);
-
     @Delete
     void deleteDose(Dose dose);
     @Update

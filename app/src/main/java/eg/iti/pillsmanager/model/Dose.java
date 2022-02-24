@@ -21,7 +21,7 @@ public class Dose {
     @Ignore
     public  Dose(){}
     public Dose(@NonNull String user, @NonNull String medecine, int day, int month, int year, int doseQuantity, int totalQuantity, boolean active, long startTime, long endTime, int lastOne) {
-        this.user = user;
+        this.user = user;   //shared pereference
         this.medecine = medecine;
         this.day = day;
         this.month = month;

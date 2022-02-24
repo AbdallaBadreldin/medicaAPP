@@ -24,7 +24,6 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
     List<Medicine> medicinesList;
 
     Medicine medicineDetails;
-    String genre = "";
 
     ImageView imageView;
     OnMedicineClickListener listener;
@@ -33,12 +32,10 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
         medicinesList = new ArrayList<>();
         this.context = context;
         this.listener = listener;
-        Log.i("Tag", "AllMedicineAdapter: ");
     }
 
     public void setInactiveMedicinesList(List<Medicine> medicines) {
         this.medicinesList = medicines;
-        Log.i("Tag", "setMedicineList: " + medicinesList.size());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -65,7 +62,7 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
             txtThird=cardView.findViewById(R.id.third_row_text);
 
             iconOpenAlarms=cardView.findViewById(R.id.image_alarm);
-            iconOpenEdit=cardView.findViewById(R.id.image_edit);
+            iconOpenEdit=cardView.findViewById(R.id.check_active_disactive);
 
 
         }
@@ -74,7 +71,6 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
     @NonNull
     @Override
     public InactiveMedicineAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup recycleView, int viewType) {
-        Log.i("TAG", "onCreateViewHolder: " + viewType);
         LayoutInflater inflater = LayoutInflater.from(recycleView.getContext());
         View v = inflater.inflate(R.layout.custom_row_medicine, recycleView, false);
         return new InactiveMedicineAdapter.ViewHolder(v);
@@ -82,7 +78,6 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
 
     @Override
     public void onBindViewHolder(@NonNull InactiveMedicineAdapter.ViewHolder holder, int position) {
-        Log.i("Tag", "onBindViewHolder: " + position);
         medicineDetails = medicinesList.get(position);
         applyChanges(holder, medicineDetails);
 

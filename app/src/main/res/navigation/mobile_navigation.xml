@@ -82,7 +82,7 @@
 
     <fragment
         android:id="@+id/navigation_refill"
-        android:name="eg.iti.pillsmanager.refill.view.Refill"
+        android:name="eg.iti.pillsmanager.refill.view.RefillFragment"
         android:label="@string/refill"
         tools:layout="@layout/fragment_refill" />
 

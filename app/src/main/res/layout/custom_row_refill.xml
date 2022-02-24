@@ -49,18 +49,18 @@
             android:layout_marginTop="8dp"
             app:layout_constraintStart_toEndOf="@+id/first_row_text"
             app:layout_constraintTop_toBottomOf="@+id/first_row_text"
-            app:srcCompat="@drawable/ic_baseline_alarm_24"
             android:contentDescription="TODO" />
 
-        <ImageView
+        <CheckBox
             android:id="@+id/check_active_disactive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
+            android:contentDescription="TODO"
             app:layout_constraintStart_toEndOf="@+id/image_alarm"
             app:layout_constraintTop_toTopOf="@+id/image_alarm"
             app:srcCompat="@drawable/ic_baseline_edit_24"
-            android:contentDescription="TODO" />
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
             android:id="@+id/third_row_text"

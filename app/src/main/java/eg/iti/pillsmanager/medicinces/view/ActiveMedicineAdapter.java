@@ -65,7 +65,7 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
             txtThird=cardView.findViewById(R.id.third_row_text);
 
             iconOpenAlarms=cardView.findViewById(R.id.image_alarm);
-            iconOpenEdit=cardView.findViewById(R.id.image_edit);
+            iconOpenEdit=cardView.findViewById(R.id.check_active_disactive);
 
 
         }
