@@ -88,12 +88,12 @@ public class Authentication implements AuthenticationI {
         asyncCallBack.onSuccess("SIGN_OUT_ACTION");
     }
 
-/*
+
     @Override
     public String getCurrentUserUID(){
         if(firebaseAuth != null && firebaseAuth.getCurrentUser() != null)
             return firebaseAuth.getCurrentUser().getUid();
         return null;
     }
- */
+
 }

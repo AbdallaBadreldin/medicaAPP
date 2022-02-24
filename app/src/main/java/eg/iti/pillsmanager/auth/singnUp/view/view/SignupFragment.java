@@ -1,7 +1,10 @@
 package eg.iti.pillsmanager.auth.singnUp.view.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +29,13 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
     TextView goToLoginRegister;
     SignupFragment signupFragment;
     SignUpPresenter signUpPresenter;
+
+    /////////
+    SharedPreferences sharedPreferences;
+    public static final String MyPREFERENCES = "MyPrefs";
+    public  final String MYNAME = getString(R.string.name_shared_pre);
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -38,6 +48,9 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
         signUpConfirmPassword = view.findViewById(R.id.signup_confirmpassword);
         buttonRegister = view.findViewById(R.id.button_register);
         goToLoginRegister = view.findViewById(R.id.button_gotologin_register);
+
+        //////////
+        sharedPreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 
         goToLoginRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +99,11 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
 
     @Override
     public void onSuccess(String actionType) {
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(MYNAME, signUpFullName.getText().toString());
+        editor.commit();
+
         startActivity(new Intent(getActivity(),  MainActivity.class));
     }
 
@@ -93,4 +111,5 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
     public void onFailure(String erorrMessage) {
         Toast.makeText(getActivity(), erorrMessage, Toast.LENGTH_LONG).show();
     }
+
 }

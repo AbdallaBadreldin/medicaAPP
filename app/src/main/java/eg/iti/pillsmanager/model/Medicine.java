@@ -20,8 +20,8 @@ public class Medicine implements Parcelable {
     String form;
    String strengthValue;
     String strength;
-    String start_date;
-    String end_date;
+    long start_date;
+    long end_date;
     int totalQuantity;
     String lastdoseQuantity;
     int quantityRemindAt;
@@ -30,7 +30,7 @@ public class Medicine implements Parcelable {
     int dateOfMed;
 
 
-    public Medicine(@NonNull String firstName, @NonNull String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, int totalQuantity, String lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder,int timeOfMed,int dateOfMed) {
+    public Medicine(@NonNull String firstName, @NonNull String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, long start_date,long end_date, int totalQuantity, String lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder,int timeOfMed,int dateOfMed) {
 
         this.firstName = firstName;
         this.secondName = secondName;
@@ -65,8 +65,8 @@ public Medicine(){}
         form = in.readString();
         strengthValue = in.readString();
         strength = in.readString();
-        start_date = in.readString();
-        end_date = in.readString();
+        start_date = in.readLong();
+        end_date = in.readLong();
         totalQuantity = in.readInt();
         lastdoseQuantity = in.readString();
         quantityRemindAt = in.readInt();
@@ -179,11 +179,11 @@ public Medicine(){}
         this.quantityRemindAt = quantityRemindAt;
     }
 
-    public void setStart_date(String start_date) {
+    public void setStart_date(long start_date) {
         this.start_date = start_date;
     }
 
-    public void setEnd_date(String end_date) {
+    public void setEnd_date(long end_date) {
         this.end_date = end_date;
     }
 
@@ -203,11 +203,11 @@ public Medicine(){}
         this.activeRefillReminder = activeRefillReminder;
     }
 
-    public String getStart_date() {
+    public long getStart_date() {
         return start_date;
     }
 
-    public String getEnd_date() {
+    public long getEnd_date() {
         return end_date;
     }
 
@@ -234,8 +234,8 @@ public Medicine(){}
         parcel.writeString(form);
         parcel.writeString(strengthValue);
         parcel.writeString(strength);
-        parcel.writeString(start_date);
-        parcel.writeString(end_date);
+        parcel.writeLong(start_date);
+        parcel.writeLong(end_date);
         parcel.writeInt(totalQuantity);
         parcel.writeString(lastdoseQuantity);
         parcel.writeInt(quantityRemindAt);

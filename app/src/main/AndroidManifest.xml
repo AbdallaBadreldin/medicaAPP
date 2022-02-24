@@ -28,8 +28,14 @@
 <!--        convert this with main activity-->
         <activity
             android:name=".SplashActivity"
-            android:exported="false"
-            android:theme="@style/Theme.PillsManager.NoActionBar" />
+            android:exported="true"
+            android:theme="@style/Theme.PillsManager.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
          <activity   android:name=".EditDrug.Edit_medActivity"
             android:exported="false" />
@@ -41,13 +47,9 @@
 <!--        we changed this with splash screen-->
         <activity
             android:name=".MainActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.PillsManager.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
