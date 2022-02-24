@@ -1,5 +1,6 @@
 package eg.iti.pillsmanager.addDrug.view;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.DialogFragment;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,16 +59,18 @@ public class AddMedFragmentThree extends Fragment {
             @Override
             public void onClick(View view) {
 
-                showDatePickerDialog(view);
-                start_date.setText(start_date.getText());
+                //showDatePickerDialog(view);
+                openDatePicker();
+
             }
         });
 
         end_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDatePickerDialog(view);
-            }
+
+                //showDatePickerDialog(view);
+                openDatePickerdate2();            }
         });
         save_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,8 +79,8 @@ public class AddMedFragmentThree extends Fragment {
                 Medicine medicine = bundle.getParcelable("med2");
                 medicine.setFirstName("esraa");
                 medicine.setSecondName("khaled");
-                medicine.setStart_date(start_date.getText().toString());
-                medicine.setEnd_date(end_date.getText().toString());
+                medicine.setStart_date(start_date.getInputType());
+                medicine.setEnd_date(end_date.getInputType());
                 medicine.setLastdoseQuantity( doses_left.getText().toString());
                 Toast.makeText(getContext(),"ssssssssssssss",Toast.LENGTH_LONG).show();
 
@@ -100,14 +104,44 @@ public class AddMedFragmentThree extends Fragment {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                AddMedActivity.showFragmentSecond();
+                Bundle bundle = new Bundle();
+
+               AddMedActivity.showFragmentSecond(bundle);
             }
         });
         return view;
     }
+
     public void showDatePickerDialog(View v) {
         DatePickerFragment newFragment = new DatePickerFragment();
         newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
 
     }
+    public void openDatePicker() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                String date = day + "/" + month + "/" + year;
+              start_date.setText(date);
+            }
+        }, '1', 2, 5);
+
+        datePickerDialog.show();
+    }
+
+
+    public void openDatePickerdate2() {
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                month = month + 1;
+                String date = day + "/" + month + "/" + year;
+                end_date.setText(date);
+            }
+        }, '1', 2, 5);
+
+        datePickerDialog.show();
+    }
+
 }
