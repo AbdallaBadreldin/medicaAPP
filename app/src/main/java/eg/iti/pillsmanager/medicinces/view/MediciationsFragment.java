@@ -8,9 +8,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,7 +42,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     Repository repository;
 //     movieClient;
     ConcreteLocalClass concreteLocalClass;
-
+    Button display_drug;
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,6 +60,13 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
                 startActivity(intent);
             }
         });
+       /* display_drug.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });*/
+
 
         recyclerViewActiveMedicines = in.findViewById(R.id.medicine_recycler_view_active);
         recyclerViewActiveMedicines.setHasFixedSize(true);

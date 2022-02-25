@@ -1,6 +1,7 @@
 package eg.iti.pillsmanager.EditDrug;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,8 @@ import android.widget.TimePicker;
 import androidx.fragment.app.Fragment;
 
 import eg.iti.pillsmanager.R;
+import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
+import eg.iti.pillsmanager.model.Medicine;
 
 
 public class EditMedFragmentSecond extends Fragment {
@@ -65,7 +68,17 @@ public class EditMedFragmentSecond extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Edit_medActivity.showFragmentThree();
+                Bundle bundle = getArguments();
+                Medicine medicine = bundle.getParcelable("med1");
+
+                medicine.setLastdoseQuantity( dose_value.getSelectedItem().toString());
+                medicine.setTimeOfMed(time_of_med.getHour());
+                medicine.setDateOfMed(date_of_med.getDayOfMonth());
+                Bundle bundle2 = new Bundle();
+                bundle2.putParcelable("med2",medicine);
+                Log.d("myname",medicine.getMedicineName());
+                System.out.println("sssssssssssssssssssssssssssssssssssssss"+medicine.getMedicineName());
+                AddMedActivity.showFragmentThree(bundle2);
             }
         });
         return view;

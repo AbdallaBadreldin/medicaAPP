@@ -78,4 +78,5 @@
     <string name="active_meds">active mediciations</string>
     <string name="inactive_meds">inactive mediciations</string>
     <string name="textview">TextView</string>
+    <string name="additional_dose">additional dose</string>
 </resources>

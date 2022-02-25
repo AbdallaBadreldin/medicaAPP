@@ -20,17 +20,18 @@ public class Medicine implements Parcelable {
     String form;
    String strengthValue;
     String strength;
-    long start_date;
-    long end_date;
+    String start_date;
+    String end_date;
     int totalQuantity;
     String lastdoseQuantity;
     int quantityRemindAt;
     boolean activeRefillReminder;
     int timeOfMed;
     int dateOfMed;
+    String add_dose_quantity;
 
 
-    public Medicine(@NonNull String firstName, @NonNull String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, long start_date,long end_date, int totalQuantity, String lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder,int timeOfMed,int dateOfMed) {
+    public Medicine(@NonNull String firstName, @NonNull String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, int totalQuantity, String lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder,int timeOfMed,int dateOfMed,String add_dose_quantity) {
 
         this.firstName = firstName;
         this.secondName = secondName;
@@ -48,7 +49,7 @@ public class Medicine implements Parcelable {
         this.activeRefillReminder = activeRefillReminder;
         this.timeOfMed = timeOfMed;
         this.dateOfMed = dateOfMed;
-
+        this.add_dose_quantity = add_dose_quantity;
     }
 
 /////////////////////////////////////////////////////////////////////////
@@ -65,12 +66,13 @@ public Medicine(){}
         form = in.readString();
         strengthValue = in.readString();
         strength = in.readString();
-        start_date = in.readLong();
-        end_date = in.readLong();
+        start_date = in.readString();
+        end_date = in.readString();
         totalQuantity = in.readInt();
         lastdoseQuantity = in.readString();
         quantityRemindAt = in.readInt();
         activeRefillReminder = in.readByte() != 0;
+        add_dose_quantity=in.readString();
     }
 
     @Ignore
@@ -85,6 +87,14 @@ public Medicine(){}
             return new Medicine[size];
         }
     };
+
+    public void setAdd_dose_quantity(String add_dose_quantity) {
+        this.add_dose_quantity = add_dose_quantity;
+    }
+
+    public String getAdd_dose_quantity() {
+        return add_dose_quantity;
+    }
 
     @NonNull
     public String getFirstName() {
@@ -179,11 +189,11 @@ public Medicine(){}
         this.quantityRemindAt = quantityRemindAt;
     }
 
-    public void setStart_date(long start_date) {
+    public void setStart_date(String start_date) {
         this.start_date = start_date;
     }
 
-    public void setEnd_date(long end_date) {
+    public void setEnd_date(String end_date) {
         this.end_date = end_date;
     }
 
@@ -203,11 +213,11 @@ public Medicine(){}
         this.activeRefillReminder = activeRefillReminder;
     }
 
-    public long getStart_date() {
+    public String getStart_date() {
         return start_date;
     }
 
-    public long getEnd_date() {
+    public String getEnd_date() {
         return end_date;
     }
 
@@ -234,8 +244,8 @@ public Medicine(){}
         parcel.writeString(form);
         parcel.writeString(strengthValue);
         parcel.writeString(strength);
-        parcel.writeLong(start_date);
-        parcel.writeLong(end_date);
+        parcel.writeString(start_date);
+        parcel.writeString(end_date);
         parcel.writeInt(totalQuantity);
         parcel.writeString(lastdoseQuantity);
         parcel.writeInt(quantityRemindAt);

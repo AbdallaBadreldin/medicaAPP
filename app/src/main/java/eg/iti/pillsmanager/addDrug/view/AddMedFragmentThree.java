@@ -27,9 +27,9 @@ import eg.iti.pillsmanager.network.RemoteSource;
 
 
 public class AddMedFragmentThree extends Fragment {
-    TextView start_date,end_date,treatment_duration,quantity_of_med,med_value;
+    TextView start_date,end_date,treatment_duration,quantity_of_med,med_value,additional_dose;
     Button save_btn,back_btn;
-    EditText doses_left;
+    EditText doses_left,add_dose_quantity;
     RepositoryInterface repo;
     RemoteSource remoteSource;
     LocalSource localSource;
@@ -54,7 +54,8 @@ public class AddMedFragmentThree extends Fragment {
         quantity_of_med=view.findViewById(R.id.Quantity_of_med);
         med_value=view.findViewById(R.id.Quantity_of_med_value);
         doses_left=view.findViewById(R.id.doses_left);
-
+        additional_dose = view.findViewById(R.id.btn_add_additional_dose);
+        add_dose_quantity = view.findViewById(R.id.display_dose);
         start_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,9 +80,10 @@ public class AddMedFragmentThree extends Fragment {
                 Medicine medicine = bundle.getParcelable("med2");
                 medicine.setFirstName("esraa");
                 medicine.setSecondName("khaled");
-                medicine.setStart_date(start_date.getInputType());
-                medicine.setEnd_date(end_date.getInputType());
+                medicine.setStart_date(start_date.getText().toString());
+                medicine.setEnd_date(end_date.getText().toString());
                 medicine.setLastdoseQuantity( doses_left.getText().toString());
+                medicine.setAdd_dose_quantity(add_dose_quantity.getText().toString());
                 Toast.makeText(getContext(),"ssssssssssssss",Toast.LENGTH_LONG).show();
 
 

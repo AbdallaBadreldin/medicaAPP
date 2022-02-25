@@ -26,22 +26,25 @@ public class Edit_medActivity extends AppCompatActivity {
     }
     public static void showFragmentone(){
         EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
-        showFragment( editMedicationFragment);
+        showFragment(editMedicationFragment,null);
     }
 
-    public static void showFragmentSecond(){
+    public static void showFragmentSecond(Bundle bundle){
         EditMedFragmentSecond editMedFragmentSecond = new EditMedFragmentSecond();
-        showFragment(editMedFragmentSecond );
+        showFragment(editMedFragmentSecond,bundle);
     }
 
-    public static void showFragmentThree(){
+    public static void showFragmentThree(Bundle bundle){
         EditMedFragmentThree editMedFragmentThree = new EditMedFragmentThree();
-        showFragment(editMedFragmentThree);
+        showFragment(editMedFragmentThree,bundle);
     }
 
-    private static void showFragment(Fragment fragment){
+
+    private static void showFragment(Fragment fragment,Bundle bundle){
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragment.setArguments(bundle);
         fragmentTransaction.replace(R.id.main_activity_container, fragment);
         fragmentTransaction.commit();
     }
+
 }
