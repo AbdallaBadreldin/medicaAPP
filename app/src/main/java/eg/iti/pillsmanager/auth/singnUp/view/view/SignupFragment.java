@@ -32,8 +32,6 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
 
     /////////
     SharedPreferences sharedPreferences;
-    public static final String MyPREFERENCES = "MyPrefs";
-    public  final String MYNAME = getString(R.string.name_shared_pre);
 
 
     @Override
@@ -50,7 +48,7 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
         goToLoginRegister = view.findViewById(R.id.button_gotologin_register);
 
         //////////
-        sharedPreferences = getActivity().getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        sharedPreferences = getActivity().getSharedPreferences(getString(R.string.signup_shared_pre), Context.MODE_PRIVATE);
 
         goToLoginRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +99,7 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
     public void onSuccess(String actionType) {
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(MYNAME, signUpFullName.getText().toString());
+        editor.putString(getString(R.string.name_shared_pre), signUpFullName.getText().toString());
         editor.commit();
 
         startActivity(new Intent(getActivity(),  MainActivity.class));
