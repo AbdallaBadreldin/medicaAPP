@@ -23,8 +23,8 @@ public class MedicinePresenter implements MedicinePresenterInterface {
     public void getActiveMedication(LifecycleOwner owner) {
         repository.getStoredActiveMedicines().observe(owner, new Observer<List<Medicine>>() {
             @Override
-            public void onChanged(List<Medicine> movies) {
-                allMedicineViewInterface.showActiveMedicines(movies);
+            public void onChanged(List<Medicine> medicines) {
+                allMedicineViewInterface.showActiveMedicines(medicines);
             }
         });
     }
@@ -33,8 +33,8 @@ public class MedicinePresenter implements MedicinePresenterInterface {
     public void getInactiveMedication(LifecycleOwner owner) {
         repository.getStoredInactiveMedicines().observe(owner, new Observer<List<Medicine>>() {
             @Override
-            public void onChanged(List<Medicine> movies) {
-                allMedicineViewInterface.showInactiveMedicines(movies);
+            public void onChanged(List<Medicine> medicines) {
+                allMedicineViewInterface.showInactiveMedicines(medicines);
             }
         });
     }

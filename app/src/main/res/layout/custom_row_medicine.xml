@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="10dp"
     android:layout_marginTop="10dp"
@@ -56,11 +56,11 @@
             android:id="@+id/check_active_disactive"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
-            app:layout_constraintStart_toEndOf="@+id/image_alarm"
+            android:layout_marginEnd="28dp"
+            android:contentDescription="TODO"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/image_alarm"
-            app:srcCompat="@drawable/ic_baseline_edit_24"
-            android:contentDescription="TODO" />
+            app:srcCompat="@drawable/ic_baseline_edit_24" />
 
         <TextView
             android:id="@+id/third_row_text"

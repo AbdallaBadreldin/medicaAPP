@@ -4,30 +4,48 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 
 @Entity( tableName = "medicine",primaryKeys = {"medicineName", "firstName","secondName"} )
 public class Medicine implements Parcelable {
     @NonNull
+    @ColumnInfo(name = "firstName")
     String firstName;
     @NonNull
+    @ColumnInfo(name = "secondName")
     String secondName;
     @NonNull
+    @ColumnInfo(name = "medicineName")
     String medicineName;
+    @ColumnInfo(name = "active")
     boolean active;
+    @ColumnInfo(name = "reason")
     String reason;
+    @ColumnInfo(name = "form")
     String form;
-   String strengthValue;
+    @ColumnInfo(name = "strengthValue")
+    String strengthValue;
+    @ColumnInfo(name = "strength")
     String strength;
+    @ColumnInfo(name = "start_date")
     String start_date;
+    @ColumnInfo(name = "end_date")
     String end_date;
+    @ColumnInfo(name = "totalQuantity")
     int totalQuantity;
+    @ColumnInfo(name = "lastdoseQuantity")
     String lastdoseQuantity;
+    @ColumnInfo(name = "quantityRemindAt")
     int quantityRemindAt;
+    @ColumnInfo(name = "activeRefillReminder")
     boolean activeRefillReminder;
+    @ColumnInfo(name = "timeOfMed")
     int timeOfMed;
+    @ColumnInfo(name = "dateOfMed")
     int dateOfMed;
+    @ColumnInfo(name = "add_dose_quantity")
     String add_dose_quantity;
 
 

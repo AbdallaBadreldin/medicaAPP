@@ -67,9 +67,7 @@ public class Repository implements RepositoryInterface {
     }
 
     @Override
-    public LiveData<List<Medicine>> getStoredInactiveMedicines() {
-        return localSource.getAllInactiveMedicine();
-    }
+    public LiveData<List<Medicine>> getStoredInactiveMedicines() { return localSource.getAllInactiveMedicine(); }
 
     @Override
     public LiveData<List<Medicine>> getAllMedicine() {
@@ -88,7 +86,7 @@ localSource.deleteMedicine(medicine);
 
     @Override
     public void updateMedicine(Medicine medicine) {
-
+    localSource.updateMedicine(medicine);
     }
 
     @Override

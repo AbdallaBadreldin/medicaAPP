@@ -44,7 +44,7 @@ public interface MedicineDao {
     void insertMedicine(Medicine medicine);
     @Delete
     void deleteMedicine(Medicine medicine);
-    @Update
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateMedicine(Medicine medicine);
 }
 
