@@ -20,21 +20,32 @@ public interface MedicineDao {
 
     @Query("Select * From Medicine")
     LiveData<List<Medicine>> getAllMedicine();
+
     @Query("Select * From Medicine WHERE active LIKE 1  ")
     LiveData<List<Medicine>> getAllActiveMedicine();
+
     @Query("Select * From Medicine WHERE active LIKE 0 ")
     LiveData<List<Medicine>> getAllInactiveMedicine();
 
+    @Query("Select * From medicine WHERE activeRefillReminder LIKE 1 AND quantityRemindAt<=totalQuantity")
+    LiveData<List<Medicine>> getActiveMedicineNeedsRefill();
+
+    @Query("Select * From medicine WHERE activeRefillReminder LIKE 0 AND quantityRemindAt<=totalQuantity")
+    LiveData<List<Medicine>> getInactiveMedicineNeedsRefill();
+
+    @Query("Select * From medicine WHERE activeRefillReminder LIKE 1 AND totalQuantity==0")
+    LiveData<List<Medicine>> getEmptyActiveMedicine();
+
+    @Query("Select * From medicine WHERE activeRefillReminder LIKE 0 AND totalQuantity==0")
+    LiveData<List<Medicine>> getEmptyInactiveMedicine();
+
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertMedicine(Medicine medicine);
-
     @Delete
     void deleteMedicine(Medicine medicine);
     @Update
     void updateMedicine(Medicine medicine);
-
-//    @Delete(Select * From user)
-//    void deleteAllUsers();
 }
 
 

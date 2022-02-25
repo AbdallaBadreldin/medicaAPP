@@ -9,5 +9,5 @@ public interface AuthenticationI {
     public void signUp(User user, AuthAsyncCallBackI asyncCallBack);
     public void resetPassword(AuthAsyncCallBackI asyncCallBack, String email);
     public void signOut(AuthAsyncCallBackI asyncCallBack);
-
+    public String getCurrentUserUID();
 }

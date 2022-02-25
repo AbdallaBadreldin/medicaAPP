@@ -99,7 +99,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 
         concreteLocalClass = ConcreteLocalClass.getConcreteLocalClassInstance(in.getContext());
 
-        repository = Repository.getInstance(new MedicineClient.getMovieClientInstance(), concreteLocalClass,getContext());
+        repository = Repository.getInstance(MedicineClient.getMedicineClientInstance(), concreteLocalClass,getContext());
 
         medicinePresenterInterface = new MedicinePresenter(this, repository);
         medicinePresenterInterface.getActiveMedication(this);
@@ -121,16 +121,40 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     @Override
     public void openAlarms(Medicine medicine) {
         //startActivity(in alarms);
+
+        //start activity or fragment or what ever you want to add doses      //thankx
+
+//        lma ydos 3la el alarm yft7
+        /*
+        in three ways
+                1 in add medication
+                2 create new activity
+            3 use old fragment*/
+
+        
+        
+        
+        
+        /////////   m4 mogpda enty aly htwGDEHA
+//        or WHATEVER YOU WANT
+//        JUST PLEASE DO IT IN TIME
+        //todo esraa    //alarm shape
     }
 
     @Override
     public void openEdit(Medicine medicine) {
         //startactivity(intent edit);
+        //todo esraa     //   pen -- edit shape
     }
 
     @Override
     public void openMedicine(Medicine medicine) {
-        //todo ersaa's tasks
+
+
+
+
+
+        //todo ersaa's tasks    edit display
     }
 
     @Override
