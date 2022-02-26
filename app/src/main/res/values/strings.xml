@@ -88,5 +88,13 @@
     <string name="notification_description">Hello, you got medicines needs refill please give attention</string>
     <string name="name_shared_pre">MyName</string>
     <string name="signup_shared_pre">MyPrefs</string>
-    <string name="refill_reminder_at">Refill Reminder at</string>
+    <string name="total_quantity">total quantity you have of this medicine</string>
+    <string name="enter_total_quantity">enter total quantity you have</string>
+    <string name="reminder_at">remind me at</string>
+    <string name="enter_remind_at">enter quantity to remind at</string>
+    <string name="cancel">cancel</string>
+    <string name="sorry">"sorry "</string>
+    <string name="remind_at_quantity_cannot_be_zero">remind at quantity can\'t be 0</string>
+    <string name="we_will_remind_you">we will remind you every 15 mins</string>
+    <string name="notification_off">reminder off</string>
 </resources>

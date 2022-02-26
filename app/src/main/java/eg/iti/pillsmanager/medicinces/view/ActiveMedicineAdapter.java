@@ -33,12 +33,10 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
         medicinesList = new ArrayList<>();
         this.context = context;
         this.listener = listener;
-        Log.i("Tag", "AllMedicineAdapter: ");
     }
 
     public void setActiveMedicinesList(List<Medicine> medicines) {
         this.medicinesList = medicines;
-        Log.i("Tag", "setMedicineList: " + medicinesList.size());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -67,14 +65,12 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
             iconOpenAlarms=cardView.findViewById(R.id.image_alarm);
             iconOpenEdit=cardView.findViewById(R.id.check_active_disactive);
 
-
         }
     }
 
     @NonNull
     @Override
     public ActiveMedicineAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup recycleView, int viewType) {
-        Log.i("TAG", "onCreateViewHolder: " + viewType);
         LayoutInflater inflater = LayoutInflater.from(recycleView.getContext());
         View v = inflater.inflate(R.layout.custom_row_medicine, recycleView, false);
         return new ViewHolder(v);
@@ -82,7 +78,6 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Log.i("Tag", "onBindViewHolder: " + position);
         medicineDetails = medicinesList.get(position);
         applyChanges(holder, medicineDetails);
 
@@ -91,16 +86,13 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
             listener.openAlarms(medicineDetails);
         });
 
-
         holder.iconOpenEdit.setOnClickListener(view -> {
             listener.openEdit(medicineDetails);
         });
 
-        holder.medicineIcon.setOnClickListener(view -> {
+        holder.constraintLayout.setOnClickListener(view -> {
             listener.openMedicine(medicineDetails);
         });
-
-
 
     }
 
@@ -118,6 +110,8 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
     public void applyChanges(@NonNull ViewHolder holder, @NonNull Medicine medicineDetails) {
 
         imageView = holder.medicineIcon;
+        holder.medicineIcon.setImageResource(R.drawable.ic_baseline_medical_services_24); //it should be modified by real image from database
+
         holder.txtFirst.setText(String.valueOf(medicineDetails.getMedicineName()));
         holder.txtSecond.setText(String.valueOf(medicineDetails.getTotalQuantity()));
         holder.txtThird.setText(String.valueOf(medicineDetails.getStrength())+String.valueOf(medicineDetails.getStrengthValue()));

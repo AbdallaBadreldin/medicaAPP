@@ -38,11 +38,11 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     RecyclerView recyclerViewInactiveMedicines;
     ActiveMedicineAdapter activeMedicineAdapter;
     InactiveMedicineAdapter inactiveActiveMedicineAdapter;
+
     MedicinePresenterInterface medicinePresenterInterface;
     Repository repository;
-//     movieClient;
     ConcreteLocalClass concreteLocalClass;
-    Button display_drug;
+
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -60,13 +60,6 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
                 startActivity(intent);
             }
         });
-       /* display_drug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });*/
-
 
         recyclerViewActiveMedicines = in.findViewById(R.id.medicine_recycler_view_active);
         recyclerViewActiveMedicines.setHasFixedSize(true);
@@ -78,8 +71,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
         inactiveActiveMedicineAdapter = new InactiveMedicineAdapter(in.getContext().getApplicationContext(), this);
 
 
-
-        LinearLayoutManager activeMedicinesLayout = new LinearLayoutManager(in.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager activeMedicinesLayout = new LinearLayoutManager(in.getContext(), LinearLayoutManager.VERTICAL, false);
 //        arrayListUser.setLayoutManager(activeMedicinesLayout);
 
         LinearLayoutManager inactiveMedicinesLayout = new LinearLayoutManager(in.getContext(), LinearLayoutManager.VERTICAL, false);

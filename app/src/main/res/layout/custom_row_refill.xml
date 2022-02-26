@@ -12,14 +12,14 @@
     app:cardUseCompatPadding="true">
     <!--    app:cardBackgroundColor="@color/teal_200"-->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrainLayout"
+        android:id="@+id/refillConstrainLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingStart="8dp"
         android:paddingEnd="8dp">
 
         <ImageView
-            android:id="@+id/image_medicine"
+            android:id="@+id/refill_image_medicine"
             android:layout_width="91dp"
             android:layout_height="86dp"
             android:layout_marginStart="4dp"
@@ -31,24 +31,24 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/first_row_text"
+            android:id="@+id/refill_first_row_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="4dp"
             android:text="@string/textview"
             android:textColor="#004D40"
-            app:layout_constraintStart_toEndOf="@+id/image_medicine"
-            app:layout_constraintTop_toTopOf="@+id/image_medicine" />
+            app:layout_constraintStart_toEndOf="@+id/refill_image_medicine"
+            app:layout_constraintTop_toTopOf="@+id/refill_image_medicine" />
 
         <ImageView
-            android:id="@+id/image_alarm"
+            android:id="@+id/refill_image_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintStart_toEndOf="@+id/first_row_text"
-            app:layout_constraintTop_toBottomOf="@+id/first_row_text"
+            app:layout_constraintStart_toEndOf="@+id/refill_first_row_text"
+            app:layout_constraintTop_toBottomOf="@+id/refill_first_row_text"
             android:contentDescription="TODO" />
 
         <CheckBox
@@ -57,33 +57,33 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
             android:contentDescription="TODO"
-            app:layout_constraintStart_toEndOf="@+id/image_alarm"
-            app:layout_constraintTop_toTopOf="@+id/image_alarm"
+            app:layout_constraintStart_toEndOf="@+id/refill_image_alarm"
+            app:layout_constraintTop_toTopOf="@+id/refill_image_alarm"
             app:srcCompat="@drawable/ic_baseline_edit_24"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
         <TextView
-            android:id="@+id/third_row_text"
+            android:id="@+id/refill_third_row_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="TextView"
             android:textColor="#004D40"
-            app:layout_constraintEnd_toEndOf="@+id/second_row_text"
+            app:layout_constraintEnd_toEndOf="@+id/refill_second_row_text"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/second_row_text"
-            app:layout_constraintTop_toBottomOf="@+id/second_row_text" />
+            app:layout_constraintStart_toStartOf="@+id/refill_second_row_text"
+            app:layout_constraintTop_toBottomOf="@+id/refill_second_row_text" />
 
         <TextView
-            android:id="@+id/second_row_text"
+            android:id="@+id/refill_second_row_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:text="TextView"
-            app:layout_constraintEnd_toEndOf="@+id/first_row_text"
+            app:layout_constraintEnd_toEndOf="@+id/refill_first_row_text"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/first_row_text"
-            app:layout_constraintTop_toBottomOf="@+id/first_row_text" />
+            app:layout_constraintStart_toStartOf="@+id/refill_first_row_text"
+            app:layout_constraintTop_toBottomOf="@+id/refill_first_row_text" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
