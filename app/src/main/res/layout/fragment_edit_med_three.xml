@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
+    tools:context=".EditDrug.EditMedFragmentThree">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/treatment_duration"
+        android:layout_gravity="center"
+        android:text="Treatment Duration"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <EditText
+            android:id="@+id/start_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:inputType="date"
+            android:minHeight="48dp" />
+        <!--        android:onClick="showDatePickerDialog"-->
+
+        <EditText
+            android:id="@+id/end_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:inputType="date"
+            android:minHeight="48dp" />
+        <!--        android:onClick="showDatePickerDialog"-->
+        <!--        android:text="@string/end_date"-->
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Quantity_of_med"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="16dp"
+            android:text="How much doses do you have?"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/Quantity_of_med_value"
+            android:layout_marginRight="16dp"
+            />
+
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1">
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/btn_save_add_three"
+            android:layout_marginLeft="16dp"
+            android:text="@string/save"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/btn_back_add_two"
+            android:text="@string/back"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

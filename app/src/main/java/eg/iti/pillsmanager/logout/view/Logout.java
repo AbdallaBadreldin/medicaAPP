@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment;
 
 import eg.iti.pillsmanager.R;
 
-public class Logout extends Fragment {
+public class Logout extends Fragment  {
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -24,4 +25,6 @@ public class Logout extends Fragment {
         super.onDestroyView();
 //        binding = null;
     }
+
+
 }

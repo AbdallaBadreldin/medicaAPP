@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="#DDB4B4"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/total_quantity_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/total_quantity"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/total_quantity_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/total_quantity_text"
+            android:background="@null"
+            android:hint="@string/enter_total_quantity"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColor="#000" />
+
+
+        <TextView
+            android:id="@+id/reminder_at_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/total_quantity_edit"
+            android:layout_marginTop="46dp"
+            android:text="@string/reminder_at"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/reminder_at_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reminder_at_text"
+            android:background="@null"
+            android:hint="@string/enter_remind_at"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColor="#000" />
+
+        <TextView
+            android:id="@+id/refill_dialog_action_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:text="@string/done"
+            android:textColor="#33bbff"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/refill_dialog_action_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:text="@string/cancel"
+            android:textColor="#33bbff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

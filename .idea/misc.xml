@@ -20,17 +20,23 @@
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/app_bar_main.xml" value="0.16799999999999998" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/choose_user.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/content_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/custom_row_medicine.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/custom_row_refill.xml" value="0.16129032258064516" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/feragment_invite_friend.xml" value="0.1421875" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_about.xml" value="0.1421875" />
-        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_add_dependent.xml" value="0.1421875" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_add_dependent.xml" value="0.176" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_edit_dependent.xml" value="0.4" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_invite_friend.xml" value="0.11302083333333333" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_logout.xml" value="0.11302083333333333" />
-        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_medicine.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_medicine.xml" value="0.264" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_pick_dependent.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/fragment_refill.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/refill_dailog_fragment.xml" value="0.4" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/layout/refill_dialog_fragment.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/menu/activity_main_drawer.xml" value="0.11076923076923077" />
+        <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/menu/add_dependent_menu_bar.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/ITITASKS/Project/Android/JAVA/medicaAPP/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />

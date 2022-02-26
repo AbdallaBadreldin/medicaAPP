@@ -3,53 +3,92 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/navigation_home">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/navigation_home"
         android:name="eg.iti.pillsmanager.home.view.Home"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/add_dependent"
+        android:id="@+id/navigation_add_dependent"
         android:name="eg.iti.pillsmanager.adddependent.view.AddDependentFragment"
         android:label="@string/add_dependent"
         tools:layout="@layout/fragment_add_dependent" />
 
     <fragment
-        android:id="@+id/pick_dependent"
+        android:id="@+id/navigation_edit_dependent"
+        android:name="eg.iti.pillsmanager.editdependent.view.EditDependentFragment"
+        android:label="@string/edit_dependent"
+        tools:layout="@layout/fragment_edit_dependent" />
+
+
+    <fragment
+        android:id="@+id/navigation_pick_dependent"
         android:name="eg.iti.pillsmanager.pickdependent.view.PickDependnet"
         android:label="@string/pick_dependent"
         tools:layout="@layout/fragment_pick_dependent" />
 
     <fragment
-        android:id="@+id/invite_friend"
+        android:id="@+id/navigation_invite_friend"
         android:name="eg.iti.pillsmanager.invitefriend.view.InviteFriend"
         android:label="@string/invite_friend"
         tools:layout="@layout/fragment_invite_friend" />
 
     <fragment
-        android:id="@+id/logout"
+        android:id="@+id/navigation_logout"
         android:name="eg.iti.pillsmanager.logout.view.Logout"
         android:label="@string/logout"
         tools:layout="@layout/fragment_logout" />
 
     <fragment
-        android:id="@+id/about"
+        android:id="@+id/navigation_about"
         android:name="eg.iti.pillsmanager.about.view.About"
         android:label="@string/about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/addMedFragmentSecond"
+        android:name="eg.iti.pillsmanager.addDrug.view.AddMedFragmentSecond"
+        android:label="AddMedFragmentSecond" >
+        <action
+            android:id="@+id/action_addMedFragmentSecond_to_addMedicationFragment"
+            app:destination="@id/addMedicationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMedicationFragment"
+        android:name="eg.iti.pillsmanager.addDrug.view.AddMedicationFragment"
+        android:label="AddMedicationFragment" >
+        <action
+            android:id="@+id/action_addMedicationFragment_to_addMedFragmentSecond2"
+            app:destination="@id/addMedFragmentSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMedFragmentOne"
+        android:name="eg.iti.pillsmanager.EditDrug.EditMedFragmentOne"
+        android:label="EditMedFragmentOne" >
+        <action
+            android:id="@+id/action_editMedFragmentOne_to_editMedFragmentSecond"
+            app:destination="@id/editMedFragmentSecond" />
+    </fragment>
+    <fragment
+        android:id="@+id/editMedFragmentSecond"
+        android:name="eg.iti.pillsmanager.EditDrug.EditMedFragmentSecond"
+        android:label="EditMedFragmentSecond" >
+        <action
+            android:id="@+id/action_editMedFragmentSecond_to_editMedFragmentOne2"
+            app:destination="@id/editMedFragmentOne" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_refill"
-        android:name="eg.iti.pillsmanager.refill.view.Refill"
+        android:name="eg.iti.pillsmanager.refill.view.RefillFragment"
         android:label="@string/refill"
         tools:layout="@layout/fragment_refill" />
 
     <fragment
         android:id="@+id/navigation_mediciation"
-        android:name="eg.iti.pillsmanager.medicinces.view.Medicine"
+        android:name="eg.iti.pillsmanager.medicinces.view.MediciationsFragment"
         android:label="@string/mediciations"
         tools:layout="@layout/fragment_medicine" />
 

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="4"
+    android:orientation="vertical"
+    android:theme="@style/Theme.PillsManager.NoActionBar"
+    tools:context="eg.iti.pillsmanager.adddependent.view.AddDependentFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="79dp"
+            android:layout_height="61dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_person_24"
+            tools:src="@tools:sample/avatars"
+            android:contentDescription="@string/todo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3">
+
+        <Button
+            android:id="@+id/add_delete_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="88dp"
+            android:text="@string/add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/second_name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonFirstName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonFirstName" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/birth_date"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textColorHint="#757575"
+            app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonLastName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonLastName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonLastName" />
+
+        <TextView
+            android:id="@+id/gender_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/gender"
+            app:layout_constraintStart_toStartOf="@+id/editTextDate"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+        <RadioGroup
+            android:id="@+id/radioButtonGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/gender_text_view"
+            app:layout_constraintStart_toEndOf="@+id/gender_text_view"
+            app:layout_constraintTop_toTopOf="@+id/gender_text_view">
+
+            <RadioButton
+                android:id="@+id/radioButtonMale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male" />
+
+            <RadioButton
+                android:id="@+id/radioButtonFemale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female" />
+
+            <RadioButton
+                android:id="@+id/radioButtonOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
