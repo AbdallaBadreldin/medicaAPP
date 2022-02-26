@@ -97,4 +97,5 @@
     <string name="remind_at_quantity_cannot_be_zero">remind at quantity can\'t be 0</string>
     <string name="we_will_remind_you">we will remind you every 15 mins</string>
     <string name="notification_off">reminder off</string>
+    <string name="refill_reminder_at">Refill Remind At</string>
 </resources>

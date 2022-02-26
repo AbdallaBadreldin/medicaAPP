@@ -137,7 +137,7 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
 
         holder.activeDisactiveBox.setChecked( medicineDetails.isActiveRefillReminder() );
 
-        if(medicineDetails.getQuantityRemindAt()>= medicineDetails.getTotalQuantity())
+        if(medicineDetails.getQuantityRemindAt().equals(medicineDetails.getTotalQuantity()) )
         holder.alarmIcon.setImageResource(R.drawable.ic_baseline_error_outline_24);
        else holder.alarmIcon.setImageResource(R.drawable.ic_baseline_done_24);
 

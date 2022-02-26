@@ -84,11 +84,9 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
                 String email = signUpEmail.getText().toString().trim();
                 String password = signUpPassword.getText().toString().trim();
                 User user = new User(firstName,getString(R.string.empty) ,0, email, password, getString(R.string.empty),"male");  //todo needs attention from ali
+
                 signUpPresenter.signUp(user, signupFragment);
-                signUpFullName.setText(getString(R.string.empty));
-                signUpEmail.setText(getString(R.string.empty));
-                signUpPassword.setText(getString(R.string.empty));
-                signUpConfirmPassword.setText(getString(R.string.empty));
+
             }
         });
 
@@ -101,7 +99,10 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(getActivity().getString(R.string.name_shared_pre), signUpFullName.getText().toString());
         editor.commit();
-
+        signUpFullName.setText(getString(R.string.empty));
+        signUpEmail.setText(getString(R.string.empty));
+        signUpPassword.setText(getString(R.string.empty));
+        signUpConfirmPassword.setText(getString(R.string.empty));
         startActivity(new Intent(getActivity(),  MainActivity.class));
     }
 

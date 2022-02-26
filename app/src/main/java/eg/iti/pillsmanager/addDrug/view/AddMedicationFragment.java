@@ -30,6 +30,7 @@ public class AddMedicationFragment extends Fragment  {
    Spinner strength_num,strength_unit,form_med_value;
    Medicine med;
    Bundle bundle;
+    SharedPreferences sharedPreferences;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,11 +81,12 @@ public class AddMedicationFragment extends Fragment  {
                String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"name is null");
                 Log.i("TAG", "onClick: "+name);
                med.setUser(new User(name,"khaled",0,"","","",""));*/
-                SharedPreferences sharedPreferences;
+
                 sharedPreferences = getActivity().getSharedPreferences(getString(R.string.signup_shared_pre), Context.MODE_PRIVATE);
-                String name= sharedPreferences.getString(getString(R.string.signup_shared_pre),"name is null");
-                System.out.println("sssssssssssssssssssssssssssss"+sharedPreferences.getString("ppp",""));
-                 med.setUser(new User(name,"",0,"","","",""));
+                String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"name is null");
+                System.out.println("nameeeeeeeeeeeeeeeeeeeeeeeeeeeeee"+name);
+                Log.i("TAG", "onClick: "+name);
+                 med.setUser(new User(name,"farag",23,"esraa@gmail.com","123","4","female"));
                  //med.setFirstName("esraa");
                 //med.setSecondName("khaled");
                 med.setMedicineName(name_med_value.getText().toString());
