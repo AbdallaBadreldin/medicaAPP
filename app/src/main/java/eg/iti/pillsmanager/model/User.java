@@ -1,14 +1,19 @@
 package eg.iti.pillsmanager.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "user" ,primaryKeys = {"firstName","secondName"} )
-public class User {
+import java.io.Serializable;
+
+@Entity(tableName = "user" ,primaryKeys = {"firstName"} )
+public class User implements Serializable {
      @NonNull
     private String firstName;
-     @NonNull
+
     private String secondName;
     private long age;
     private String email;
@@ -16,7 +21,7 @@ public class User {
     private String userID;
     private String gender;
 
-    public User(@NonNull String firstName, @NonNull String secondName, long age, String email, String password, String userID, String gender) {
+    public User(@NonNull String firstName,  String secondName, long age, String email, String password, String userID, String gender) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.age = age;
@@ -83,4 +88,6 @@ public class User {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+
 }

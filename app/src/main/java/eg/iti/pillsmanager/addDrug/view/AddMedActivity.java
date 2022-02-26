@@ -35,6 +35,10 @@ public class AddMedActivity extends AppCompatActivity {
         AddMedFragmentThree addMedFragmentThree = new AddMedFragmentThree();
         showFragment(addMedFragmentThree,bundle);
     }
+    public static void showFragmentAllMed(Bundle bundle){
+        Fragment_all_med addAllMedFragment = new  Fragment_all_med();
+        showFragment(addAllMedFragment,bundle);
+    }
 
     public static void showFragmentMedication(Bundle bundle){
         MediciationsFragment mediciationsFragment = new MediciationsFragment();

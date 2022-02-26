@@ -1,37 +1,92 @@
 package eg.iti.pillsmanager.model;
 
+
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 
-@Entity( tableName = "medicine",primaryKeys = {"medicineName", "firstName","secondName"} )
-public class Medicine implements Parcelable {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity( tableName = "medicine",primaryKeys = {"medicineName", "firstName"} )
+public class Medicine implements Serializable {
     @NonNull
     String firstName;
-    @NonNull
+
     String secondName;
     @NonNull
     String medicineName;
     boolean active;
     String reason;
     String form;
-   String strengthValue;
+    String strengthValue;
     String strength;
     String start_date;
     String end_date;
-    int totalQuantity;
+    String totalQuantity;
     String lastdoseQuantity;
-    int quantityRemindAt;
+    String dose_quantity;
+    int days;
+    User user;
+    Dose dose;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Dose getDose() {
+        return dose;
+    }
+
+    public void setDose(Dose dose) {
+        this.dose = dose;
+    }
+
+
+    // []days;
+//    List<String> days_of_week;
+    private ArrayList<String> days_of_week;
+
+    public ArrayList<String> getDays_of_week() {
+        return days_of_week;
+    }
+
+    public void setDays_of_week(ArrayList<String> days_of_week) {
+        this.days_of_week = days_of_week;
+    }
+
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public String getDose_quantity() {
+        return dose_quantity;
+    }
+
+    public void setDose_quantity(String dose_quantity) {
+        this.dose_quantity = dose_quantity;
+    }
+
+    String quantityRemindAt;
     boolean activeRefillReminder;
-    int timeOfMed;
-    int dateOfMed;
+   String timeOfMed;
+    String dateOfMed;
     String add_dose_quantity;
 
 
-    public Medicine(@NonNull String firstName, @NonNull String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, int totalQuantity, String lastdoseQuantity, int quantityRemindAt, boolean activeRefillReminder,int timeOfMed,int dateOfMed,String add_dose_quantity) {
+    public Medicine(@NonNull String firstName,  String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, String totalQuantity, String lastdoseQuantity,  String quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,String add_dose_quantity,String dose_quantity,int days,ArrayList<String> days_of_week,User user,Dose dose) {
 
         this.firstName = firstName;
         this.secondName = secondName;
@@ -50,43 +105,18 @@ public class Medicine implements Parcelable {
         this.timeOfMed = timeOfMed;
         this.dateOfMed = dateOfMed;
         this.add_dose_quantity = add_dose_quantity;
+        this.dose_quantity=dose_quantity;
+        this.days=days;
+        this.days_of_week=days_of_week;
+        this.user=user;
+        this.dose=dose;
     }
 
 /////////////////////////////////////////////////////////////////////////
 @Ignore
 public Medicine(){}
 
-    @Ignore
-    protected Medicine(Parcel in) {
-        firstName = in.readString();
-        secondName = in.readString();
-        medicineName = in.readString();
-        active = in.readByte() != 0;
-        reason = in.readString();
-        form = in.readString();
-        strengthValue = in.readString();
-        strength = in.readString();
-        start_date = in.readString();
-        end_date = in.readString();
-        totalQuantity = in.readInt();
-        lastdoseQuantity = in.readString();
-        quantityRemindAt = in.readInt();
-        activeRefillReminder = in.readByte() != 0;
-        add_dose_quantity=in.readString();
-    }
 
-    @Ignore
-    public static final Creator<Medicine> CREATOR = new Creator<Medicine>() {
-        @Override
-        public Medicine createFromParcel(Parcel in) {
-            return new Medicine(in);
-        }
-
-        @Override
-        public Medicine[] newArray(int size) {
-            return new Medicine[size];
-        }
-    };
 
     public void setAdd_dose_quantity(String add_dose_quantity) {
         this.add_dose_quantity = add_dose_quantity;
@@ -165,11 +195,11 @@ public Medicine(){}
 
 
 
-    public int getTotalQuantity() {
+    public String getTotalQuantity() {
         return totalQuantity;
     }
 
-    public void setTotalQuantity(int totalQuantity) {
+    public void setTotalQuantity(String totalQuantity) {
         this.totalQuantity = totalQuantity;
     }
 
@@ -181,11 +211,11 @@ public Medicine(){}
         this.lastdoseQuantity = lastdoseQuantity;
     }
 
-    public int getQuantityRemindAt() {
+    public String getQuantityRemindAt() {
         return quantityRemindAt;
     }
 
-    public void setQuantityRemindAt(int quantityRemindAt) {
+    public void setQuantityRemindAt( String quantityRemindAt) {
         this.quantityRemindAt = quantityRemindAt;
     }
 
@@ -197,11 +227,11 @@ public Medicine(){}
         this.end_date = end_date;
     }
 
-    public void setTimeOfMed(int timeOfMed) {
+    public void setTimeOfMed(String timeOfMed) {
         this.timeOfMed = timeOfMed;
     }
 
-    public void setDateOfMed(int dateOfMed) {
+    public void setDateOfMed(String dateOfMed) {
         this.dateOfMed = dateOfMed;
     }
 
@@ -221,34 +251,15 @@ public Medicine(){}
         return end_date;
     }
 
-    public int getTimeOfMed() {
+    public String getTimeOfMed() {
         return timeOfMed;
     }
 
-    public int getDateOfMed() {
+    public String getDateOfMed() {
         return dateOfMed;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(firstName);
-        parcel.writeString(secondName);
-        parcel.writeString(medicineName);
-        parcel.writeByte((byte) (active ? 1 : 0));
-        parcel.writeString(reason);
-        parcel.writeString(form);
-        parcel.writeString(strengthValue);
-        parcel.writeString(strength);
-        parcel.writeString(start_date);
-        parcel.writeString(end_date);
-        parcel.writeInt(totalQuantity);
-        parcel.writeString(lastdoseQuantity);
-        parcel.writeInt(quantityRemindAt);
-        parcel.writeByte((byte) (activeRefillReminder ? 1 : 0));
-    }
+
+
 }

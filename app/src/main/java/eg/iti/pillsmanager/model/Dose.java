@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
+
 @Entity(tableName = "Dose")
-public class Dose {
+public class Dose implements Serializable {
     String user;
     @PrimaryKey  @NonNull
     String medecine;

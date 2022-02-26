@@ -88,4 +88,5 @@
     <string name="notification_description">Hello, you got medicines needs refill please give attention</string>
     <string name="name_shared_pre">MyName</string>
     <string name="signup_shared_pre">MyPrefs</string>
+    <string name="refill_reminder_at">Refill Reminder at</string>
 </resources>

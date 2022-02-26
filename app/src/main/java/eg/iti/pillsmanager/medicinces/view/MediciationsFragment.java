@@ -131,6 +131,8 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
                 2 create new activity
             3 use old fragment*/
 
+
+
         
         
         
@@ -145,6 +147,9 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     public void openEdit(Medicine medicine) {
         //startactivity(intent edit);
         //todo esraa     //   pen -- edit shape
+
+
+
     }
 
     @Override
@@ -155,6 +160,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 
 
         //todo ersaa's tasks    edit display
+
     }
 
     @Override

@@ -15,7 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.addDrug.view.DatePickerFragment;
 import eg.iti.pillsmanager.database.LocalSource;
 import eg.iti.pillsmanager.model.RepositoryInterface;
@@ -50,7 +49,7 @@ public class EditMedFragmentThree extends Fragment {
         treatment_duration=view.findViewById(R.id.treatment_duration);
         quantity_of_med=view.findViewById(R.id.Quantity_of_med);
         med_value=view.findViewById(R.id.Quantity_of_med_value);
-        doses_left=view.findViewById(R.id.doses_left);
+        doses_left=view.findViewById(R.id.total_doses);
 
         end_date.setOnClickListener(new View.OnClickListener() {
             @Override

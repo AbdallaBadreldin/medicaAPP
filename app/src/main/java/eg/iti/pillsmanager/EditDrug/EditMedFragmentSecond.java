@@ -40,7 +40,7 @@ public class EditMedFragmentSecond extends Fragment {
         View view = inflater.inflate(R.layout.fragment_edit_med_second, container, false);
         back = view.findViewById(R.id.btn_back_add_two);
         next =view.findViewById(R.id.btn_next_add_second);
-        add_alarm =view.findViewById(R.id.btn_alarm_add_second);
+       // add_alarm =view.findViewById(R.id.btn_alarm_add_second);
         ///////////////////////////////////////////////////////////
         select_every_day =view.findViewById(R.id.every_day);
         select_month =view.findViewById(R.id.select_month);
@@ -72,10 +72,10 @@ public class EditMedFragmentSecond extends Fragment {
                 Medicine medicine = bundle.getParcelable("med1");
 
                 medicine.setLastdoseQuantity( dose_value.getSelectedItem().toString());
-                medicine.setTimeOfMed(time_of_med.getHour());
-                medicine.setDateOfMed(date_of_med.getDayOfMonth());
+              //  medicine.setTimeOfMed(time_of_med.ge);
+              //  medicine.setDateOfMed(date_of_med.);
                 Bundle bundle2 = new Bundle();
-                bundle2.putParcelable("med2",medicine);
+              //  bundle2.putParcelable("med2",medicine);
                 Log.d("myname",medicine.getMedicineName());
                 System.out.println("sssssssssssssssssssssssssssssssssssssss"+medicine.getMedicineName());
                 AddMedActivity.showFragmentThree(bundle2);

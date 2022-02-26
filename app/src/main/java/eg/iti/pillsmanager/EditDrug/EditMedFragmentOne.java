@@ -20,6 +20,7 @@ import java.util.List;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.database.LocalSource;
+import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
 import eg.iti.pillsmanager.model.RepositoryInterface;
@@ -29,9 +30,9 @@ import eg.iti.pillsmanager.network.RemoteSource;
 public class EditMedFragmentOne extends Fragment {
 
     TextView name_of_med,form_of_med,reason_of_med,strength_of_med;
-    EditText name_med_value,reason_med_value,form_med_value;
-    Spinner strength_num,strength_unit;
-   Button next_btn,back_btn;
+    EditText name_med_value,reason_med_value;
+    Spinner strength_num,strength_unit,form_med_value;
+   Button next_btn;
    Bundle bundle;
     RepositoryInterface repo;
     RemoteSource remoteSource;
@@ -48,7 +49,6 @@ public class EditMedFragmentOne extends Fragment {
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_edit_med_first, container, false);
         next_btn = view.findViewById(R.id.btn_next_add_second);
-        back_btn = view.findViewById(R.id.btn_back_add_first);
         //////////////////////////////////////////////////////////////
         name_of_med = view.findViewById(R.id.name_of_med);
         form_of_med = view.findViewById(R.id.form_of_med);
@@ -61,7 +61,6 @@ public class EditMedFragmentOne extends Fragment {
         ///////////////////////////////////////////////////////////
         strength_num=view.findViewById(R.id.med_concentration_num);
         strength_unit=view.findViewById(R.id.med_concentration_symbol);
-        strength_num=view.findViewById(R.id.med_concentration_num);
         String[] arraySpinner = new String[] {
                 "100", "200", "300", "400", "500", "600", "700"
         };
@@ -81,11 +80,17 @@ public class EditMedFragmentOne extends Fragment {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         strength_unit.setAdapter(adapter2);
 
+        String[] arraySpinner3 = new String[] {
+                "pills", "solution", "injection","powder","drops","Inhaler"
+        };
+        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getContext(),
+                android.R.layout.simple_spinner_item, arraySpinner3);
+        adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        form_med_value.setAdapter(adapter3);
+
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
               //get data from edit
                  med = new Medicine();
                 bundle = new Bundle();
@@ -96,29 +101,28 @@ public class EditMedFragmentOne extends Fragment {
                         med = medicines.get(0);
                     }
                 });
-                name_med_value.setText(med.getMedicineName());
-                form_med_value.setText(med.getForm());
-                reason_med_value.setText(med.getReason());
-                med.setStrengthValue(strength_num.getSelectedItem().toString());
-                med.setStrength(strength_unit.getSelectedItem().toString());
-              ///////////////////////////////////////////////////////////////////////////////////////
-                //enter data again
+              /* SharedPreferences  sharedPreferences = getActivity().getSharedPreferences(getString(R.string.signup_shared_pre), Context.MODE_PRIVATE);
+
+               String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"name is null");
+                Log.i("TAG", "onClick: "+name);
+               med.setUser(new User(name,"khaled",0,"","","",""));*/
+
+                med.setFirstName("esraa");
+                med.setSecondName("khaled");
                 med.setMedicineName(name_med_value.getText().toString());
-                med.setForm(form_med_value.getText().toString());
+                med.setForm(form_med_value.getSelectedItem().toString());
                 med.setReason(reason_med_value.getText().toString());
                 med.setStrengthValue(strength_num.getSelectedItem().toString());
                 med.setStrength(strength_unit.getSelectedItem().toString());
-                bundle.putParcelable("med1",med);
+                med.setActive(true);
+                med.setDose(new Dose());
+                bundle.putSerializable("med1",med);
+
                 Edit_medActivity.showFragmentSecond(bundle);
             }
         });
 
-        back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
         return view;
     }
 }
