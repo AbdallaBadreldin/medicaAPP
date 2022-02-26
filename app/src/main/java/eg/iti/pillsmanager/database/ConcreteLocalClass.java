@@ -3,7 +3,6 @@ package eg.iti.pillsmanager.database;
 import android.content.Context;
 
 import androidx.lifecycle.LiveData;
-import androidx.room.Query;
 
 import java.util.List;
 import eg.iti.pillsmanager.database.DoseDao.DoseDao;
@@ -28,7 +27,7 @@ public class ConcreteLocalClass implements LocalSource {
     private final LiveData<List<Medicine>> storedMedicine;
     private final LiveData<List<Medicine>> storedActiveMedicine;
     private final LiveData<List<Medicine>> storedInactiveMedicine;
-    private final LiveData<List<Medicine>> storedActiveMedicineNeedsRefill;
+//    private final List<Medicine> storedActiveMedicineNeedsRefill;
     private final LiveData<List<Medicine>> storedInactiveMedicineNeedsRefill;
     private final LiveData<List<Medicine>> storedEmptyActiveMedicine;
     private final LiveData<List<Medicine>> storedEmptyInactiveMedicine;
@@ -51,13 +50,12 @@ public class ConcreteLocalClass implements LocalSource {
         MedicineDataBase medicineDataBase = MedicineDataBase.getMedicineDataBaseInstance(context.getApplicationContext());
         medicineDao = medicineDataBase.getMedicineDao();
         storedMedicine = medicineDao.getAllMedicine();
-        storedActiveMedicineNeedsRefill=medicineDao.getActiveMedicineNeedsRefill();
-       storedInactiveMedicineNeedsRefill =medicineDao.getInactiveMedicineNeedsRefill();
+
+//        storedActiveMedicineNeedsRefill=medicineDao.getActiveMedicineNeedsRefill();
+
+        storedInactiveMedicineNeedsRefill =medicineDao.getInactiveMedicineNeedsRefill();
         storedEmptyActiveMedicine = medicineDao.getEmptyActiveMedicine();
         storedEmptyInactiveMedicine = medicineDao.getEmptyInactiveMedicine();
-
-
-
 
         //dose things
         DoseDataBase DoseDataBase = eg.iti.pillsmanager.database.DoseDao.DoseDataBase.getDoseDataBaseInstance(context.getApplicationContext());
@@ -148,8 +146,8 @@ public class ConcreteLocalClass implements LocalSource {
     public LiveData<List<Medicine>> getAllInactiveMedicine() {
         return storedInactiveMedicine;
     }
-    @Override
-    public LiveData<List<Medicine>> getActiveMedicineNeedsRefill() { return storedActiveMedicineNeedsRefill; }
+//    @Override
+//    public List<Medicine> getActiveMedicineNeedsRefill() { return storedActiveMedicineNeedsRefill; }
     @Override
     public LiveData<List<Medicine>> getInactiveMedicineNeedsRefill() { return storedInactiveMedicineNeedsRefill; }
     @Override
