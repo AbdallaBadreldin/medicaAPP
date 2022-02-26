@@ -64,7 +64,6 @@ public class RefillDialogFragment  extends DialogFragment {
                                 mOnInputListener.sendTotalQuantity(Integer.parseInt(totalQuantityInputString));
                                 mOnInputListener.sendRemindAtQuantity(Integer.parseInt(remindAtQuantityInputString));
                         }
-
 }
                         getDialog().dismiss();
                     }

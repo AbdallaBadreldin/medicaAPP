@@ -28,7 +28,7 @@ public interface MedicineDao {
     LiveData<List<Medicine>> getAllInactiveMedicine();
 
     @Query("Select * From medicine WHERE activeRefillReminder LIKE 1 AND quantityRemindAt>=totalQuantity")
-    LiveData<List<Medicine>> getActiveMedicineNeedsRefill();
+    List<Medicine> getActiveMedicineNeedsRefill();
 
     @Query("Select * From medicine WHERE activeRefillReminder LIKE 0 AND quantityRemindAt<=totalQuantity")
     LiveData<List<Medicine>> getInactiveMedicineNeedsRefill();
