@@ -135,8 +135,9 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
 
     public void applyChanges(@NonNull ViewHolder holder, @NonNull Medicine medicineDetails) {
 
-        holder.activeDisactiveBox.setChecked(medicineDetails.isActiveRefillReminder() );
-       if(medicineDetails.getQuantityRemindAt()<= medicineDetails.getTotalQuantity())
+        holder.activeDisactiveBox.setChecked( medicineDetails.isActiveRefillReminder() );
+
+        if(medicineDetails.getQuantityRemindAt()>= medicineDetails.getTotalQuantity())
         holder.alarmIcon.setImageResource(R.drawable.ic_baseline_error_outline_24);
        else holder.alarmIcon.setImageResource(R.drawable.ic_baseline_done_24);
 
@@ -158,6 +159,13 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
             @Override
             public void onClick(View view) {
                 onRefillClickListenerInterface.changeRefillReminderStatus(medicineDetails);
+            }
+        });
+
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onRefillClickListenerInterface.refillMedicine(medicineDetails);
             }
         });
 }

@@ -4,6 +4,7 @@ package eg.iti.pillsmanager.refill.view;
 import android.annotation.SuppressLint;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,9 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.work.Constraints;
@@ -36,7 +39,7 @@ import eg.iti.pillsmanager.refill.presenter.RefillPresenter;
 import eg.iti.pillsmanager.refill.presenter.RefillPresenterInterface;
 import eg.iti.pillsmanager.utility.NotifyWorker;
 @SuppressLint("NotifyDataSetChanged")
-public class RefillFragment extends Fragment implements RefillFragmentInterface ,OnRefillClickListenerInterface{
+public class RefillFragment extends Fragment implements RefillFragmentInterface ,OnRefillClickListenerInterface,RefillDialogInterface {
     //we set a tag to be able to cancel all work of this type if needed
     public static final String workTag = "notificationWork";
 
@@ -45,7 +48,7 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
     RefillPresenterInterface refillPresenterInterface;
     Repository repository;
     ConcreteLocalClass concreteLocalClass;
-
+    Medicine medicineForDialog;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -126,17 +129,23 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
         if(medicine.isActiveRefillReminder())
         {
             medicine.setActiveRefillReminder(false);
-            Toast.makeText(getContext(), medicine.getMedicineName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getContext().getString(R.string.notification_off), Toast.LENGTH_SHORT).show();
 
            updateMedicine(medicine);
         }
-        else { Toast.makeText(getContext(), medicine.getMedicineName()+ "FALSE", Toast.LENGTH_SHORT).show();
+        else { Toast.makeText(getContext(), getContext().getString(R.string.we_will_remind_you), Toast.LENGTH_SHORT).show();
             medicine.setActiveRefillReminder(true);
             updateMedicine(medicine);    }
     }
 
     @Override
     public void refillMedicine(Medicine medicine) {
+        medicineForDialog = medicine;
+
+
+        RefillDialogFragment dialog = new RefillDialogFragment();
+        FragmentManager manager = getParentFragmentManager();
+               dialog.show(manager,"mydialog");
 
     }
 
@@ -149,6 +158,23 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
 
     @Override
     public void updateMedicine(Medicine medicine) {
+        Toast.makeText(getContext(),"done updated",Toast.LENGTH_LONG);
     refillPresenterInterface.updateRefillActiveStatue(medicine);
+    }
+
+
+    @Override
+    public void sendTotalQuantity(int totalQuantity) {
+        medicineForDialog.setTotalQuantity(totalQuantity);
+        updateMedicine(medicineForDialog);
+    }
+
+    @Override
+    public void sendRemindAtQuantity(int remindAtQuantity) {
+        if (remindAtQuantity==0){
+            Toast.makeText(getContext(),getContext().getString(R.string.sorry)+getContext().getString(R.string.remind_at_quantity_cannot_be_zero),Toast.LENGTH_LONG).show();}
+        else{
+        medicineForDialog.setQuantityRemindAt(remindAtQuantity);
+        updateMedicine(medicineForDialog);}
     }
 }

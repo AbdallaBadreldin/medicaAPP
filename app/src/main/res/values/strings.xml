@@ -93,4 +93,8 @@
     <string name="reminder_at">remind me at</string>
     <string name="enter_remind_at">enter quantity to remind at</string>
     <string name="cancel">cancel</string>
+    <string name="sorry">"sorry "</string>
+    <string name="remind_at_quantity_cannot_be_zero">remind at quantity can\'t be 0</string>
+    <string name="we_will_remind_you">we will remind you every 15 mins</string>
+    <string name="notification_off">reminder off</string>
 </resources>
