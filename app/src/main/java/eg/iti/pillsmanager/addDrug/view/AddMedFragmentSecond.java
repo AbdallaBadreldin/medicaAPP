@@ -42,8 +42,7 @@ import eg.iti.pillsmanager.model.User;
 
 public class AddMedFragmentSecond extends Fragment {
 
-    Button back, next;
-    FloatingActionButton floatingActionButton;
+    Button  next;
     RadioButton select_every_day, select_days_from_week, select_month;
     CheckBox sat_day, sun_day, mon_day, tue_day, wen_day, thu_day, fri_day;
     EditText time_of_med, date_of_med;
@@ -52,7 +51,8 @@ public class AddMedFragmentSecond extends Fragment {
     RadioGroup select_days;
     int timerHour, timerMinute;
     int days;
-
+    ArrayList<String> days_chosed = new ArrayList<>();
+    ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,7 +158,6 @@ public class AddMedFragmentSecond extends Fragment {
 
 
         next.setOnClickListener(new View.OnClickListener() {
-            ArrayList<String> days_chosed = new ArrayList<>();
             @Override
             public void onClick(View view) {
 
