@@ -16,7 +16,7 @@ public class Medicine implements Serializable {
     @NonNull
     String firstName;
 
-    String secondName;
+    //String secondName;
     @NonNull
     String medicineName;
     boolean active;
@@ -30,10 +30,10 @@ public class Medicine implements Serializable {
     String lastdoseQuantity;
     String dose_quantity;
     int days;
-    User user;
-    Dose dose;
+    //User user;
+    //Dose dose;
 
-    public User getUser() {
+    /*public User getUser() {
         return user;
     }
 
@@ -48,7 +48,7 @@ public class Medicine implements Serializable {
     public void setDose(Dose dose) {
         this.dose = dose;
     }
-
+*/
 
     // []days;
 //    List<String> days_of_week;
@@ -86,10 +86,10 @@ public class Medicine implements Serializable {
     String add_dose_quantity;
 
 
-    public Medicine(@NonNull String firstName,  String secondName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, String totalQuantity, String lastdoseQuantity,  String quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,String add_dose_quantity,String dose_quantity,int days,ArrayList<String> days_of_week,User user,Dose dose) {
+    public Medicine(@NonNull String firstName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, String totalQuantity, String lastdoseQuantity,  String quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,String add_dose_quantity,String dose_quantity,int days,ArrayList<String> days_of_week) {
 
         this.firstName = firstName;
-        this.secondName = secondName;
+       // this.secondName = secondName;
         this.medicineName = medicineName;
         this.active = active;
         this.reason = reason;
@@ -108,8 +108,8 @@ public class Medicine implements Serializable {
         this.dose_quantity=dose_quantity;
         this.days=days;
         this.days_of_week=days_of_week;
-        this.user=user;
-        this.dose=dose;
+       /* this.user=user;
+        this.dose=dose;*/
     }
 
 /////////////////////////////////////////////////////////////////////////
@@ -135,14 +135,14 @@ public Medicine(){}
         this.firstName = firstName;
     }
 
-    @NonNull
+    /*@NonNull
     public String getSecondName() {
         return secondName;
     }
 
     public void setSecondName(@NonNull String secondName) {
         this.secondName = secondName;
-    }
+    }*/
 
     @NonNull
     public String getMedicineName() {

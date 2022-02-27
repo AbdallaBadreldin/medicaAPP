@@ -86,8 +86,8 @@ public class AddMedicationFragment extends Fragment  {
                 String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"name is null");
                 System.out.println("nameeeeeeeeeeeeeeeeeeeeeeeeeeeeee"+name);
                 Log.i("TAG", "onClick: "+name);
-                 med.setUser(new User(name,"farag",23,"esraa@gmail.com","123","4","female"));
-                 //med.setFirstName("esraa");
+                // med.setUser(new User(name,"farag",23,"esraa@gmail.com","123","4","female"));
+                 med.setFirstName(name);
                 //med.setSecondName("khaled");
                 med.setMedicineName(name_med_value.getText().toString());
                 med.setForm(form_med_value.getSelectedItem().toString());

@@ -166,31 +166,30 @@ public class AddMedFragmentSecond extends Fragment {
                    days_chosed.add("saturday");
 
                 }
-                else if(sun_day.isChecked()){
+                 if(sun_day.isChecked()){
                     days_chosed.add("sunday");
-
-                }
-               else if(mon_day.isChecked()){
+               }
+                if(mon_day.isChecked()){
                    days_chosed.add("monday");
 
                }
-               else if(tue_day.isChecked()){
+                if(tue_day.isChecked()){
                    days_chosed.add("tuesday");
 
                }
-               else if(wen_day.isChecked()){
+                if(wen_day.isChecked()){
                    days_chosed.add("wednesday");
 
-               }
-               else if(thu_day.isChecked()){
-                   days_chosed.add("thursday");
 
                }
-               else if(fri_day.isChecked()){
-                   days_chosed.add("friday");
+                if(thu_day.isChecked()){
+                   days_chosed.add("thursday");
+
+
                }
-               else {
-                   days_chosed.add("");
+                if(fri_day.isChecked()){
+                   days_chosed.add("friday");
+
                }
 
 

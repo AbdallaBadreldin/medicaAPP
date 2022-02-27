@@ -1,6 +1,5 @@
 package eg.iti.pillsmanager.database;
 
-import androidx.room.ProvidedTypeConverter;
 import androidx.room.TypeConverter;
 
 import com.google.gson.Gson;
@@ -11,9 +10,8 @@ import java.util.ArrayList;
 
 import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.User;
-@ProvidedTypeConverter
 public class Converters {
-    @TypeConverter
+   /* @TypeConverter
     public static String fromUsertoString(User user){
         return  new Gson().toJson(user);
     }
@@ -22,7 +20,7 @@ public class Converters {
         return new Gson().fromJson(stringUser,User.class);
 
     }
-    @TypeConverter
+*/   /* @TypeConverter
   public static String fromDosetoString(Dose dose){
         return  new Gson().toJson(dose);
     }
@@ -30,7 +28,7 @@ public class Converters {
     public static Dose fromStringtoDose(String stringDose){
         return new Gson().fromJson(stringDose,Dose.class);
 
-    }
+    }*/
     @TypeConverter
     public static String fromArrayListToString(ArrayList<String> days_of_week){
         return new Gson().toJson(days_of_week);

@@ -24,7 +24,7 @@ import eg.iti.pillsmanager.model.Medicine;
 public abstract class MedicineDataBase extends RoomDatabase {
 
     public static MedicineDataBase medicineDataBase = null;
-    private static Object exampleConverterInstance;
+
 
     public static synchronized MedicineDataBase getMedicineDataBaseInstance(Context context) {
         if (medicineDataBase == null) {
