@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="@+id/uesr_image" />
 
         <ImageView
-            android:id="@+id/refill_image_alarm"
+            android:id="@+id/user_image_alarm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"

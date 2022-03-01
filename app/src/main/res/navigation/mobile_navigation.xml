@@ -23,7 +23,6 @@
         android:label="@string/edit_dependent"
         tools:layout="@layout/fragment_edit_dependent" />
 
-
     <fragment
         android:id="@+id/navigation_pick_dependent"
         android:name="eg.iti.pillsmanager.pickdependent.view.PickDependnet"

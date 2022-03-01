@@ -19,7 +19,7 @@ public interface UserDao {
     @Query("Select * From user")
     LiveData<List<User>> getAllUsers();
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertUser(User user);
 
     @Delete

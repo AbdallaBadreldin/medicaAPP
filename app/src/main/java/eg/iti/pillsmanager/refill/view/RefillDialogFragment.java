@@ -29,10 +29,8 @@ public class RefillDialogFragment  extends DialogFragment {
                              ViewGroup container,
                              Bundle savedInstanceState)
     {
-        View view = inflater.inflate(
-                R.layout.refill_dialog_fragment, container, true);
-        mActionCancel
-                = view.findViewById(R.id.refill_dialog_action_cancel);
+        View view = inflater.inflate(R.layout.refill_dialog_fragment, container, true);
+        mActionCancel = view.findViewById(R.id.refill_dialog_action_cancel);
         mActionOk = view.findViewById(R.id.refill_dialog_action_ok);
         totalQuantityInput = view.findViewById(R.id.total_quantity_edit);
         remindAtQuantityInput = view.findViewById(R.id.reminder_at_edit);
