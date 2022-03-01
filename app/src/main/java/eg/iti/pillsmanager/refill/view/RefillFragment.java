@@ -160,7 +160,7 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
 
     @Override
     public void sendTotalQuantity(int totalQuantity) {
-        medicineForDialog.setTotalQuantity(String.valueOf(totalQuantity));
+        medicineForDialog.setTotalQuantity(totalQuantity);
         updateMedicine(medicineForDialog);
     }
 
@@ -169,7 +169,7 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
         if (remindAtQuantity==0){
             Toast.makeText(getContext(),getContext().getString(R.string.sorry)+getContext().getString(R.string.remind_at_quantity_cannot_be_zero),Toast.LENGTH_LONG).show();}
         else{
-        medicineForDialog.setQuantityRemindAt(String.valueOf(remindAtQuantity));
+        medicineForDialog.setQuantityRemindAt(remindAtQuantity);
         updateMedicine(medicineForDialog);}
     }
 }

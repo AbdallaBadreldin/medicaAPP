@@ -37,7 +37,7 @@ public interface LocalSource {
     LiveData<List<Medicine>> getAllMedicine();
     LiveData<List<Medicine>> getAllActiveMedicine();
     LiveData<List<Medicine>> getAllInactiveMedicine();
-//    List<Medicine> getActiveMedicineNeedsRefill();
+    List<Medicine> getActiveMedicineNeedsRefill();
     LiveData<List<Medicine>> getInactiveMedicineNeedsRefill();
     LiveData<List<Medicine>> getEmptyActiveMedicine();
     LiveData<List<Medicine>> getEmptyInactiveMedicine();

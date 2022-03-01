@@ -11,14 +11,16 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity( tableName = "medicine",primaryKeys = {"medicineName", "firstName"} )
+@Entity( tableName = "medicine",primaryKeys = {"medicineName", "Email"} )
 public class Medicine implements Serializable {
+
+    @NonNull
+    String Email;
+    @NonNull
+    String medicineName;
     @NonNull
     String firstName;
 
-    //String secondName;
-    @NonNull
-    String medicineName;
     boolean active;
     String reason;
     String form;
@@ -26,10 +28,17 @@ public class Medicine implements Serializable {
     String strength;
     String start_date;
     String end_date;
-    String totalQuantity;
-    String lastdoseQuantity;
+    int totalQuantity;
+    int lastdoseQuantity;
     String dose_quantity;
     int days;
+    int quantityRemindAt;
+    boolean activeRefillReminder;
+    String timeOfMed;
+    String dateOfMed;
+    String add_dose_quantity;
+
+
     //User user;
     //Dose dose;
 
@@ -79,40 +88,31 @@ public class Medicine implements Serializable {
         this.dose_quantity = dose_quantity;
     }
 
-    String quantityRemindAt;
-    boolean activeRefillReminder;
-   String timeOfMed;
-    String dateOfMed;
-    String add_dose_quantity;
 
-
-    public Medicine(@NonNull String firstName, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date,String end_date, String totalQuantity, String lastdoseQuantity,  String quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,String add_dose_quantity,String dose_quantity,int days,ArrayList<String> days_of_week) {
-
+    public Medicine(@NonNull String firstName, @NonNull String Email, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date, String end_date, int totalQuantity, int lastdoseQuantity, String dose_quantity, int days, int quantityRemindAt, boolean activeRefillReminder, String timeOfMed, String dateOfMed, String add_dose_quantity, ArrayList<String> days_of_week) {
         this.firstName = firstName;
-       // this.secondName = secondName;
+        this.Email = Email;
         this.medicineName = medicineName;
         this.active = active;
         this.reason = reason;
         this.form = form;
         this.strengthValue = strengthValue;
         this.strength = strength;
-        this.start_date=start_date;
-        this.end_date=end_date;
+        this.start_date = start_date;
+        this.end_date = end_date;
         this.totalQuantity = totalQuantity;
         this.lastdoseQuantity = lastdoseQuantity;
+        this.dose_quantity = dose_quantity;
+        this.days = days;
         this.quantityRemindAt = quantityRemindAt;
         this.activeRefillReminder = activeRefillReminder;
         this.timeOfMed = timeOfMed;
         this.dateOfMed = dateOfMed;
         this.add_dose_quantity = add_dose_quantity;
-        this.dose_quantity=dose_quantity;
-        this.days=days;
-        this.days_of_week=days_of_week;
-       /* this.user=user;
-        this.dose=dose;*/
+        this.days_of_week = days_of_week;
     }
 
-/////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////////////////
 @Ignore
 public Medicine(){}
 
@@ -135,7 +135,15 @@ public Medicine(){}
         this.firstName = firstName;
     }
 
-    /*@NonNull
+    @NonNull
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(@NonNull String email) {
+        Email = email;
+    }
+/*@NonNull
     public String getSecondName() {
         return secondName;
     }
@@ -195,27 +203,27 @@ public Medicine(){}
 
 
 
-    public String getTotalQuantity() {
+    public int getTotalQuantity() {
         return totalQuantity;
     }
 
-    public void setTotalQuantity(String totalQuantity) {
+    public void setTotalQuantity(int totalQuantity) {
         this.totalQuantity = totalQuantity;
     }
 
-    public String getLastdoseQuantity() {
+    public int getLastdoseQuantity() {
         return lastdoseQuantity;
     }
 
-    public void setLastdoseQuantity(String lastdoseQuantity) {
+    public void setLastdoseQuantity(int lastdoseQuantity) {
         this.lastdoseQuantity = lastdoseQuantity;
     }
 
-    public String getQuantityRemindAt() {
+    public int getQuantityRemindAt() {
         return quantityRemindAt;
     }
 
-    public void setQuantityRemindAt( String quantityRemindAt) {
+    public void setQuantityRemindAt( int quantityRemindAt) {
         this.quantityRemindAt = quantityRemindAt;
     }
 

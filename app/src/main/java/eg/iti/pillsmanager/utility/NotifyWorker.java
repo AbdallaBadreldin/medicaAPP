@@ -36,10 +36,10 @@ int counter = 1;
     @NonNull
     @Override
     public Result doWork() {
-//        getWorkerFactory().createWorker()
+//getWorkerFactory().createWorker()
 //WorkManager.getInstance(context).cancelAllWork();
-        // Method to trigger an instant notification
-//        System.out.println("FROM WORKER WITH LOVE");
+//Method to trigger an instant notification
+//System.out.println("FROM WORKER WITH LOVE");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -47,12 +47,12 @@ int counter = 1;
                 List<Medicine> med =MedicineDataBase.getMedicineDataBaseInstance(context).getMedicineDao().getActiveMedicineNeedsRefill();
                 //we need to check database here
                 if(med==null)
-                {/*then ther's not refill reminders*/ }  //System.out.println("FROM WORKER VALUE == NULL");
+                {/*then there's not refill reminders*/ }  //System.out.println("FROM WORKER VALUE == NULL");
                 else {
                     if (med.isEmpty())
                     { /*still empty*/ } //System.out.println("FROM WORKER VALUE ISEMPTY()");
                     else {
-//                        System.out.println("FROM WORKER SEND NOTIFICATION");
+                    // System.out.println("FROM WORKER SEND NOTIFICATION");
                         sendNotification(context.getString(R.string.app_name), context.getString(R.string.notification_description));
                     }
                 }
