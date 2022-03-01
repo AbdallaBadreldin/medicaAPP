@@ -43,7 +43,6 @@ int counter = 1;
         new Thread(new Runnable() {
             @Override
             public void run() {
-
                 List<Medicine> med =MedicineDataBase.getMedicineDataBaseInstance(context).getMedicineDao().getActiveMedicineNeedsRefill();
                 //we need to check database here
                 if(med==null)

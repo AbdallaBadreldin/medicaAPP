@@ -70,7 +70,6 @@ public class Medicine implements Serializable {
         this.days_of_week = days_of_week;
     }
 
-
     public int getDays() {
         return days;
     }
@@ -87,13 +86,8 @@ public class Medicine implements Serializable {
         this.dose_quantity = dose_quantity;
     }
 
-
-
-
     public Medicine(@NonNull String firstName, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, String start_date,String end_date, int totalQuantity, int lastdoseQuantity,  int quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,int add_dose_quantity,int dose_quantity,int days,ArrayList<String> days_of_week) {
-
-    public Medicine(@NonNull String firstName, @NonNull String Email, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date, String end_date, int totalQuantity, int lastdoseQuantity, String dose_quantity, int days, int quantityRemindAt, boolean activeRefillReminder, String timeOfMed, String dateOfMed, String add_dose_quantity, ArrayList<String> days_of_week) {
-        this.firstName = firstName;
+     this.firstName = firstName;
         this.Email = Email;
         this.medicineName = medicineName;
         this.active = active;
@@ -204,8 +198,6 @@ public Medicine(){}
         this.strength = strength;
     }
 
-
-
     public int getTotalQuantity() {
         return totalQuantity;
     }
@@ -218,9 +210,7 @@ public Medicine(){}
         return lastdoseQuantity;
     }
 
-    public void setLastdoseQuantity(int lastdoseQuantity) {
-        this.lastdoseQuantity = lastdoseQuantity;
-    }
+    public void setLastdoseQuantity(int lastdoseQuantity) { this.lastdoseQuantity = lastdoseQuantity; }
 
     public int getQuantityRemindAt() {
         return quantityRemindAt;

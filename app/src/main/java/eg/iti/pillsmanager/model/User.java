@@ -9,13 +9,14 @@ import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
 
-@Entity(tableName = "user" ,primaryKeys = {"firstName"} )
+@Entity(tableName = "user" ,primaryKeys = {"firstName","email"} )
 public class User implements Serializable {
      @NonNull
     private String firstName;
 
     private String secondName;
     private long age;
+    @NonNull
     private String email;
     private String password;
     private String userID;

@@ -19,7 +19,7 @@ import eg.iti.pillsmanager.model.Medicine;
 
 
 //table of users modifiy it if we will modifiy UserDao so as results we will modifit localSource for sure
-@Database(entities = {Medicine.class}, version = 4)
+@Database(entities = {Medicine.class}, version = 5)
 @TypeConverters({Converters.class})
 public abstract class MedicineDataBase extends RoomDatabase {
 

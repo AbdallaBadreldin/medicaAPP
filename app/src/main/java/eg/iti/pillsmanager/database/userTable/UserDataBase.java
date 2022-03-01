@@ -16,14 +16,14 @@ import eg.iti.pillsmanager.model.User;
 
 
 //table of users modifiy it if we will modifiy UserDao so as results we will modifit localSource for sure
-@Database(entities = {User.class}, version = 5)
+@Database(entities = {User.class}, version = 6)
 public abstract class UserDataBase extends RoomDatabase {
 
     public static UserDataBase userDataBase = null;
 
     public static synchronized UserDataBase getUserDataBaseInstance(Context context) {
         if (userDataBase == null) {
-            userDataBase = Room.databaseBuilder(context.getApplicationContext(), UserDataBase.class, "users")
+            userDataBase = Room.databaseBuilder(context.getApplicationContext(), UserDataBase.class, "user")
                     .build();
         }
         return userDataBase;
