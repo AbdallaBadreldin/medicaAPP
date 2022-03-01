@@ -112,6 +112,7 @@ public class AddMedFragmentThree extends Fragment {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
                 startActivity(intent);
+
             }
         });
         med_btn.setOnClickListener(new View.OnClickListener() {

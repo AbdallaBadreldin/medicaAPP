@@ -21,9 +21,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
+import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.database.ConcreteLocalClass;
+import eg.iti.pillsmanager.displaydrug.view.DisplayDrug;
 import eg.iti.pillsmanager.medicinces.presenter.MedicinePresenter;
 import eg.iti.pillsmanager.medicinces.presenter.MedicinePresenterInterface;
 import eg.iti.pillsmanager.model.Medicine;
@@ -38,7 +40,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     RecyclerView recyclerViewInactiveMedicines;
     ActiveMedicineAdapter activeMedicineAdapter;
     InactiveMedicineAdapter inactiveActiveMedicineAdapter;
-
+     Medicine medicine;
     MedicinePresenterInterface medicinePresenterInterface;
     Repository repository;
     ConcreteLocalClass concreteLocalClass;
@@ -52,6 +54,7 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 
 
         add_alarm = in.findViewById(R.id.btn_add_medication);
+        Medicine med = new Medicine();
         add_alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,11 +150,14 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     @Override
     public void openMedicine(Medicine medicine) {
 
+        Intent intent = new Intent(getActivity(),  DisplayDrug.class);
+        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+        intent.putExtra("med",medicine);
+        startActivity(intent);
 
 
 
 
-        //todo ersaa's tasks    edit display
 
     }
 

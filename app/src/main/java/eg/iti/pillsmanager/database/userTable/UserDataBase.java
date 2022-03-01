@@ -16,7 +16,7 @@ import eg.iti.pillsmanager.model.User;
 
 
 //table of users modifiy it if we will modifiy UserDao so as results we will modifit localSource for sure
-@Database(entities = {User.class}, version = 5)
+@Database(entities = {User.class}, version = 6)
 public abstract class UserDataBase extends RoomDatabase {
 
     public static UserDataBase userDataBase = null;

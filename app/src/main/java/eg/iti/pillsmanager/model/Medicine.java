@@ -91,8 +91,6 @@ public class Medicine implements Serializable {
 
 
     public Medicine(@NonNull String firstName, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, String start_date,String end_date, int totalQuantity, int lastdoseQuantity,  int quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,int add_dose_quantity,int dose_quantity,int days,ArrayList<String> days_of_week) {
-
-    public Medicine(@NonNull String firstName, @NonNull String Email, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date, String end_date, int totalQuantity, int lastdoseQuantity, String dose_quantity, int days, int quantityRemindAt, boolean activeRefillReminder, String timeOfMed, String dateOfMed, String add_dose_quantity, ArrayList<String> days_of_week) {
         this.firstName = firstName;
         this.Email = Email;
         this.medicineName = medicineName;
