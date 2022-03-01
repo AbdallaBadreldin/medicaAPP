@@ -88,10 +88,10 @@ public class AddMedFragmentThree extends Fragment {
                 Medicine medicine = (Medicine) bundle.getSerializable("med2");
                 medicine.setStart_date(start_date.getText().toString());
                 medicine.setEnd_date(end_date.getText().toString());
-                medicine.setTotalQuantity(total_doses.getText().toString());
-                medicine.setAdd_dose_quantity(add_dose_quantity.getText().toString());
-                medicine.setQuantityRemindAt(refill_at_dose_num.getText().toString());
-                medicine.setLastdoseQuantity(last_dose_num.getText().toString());
+                medicine.setTotalQuantity(Integer.parseInt(total_doses.getText().toString()));
+                medicine.setAdd_dose_quantity(Integer.parseInt(add_dose_quantity.getText().toString()));
+                medicine.setQuantityRemindAt(Integer.parseInt(refill_at_dose_num.getText().toString()));
+                medicine.setLastdoseQuantity(Integer.parseInt(last_dose_num.getText().toString()));
                 Toast.makeText(getContext(),"ssssssssssssss",Toast.LENGTH_LONG).show();
 
                if((medicine.getQuantityRemindAt()==medicine.getLastdoseQuantity())||(medicine.getQuantityRemindAt()==medicine.getTotalQuantity()))
