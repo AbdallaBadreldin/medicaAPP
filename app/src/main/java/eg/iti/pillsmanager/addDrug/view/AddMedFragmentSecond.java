@@ -197,7 +197,7 @@ public class AddMedFragmentSecond extends Fragment {
                // medicine.setFirstName("esraa");
                // medicine.setSecondName("khaled");
                 medicine.setDays(days);
-                medicine.setDose_quantity(dose_value.getSelectedItem().toString());
+                medicine.setDose_quantity(Integer.parseInt(dose_value.getSelectedItem().toString()));
                 medicine.setTimeOfMed(time_of_med.getText().toString());
                 medicine.setDateOfMed(date_of_med.getText().toString());
                 medicine.setDays_of_week(days_chosed);

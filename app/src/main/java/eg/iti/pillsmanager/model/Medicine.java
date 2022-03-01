@@ -24,20 +24,19 @@ public class Medicine implements Serializable {
     boolean active;
     String reason;
     String form;
-    String strengthValue;
+    int strengthValue;
     String strength;
     String start_date;
     String end_date;
     int totalQuantity;
     int lastdoseQuantity;
-    String dose_quantity;
+    int dose_quantity;
     int days;
-    int quantityRemindAt;
-    boolean activeRefillReminder;
     String timeOfMed;
     String dateOfMed;
-    String add_dose_quantity;
-
+    int quantityRemindAt;
+    boolean activeRefillReminder;
+    int add_dose_quantity;
 
     //User user;
     //Dose dose;
@@ -80,14 +79,18 @@ public class Medicine implements Serializable {
         this.days = days;
     }
 
-    public String getDose_quantity() {
+    public int getDose_quantity() {
         return dose_quantity;
     }
 
-    public void setDose_quantity(String dose_quantity) {
+    public void setDose_quantity(int dose_quantity) {
         this.dose_quantity = dose_quantity;
     }
 
+
+
+
+    public Medicine(@NonNull String firstName, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, String start_date,String end_date, int totalQuantity, int lastdoseQuantity,  int quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,int add_dose_quantity,int dose_quantity,int days,ArrayList<String> days_of_week) {
 
     public Medicine(@NonNull String firstName, @NonNull String Email, @NonNull String medicineName, boolean active, String reason, String form, String strengthValue, String strength, String start_date, String end_date, int totalQuantity, int lastdoseQuantity, String dose_quantity, int days, int quantityRemindAt, boolean activeRefillReminder, String timeOfMed, String dateOfMed, String add_dose_quantity, ArrayList<String> days_of_week) {
         this.firstName = firstName;
@@ -118,11 +121,11 @@ public Medicine(){}
 
 
 
-    public void setAdd_dose_quantity(String add_dose_quantity) {
+    public void setAdd_dose_quantity(int add_dose_quantity) {
         this.add_dose_quantity = add_dose_quantity;
     }
 
-    public String getAdd_dose_quantity() {
+    public int getAdd_dose_quantity() {
         return add_dose_quantity;
     }
 
@@ -185,11 +188,11 @@ public Medicine(){}
         this.form = form;
     }
 
-    public String getStrengthValue() {
+    public int getStrengthValue() {
         return strengthValue;
     }
 
-    public void setStrengthValue(String strengthValue) {
+    public void setStrengthValue(int strengthValue) {
         this.strengthValue = strengthValue;
     }
 

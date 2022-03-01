@@ -99,6 +99,7 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(getActivity().getString(R.string.name_shared_pre), signUpFullName.getText().toString());
         editor.commit();
+        System.out.println("dddddddddddddddddddddddddddddddd"+signUpFullName.getText());
         signUpFullName.setText(getString(R.string.empty));
         signUpEmail.setText(getString(R.string.empty));
         signUpPassword.setText(getString(R.string.empty));

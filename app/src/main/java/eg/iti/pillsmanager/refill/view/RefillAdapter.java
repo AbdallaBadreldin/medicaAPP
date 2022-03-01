@@ -144,8 +144,8 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
        holder.medicineIcon.setImageResource(R.drawable.ic_baseline_medical_services_24); //it should be modified by real image from database
 
         holder.txtFirst.setText(String.valueOf( medicineDetails.getMedicineName()) );
-        holder.txtSecond.setText(String.valueOf( medicineDetails.getTotalQuantity()) );
-        holder.txtThird.setText(String.valueOf( medicineDetails.getQuantityRemindAt()) );
+        holder.txtSecond.setText( medicineDetails.getTotalQuantity());
+        holder.txtThird.setText( medicineDetails.getQuantityRemindAt() );
 
 //        holder.activeDisactiveBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override

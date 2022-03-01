@@ -1,3 +1,5 @@
+
+
 package eg.iti.pillsmanager.EditDrug;
 
 import android.os.Bundle;
@@ -112,7 +114,7 @@ public class EditMedFragmentOne extends Fragment {
                 med.setMedicineName(name_med_value.getText().toString());
                 med.setForm(form_med_value.getSelectedItem().toString());
                 med.setReason(reason_med_value.getText().toString());
-                med.setStrengthValue(strength_num.getSelectedItem().toString());
+                med.setStrengthValue(Integer.parseInt(strength_num.getSelectedItem().toString()));
                 med.setStrength(strength_unit.getSelectedItem().toString());
                 med.setActive(true);
 

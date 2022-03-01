@@ -71,7 +71,7 @@ public class EditMedFragmentSecond extends Fragment {
                 Bundle bundle = getArguments();
                 Medicine medicine = bundle.getParcelable("med1");
 
-                medicine.setLastdoseQuantity( dose_value.getSelectedItem().toString());
+                medicine.setLastdoseQuantity(Integer.parseInt(dose_value.getSelectedItem().toString()) );
               //  medicine.setTimeOfMed(time_of_med.ge);
               //  medicine.setDateOfMed(date_of_med.);
                 Bundle bundle2 = new Bundle();
