@@ -15,7 +15,6 @@
     </style>
 
 
-
     <style name="Theme.PillsManager.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

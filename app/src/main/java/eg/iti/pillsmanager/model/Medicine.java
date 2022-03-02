@@ -18,7 +18,7 @@ public class Medicine implements Serializable {
     String Email;
     @NonNull
     String medicineName;
-    @NonNull
+
     String firstName;
 
     boolean active;
@@ -86,7 +86,7 @@ public class Medicine implements Serializable {
         this.dose_quantity = dose_quantity;
     }
 
-    public Medicine(@NonNull String firstName, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, String start_date,String end_date, int totalQuantity, int lastdoseQuantity,  int quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,int add_dose_quantity,int dose_quantity,int days,ArrayList<String> days_of_week) {
+    public Medicine(@NonNull String Email, String firstName, @NonNull String medicineName, boolean active, String reason, String form, int strengthValue, String strength, String start_date,String end_date, int totalQuantity, int lastdoseQuantity,  int quantityRemindAt, boolean activeRefillReminder,String timeOfMed,String dateOfMed,int add_dose_quantity,int dose_quantity,int days,ArrayList<String> days_of_week) {
      this.firstName = firstName;
         this.Email = Email;
         this.medicineName = medicineName;
