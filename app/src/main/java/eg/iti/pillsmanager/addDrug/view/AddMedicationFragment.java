@@ -88,6 +88,7 @@ public class AddMedicationFragment extends Fragment  {
                 Log.i("TAG", "onClick: "+name);
                 // med.setUser(new User(name,"farag",23,"esraa@gmail.com","123","4","female"));
                  med.setFirstName(name);
+                med.setEmail("esraakh400@gmail.com");
                 //med.setSecondName("khaled");
                 med.setMedicineName(name_med_value.getText().toString());
                 med.setForm(form_med_value.getSelectedItem().toString());

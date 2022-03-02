@@ -70,6 +70,7 @@ public class Medicine implements Serializable {
         this.days_of_week = days_of_week;
     }
 
+
     public int getDays() {
         return days;
     }
@@ -198,6 +199,8 @@ public Medicine(){}
         this.strength = strength;
     }
 
+
+
     public int getTotalQuantity() {
         return totalQuantity;
     }
@@ -210,7 +213,9 @@ public Medicine(){}
         return lastdoseQuantity;
     }
 
-    public void setLastdoseQuantity(int lastdoseQuantity) { this.lastdoseQuantity = lastdoseQuantity; }
+    public void setLastdoseQuantity(int lastdoseQuantity) {
+        this.lastdoseQuantity = lastdoseQuantity;
+    }
 
     public int getQuantityRemindAt() {
         return quantityRemindAt;

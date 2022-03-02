@@ -112,6 +112,7 @@ public class AddMedFragmentThree extends Fragment {
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
                 startActivity(intent);
+
             }
         });
         med_btn.setOnClickListener(new View.OnClickListener() {
@@ -124,11 +125,7 @@ public class AddMedFragmentThree extends Fragment {
         return view;
     }
 
-    public void showDatePickerDialog(View v) {
-        DatePickerFragment newFragment = new DatePickerFragment();
-        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
 
-    }
     public void openDatePicker() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override

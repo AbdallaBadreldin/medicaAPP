@@ -92,6 +92,10 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
 
         holder.constraintLayout.setOnClickListener(view -> {
             listener.openMedicine(medicineDetails);
+
+
+
+
         });
 
     }

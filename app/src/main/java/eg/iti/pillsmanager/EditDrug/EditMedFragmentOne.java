@@ -3,6 +3,7 @@
 package eg.iti.pillsmanager.EditDrug;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
@@ -44,13 +47,14 @@ public class EditMedFragmentOne extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_edit_med_first, container, false);
-        next_btn = view.findViewById(R.id.btn_next_add_second);
+       /* next_btn = view.findViewById(R.id.btn_next_add_second);
         //////////////////////////////////////////////////////////////
         name_of_med = view.findViewById(R.id.name_of_med);
         form_of_med = view.findViewById(R.id.form_of_med);
@@ -93,38 +97,37 @@ public class EditMedFragmentOne extends Fragment {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //get data from edit
-                 med = new Medicine();
-                bundle = new Bundle();
-                repo= Repository.getInstance(remoteSource,localSource,getContext());
-                repo.getStoredMedicines().observe(getActivity(), new Observer<List<Medicine>>() {
-                    @Override
-                    public void onChanged(List<Medicine> medicines) {
-                        med = medicines.get(0);
-                    }
-                });
-              /* SharedPreferences  sharedPreferences = getActivity().getSharedPreferences(getString(R.string.signup_shared_pre), Context.MODE_PRIVATE);
+                Medicine medicine = (Medicine) bundle.getSerializable("med");
+                Log.v("MEDICENE_FROM_EDIT_MED",medicine.getMedicineName());
 
-               String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"name is null");
-                Log.i("TAG", "onClick: "+name);
-               med.setUser(new User(name,"khaled",0,"","","",""));*/
+               // EditText value_of_name_med = view.findViewById(R.id.value_of_name_med);
+               // EditText value_of_reason_med = view.findViewById(R.id.value_of_reason_med);
 
-                med.setFirstName("esraa");
+              //  value_of_name_med.setText(medicine.getMedicineName());
+               // value_of_reason_med.setText(medicine.getReason());
 
-                med.setMedicineName(name_med_value.getText().toString());
-                med.setForm(form_med_value.getSelectedItem().toString());
-                med.setReason(reason_med_value.getText().toString());
-                med.setStrengthValue(Integer.parseInt(strength_num.getSelectedItem().toString()));
-                med.setStrength(strength_unit.getSelectedItem().toString());
-                med.setActive(true);
 
                 bundle.putSerializable("med1",med);
 
                 Edit_medActivity.showFragmentSecond(bundle);
             }
         });
-
+*/
 
         return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        Medicine medicine = (Medicine) bundle.getSerializable("med");
+        Log.v("MEDICENE_FROM_EDIT_MED",medicine.getMedicineName());
+
+        EditText value_of_name_med = view.findViewById(R.id.value_of_name_med);
+        EditText value_of_reason_med = view.findViewById(R.id.value_of_reason_med);
+
+        value_of_name_med.setText(medicine.getMedicineName());
+        value_of_reason_med.setText(medicine.getReason());
+       // medicine.getEmail();
     }
 }
