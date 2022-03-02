@@ -11,14 +11,18 @@ import android.widget.TextView;
 import eg.iti.pillsmanager.EditDrug.Edit_medActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
+import eg.iti.pillsmanager.database.LocalSource;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
+import eg.iti.pillsmanager.network.NetworkDelegate;
+import eg.iti.pillsmanager.network.RemoteSource;
 
 public class DisplayDrug extends AppCompatActivity {
     ImageView imgView,deleteBtn;
     TextView drug_name,drug_dose,reminder_val,reason_val,pills_left,when_to_refill;
     Repository repo;
-
+    RemoteSource remoteSource;
+    LocalSource localSource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,26 +36,28 @@ public class DisplayDrug extends AppCompatActivity {
         when_to_refill =findViewById(R.id.when_to_refill);
         deleteBtn =findViewById(R.id.delete_button);
 
+
         Intent intent = getIntent();
-        Medicine medicine= (Medicine) intent.getSerializableExtra("med");
+        Medicine medicine = (Medicine) intent.getSerializableExtra("med");
 
-
+        repo = Repository.getInstance(remoteSource, localSource, this);
         drug_name.setText(medicine.getMedicineName());
-        drug_dose.setText(""+medicine.getStrengthValue());
+        drug_dose.setText("" + medicine.getStrengthValue());
         reason_val.setText(medicine.getReason());
-        pills_left.setText(medicine.getLastdoseQuantity());
-        when_to_refill.setText(""+medicine.getQuantityRemindAt());
+        pills_left.setText("" + medicine.getLastdoseQuantity());
+        when_to_refill.setText("" + medicine.getQuantityRemindAt());
 
         imgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(DisplayDrug.this,Edit_medActivity.class));
 
             }
         });
         deleteBtn.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View view) {
-
+                                             repo.deleteMedicine(medicine);
                                          }
                                      }
         );

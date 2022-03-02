@@ -21,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
+import eg.iti.pillsmanager.EditDrug.Edit_medActivity;
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
@@ -110,38 +111,19 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-//        binding = null;
     }
 
     @Override
     public void openAlarms(Medicine medicine) {
-        //startActivity(in alarms);
-
-        //start activity or fragment or what ever you want to add doses      //thankx
-
-//        lma ydos 3la el alarm yft7
-        /*
-        in three ways
-                1 in add medication
-                2 create new activity
-            3 use old fragment*/
-
-
-
-        
-        
-        
-        
-        /////////   m4 mogpda enty aly htwGDEHA
-//        or WHATEVER YOU WANT
-//        JUST PLEASE DO IT IN TIME
-        //todo esraa    //alarm shape
     }
 
     @Override
     public void openEdit(Medicine medicine) {
-        //startactivity(intent edit);
         //todo esraa     //   pen -- edit shape
+        Intent intent = new Intent(getActivity(),  Edit_medActivity.class);
+        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+        intent.putExtra("med",medicine);
+        startActivity(intent);
 
 
 

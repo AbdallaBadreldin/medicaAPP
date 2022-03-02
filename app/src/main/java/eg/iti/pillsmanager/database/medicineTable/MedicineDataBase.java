@@ -2,6 +2,7 @@ package eg.iti.pillsmanager.database.medicineTable;
 
 
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -19,7 +20,7 @@ import eg.iti.pillsmanager.model.Medicine;
 
 
 //table of users modifiy it if we will modifiy UserDao so as results we will modifit localSource for sure
-@Database(entities = {Medicine.class}, version = 6)
+@Database(entities = {Medicine.class}, version = 7)
 @TypeConverters({Converters.class})
 public abstract class MedicineDataBase extends RoomDatabase {
 
@@ -28,8 +29,9 @@ public abstract class MedicineDataBase extends RoomDatabase {
 
     public static synchronized MedicineDataBase getMedicineDataBaseInstance(Context context) {
         if (medicineDataBase == null) {
-            medicineDataBase = Room.databaseBuilder(context.getApplicationContext(), MedicineDataBase.class, "medicine")
-            .build();
+            medicineDataBase = Room.databaseBuilder(context.getApplicationContext(), MedicineDataBase.class, "medicine").allowMainThreadQueries().build();
+
+
         }
         return medicineDataBase;
     }

@@ -18,8 +18,6 @@ import eg.iti.pillsmanager.model.User;
 //here we add all Daos as we will create new daos
 public class ConcreteLocalClass implements LocalSource {
     private static ConcreteLocalClass concreteLocalClass = null;
-
-
     private final UserDao userDao;
     private final LiveData<List<User>> storedUsers;
 
