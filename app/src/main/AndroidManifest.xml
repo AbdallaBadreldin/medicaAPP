@@ -26,7 +26,7 @@
             android:name=".auth.singnIn.view.SignInActivity"
             android:exported="false"></activity> <!-- convert this with main activity -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.PillsManager.NoActionBar">
             <intent-filter>
@@ -42,7 +42,7 @@
             android:name=".addDrug.view.AddMedActivity"
             android:exported="false" /> <!-- we changed this with splash screen -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="false"
             android:theme="@style/Theme.PillsManager.NoActionBar"></activity>
     </application>

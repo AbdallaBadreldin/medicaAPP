@@ -32,6 +32,7 @@ public class ConcreteLocalClass implements LocalSource {
 
     private final DoseDao doseDao;
     private final LiveData<List<Dose>> storedDose;
+    private final LiveData<List<Dose>> storedDoseByMedicine;
     //for future use
 //    private final AlarmDao movieDao;
 //    private final MedicineDao movieDao;
@@ -54,17 +55,17 @@ public class ConcreteLocalClass implements LocalSource {
                 storedActiveMedicineNeedsRefill=medicineDao.getActiveMedicineNeedsRefill();
             }
         }).start();
-
         storedInactiveMedicineNeedsRefill =medicineDao.getInactiveMedicineNeedsRefill();
         storedEmptyActiveMedicine = medicineDao.getEmptyActiveMedicine();
         storedEmptyInactiveMedicine = medicineDao.getEmptyInactiveMedicine();
+        storedActiveMedicine = medicineDao.getAllActiveMedicine();
+        storedInactiveMedicine = medicineDao.getAllInactiveMedicine();
 
         //dose things
         DoseDataBase DoseDataBase = eg.iti.pillsmanager.database.DoseDao.DoseDataBase.getDoseDataBaseInstance(context.getApplicationContext());
         doseDao = DoseDataBase.getDoseDao();
         storedDose =doseDao.getAllDoses();
-        storedActiveMedicine = medicineDao.getAllActiveMedicine();
-        storedInactiveMedicine = medicineDao.getAllInactiveMedicine();
+        storedDoseByMedicine =doseDao.getAllDoses();
 
     }
 
@@ -75,7 +76,6 @@ public class ConcreteLocalClass implements LocalSource {
         }
         return concreteLocalClass;
     }
-
 
     // the more daos we will add the more methods we will need
    //once we edited old daos we will mopdifiy localSource then we will modifiy this
@@ -196,6 +196,11 @@ public class ConcreteLocalClass implements LocalSource {
     @Override
     public LiveData<List<Dose>> getAllDoses() {
         return storedDose;
+    }
+
+    @Override
+    public LiveData<List<Dose>> getDosesByMedicine(String email, String user, String medicine) {
+        return storedDoseByMedicine;
     }
 
     @Override

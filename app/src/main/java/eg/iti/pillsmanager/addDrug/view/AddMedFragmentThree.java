@@ -5,9 +5,6 @@ import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.SplashActivity;
 import eg.iti.pillsmanager.database.LocalSource;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
@@ -92,13 +90,14 @@ public class AddMedFragmentThree extends Fragment {
                 medicine.setAdd_dose_quantity(Integer.parseInt(add_dose_quantity.getText().toString()));
                 medicine.setQuantityRemindAt(Integer.parseInt(refill_at_dose_num.getText().toString()));
                 medicine.setLastdoseQuantity(Integer.parseInt(last_dose_num.getText().toString()));
-                Toast.makeText(getContext(),"ssssssssssssss",Toast.LENGTH_LONG).show();
+                medicine.setEmail("e");
+                medicine.setFirstName("e");
+                Toast.makeText(getContext(),"add succeed",Toast.LENGTH_LONG).show();
 
                if((medicine.getQuantityRemindAt()==medicine.getLastdoseQuantity())||(medicine.getQuantityRemindAt()==medicine.getTotalQuantity()))
                {
                    medicine.setActiveRefillReminder(true);
                }
-
 
                 repo= Repository.getInstance(remoteSource,localSource,getContext());
                 repo.insertMedicine(medicine);

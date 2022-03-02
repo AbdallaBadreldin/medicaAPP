@@ -1,7 +1,6 @@
 package eg.iti.pillsmanager.medicinces.view;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,9 +91,6 @@ public class ActiveMedicineAdapter extends RecyclerView.Adapter<ActiveMedicineAd
 
         holder.constraintLayout.setOnClickListener(view -> {
             listener.openMedicine(medicineDetails);
-
-
-
 
         });
 

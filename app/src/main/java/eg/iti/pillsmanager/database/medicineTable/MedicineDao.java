@@ -10,9 +10,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.Medicine;
-import eg.iti.pillsmanager.model.User;
 
 //user dao maybe we will need to edit it
 @Dao
@@ -38,7 +36,6 @@ public interface MedicineDao {
 
     @Query("Select * From medicine WHERE activeRefillReminder LIKE 0 AND totalQuantity==0")
     LiveData<List<Medicine>> getEmptyInactiveMedicine();
-
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertMedicine(Medicine medicine);

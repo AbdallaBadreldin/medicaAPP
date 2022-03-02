@@ -10,14 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
 import eg.iti.pillsmanager.R;
 
 public class RefillDialogFragment  extends DialogFragment {
 
     private static final String TAG = "DialogFragment";
-
 
     public RefillDialogInterface mOnInputListener;
 
@@ -56,9 +54,7 @@ public class RefillDialogFragment  extends DialogFragment {
                                 = remindAtQuantityInput.getText().toString().trim();
 
                         if ( !(totalQuantityInputString.isEmpty()||remindAtQuantityInputString.isEmpty()) ) {
-
                             if(mOnInputListener instanceof RefillFragment){
-
                                 mOnInputListener.sendTotalQuantity(Integer.parseInt(totalQuantityInputString));
                                 mOnInputListener.sendRemindAtQuantity(Integer.parseInt(remindAtQuantityInputString));
                         }
@@ -70,7 +66,6 @@ public class RefillDialogFragment  extends DialogFragment {
         return view;
     }
 
-    //todo
     @Override public void onAttach(Context context)
     {
         super.onAttach(context);

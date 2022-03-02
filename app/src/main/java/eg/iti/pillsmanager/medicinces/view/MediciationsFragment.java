@@ -20,12 +20,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import eg.iti.pillsmanager.EditDrug.Edit_medActivity;
-import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.database.ConcreteLocalClass;
-import eg.iti.pillsmanager.dosemanager.view.DoseManagerActivity;
 import eg.iti.pillsmanager.displaydrug.view.DisplayDrug;
+import eg.iti.pillsmanager.dosemanager.view.DoseManagerActivity;
 import eg.iti.pillsmanager.medicinces.presenter.MedicinePresenter;
 import eg.iti.pillsmanager.medicinces.presenter.MedicinePresenterInterface;
 import eg.iti.pillsmanager.model.Medicine;
@@ -116,57 +115,18 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 
     @Override
     public void openAlarms(Medicine medicine) {
-        //startActivity(in alarms);
-
-        //start activity or fragment or what ever you want to add doses      //thankx
-
-//        lma ydos 3la el alarm yft7
-        /*
-        in three ways
-                1 in add medication
-                2 create new activity
-            3 use old fragment*/
-
-
-
-        
-        
-        
-        
-        /////////   m4 mogpda enty aly htwGDEHA
-//        or WHATEVER YOU WANT
-//        JUST PLEASE DO IT IN TIME
-        //todo esraa    //alarm shape
-
-
-        Intent intent = new Intent(getActivity(), DoseManagerActivity.class);
-        startActivity(intent);
+        showDoseManager(medicine);
     }
 
     @Override
     public void openEdit(Medicine medicine) {
-        //todo esraa     //   pen -- edit shape
-        Intent intent = new Intent(getActivity(),  Edit_medActivity.class);
-        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
-        intent.putExtra("med",medicine);
-        startActivity(intent);
 
-
-
+        showEditManager(medicine);
     }
 
     @Override
     public void openMedicine(Medicine medicine) {
-
-        Intent intent = new Intent(getActivity(),  DisplayDrug.class);
-        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
-        intent.putExtra("med",medicine);
-        startActivity(intent);
-
-
-
-
-
+        showMedicineDetails(medicine);
     }
 
     @Override
@@ -179,6 +139,29 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
     public void showInactiveMedicines(List<Medicine> medicines) {
         inactiveActiveMedicineAdapter.setInactiveMedicinesList(medicines);
         inactiveActiveMedicineAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void showDoseManager(Medicine medicine) {
+        Intent intent = new Intent(getActivity(), DoseManagerActivity.class);
+        intent.putExtra(getActivity().getString(R.string.dose_manager_pass_data_id),medicine);
+        startActivity(intent);
+    }
+
+    @Override
+    public void showEditManager(Medicine medicine) {
+        Intent intent = new Intent(getActivity(),  Edit_medActivity.class);
+        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+        intent.putExtra("med",medicine);
+        startActivity(intent);
+    }
+
+    @Override
+    public void showMedicineDetails(Medicine medicine) {
+        Intent intent = new Intent(getActivity(),  DisplayDrug.class);
+        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+        intent.putExtra("med",medicine);
+        startActivity(intent);
     }
 
 }

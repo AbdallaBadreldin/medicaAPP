@@ -16,8 +16,6 @@ we will modify localSource
  */
 public interface LocalSource {
 
-
-
     //interface for user table
     LiveData<List<User>>  getAllUsers();
     void insertUser(User user);
@@ -25,9 +23,9 @@ public interface LocalSource {
     void updateUser(User user);
 
 
-
     //interface for dose table
     LiveData<List<Dose>> getAllDoses();
+    LiveData<List<Dose>> getDosesByMedicine(String email , String user ,String medicine);
     void insertDose(Dose dose);
     void deleteDose(Dose dose);
     void updateDose(Dose dose);

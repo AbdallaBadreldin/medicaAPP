@@ -15,6 +15,8 @@ import eg.iti.pillsmanager.model.Dose;
 public interface DoseDao {
     @Query("Select * From Dose")
     LiveData<List<Dose>> getAllDoses();
+    @Query("Select * From Dose WHERE medicine = :medicine AND email = :email AND user = :user")
+    LiveData<List<Dose>> getDoseByMedicine(String email , String user , String medicine);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertDose(Dose dose);

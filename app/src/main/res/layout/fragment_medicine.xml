@@ -54,7 +54,6 @@
         android:id="@+id/display_drug"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Display"
-        />
+        android:text="Display" />
 
 </LinearLayout>
