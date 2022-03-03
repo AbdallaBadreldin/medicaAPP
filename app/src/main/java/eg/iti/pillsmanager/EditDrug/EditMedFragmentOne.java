@@ -2,6 +2,8 @@
 
 package eg.iti.pillsmanager.EditDrug;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,12 +39,14 @@ public class EditMedFragmentOne extends Fragment {
     TextView name_of_med,form_of_med,reason_of_med,strength_of_med;
     EditText name_med_value,reason_med_value;
     Spinner strength_num,strength_unit,form_med_value;
-   Button next_btn;
-   Bundle bundle;
+    Button next_btn;
+    Bundle bundle;
+    Medicine medicine;
     RepositoryInterface repo;
     RemoteSource remoteSource;
-      Medicine med;
+    Medicine med;
     LocalSource localSource;
+    SharedPreferences  sharedPreferences;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +58,14 @@ public class EditMedFragmentOne extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_edit_med_first, container, false);
-       /* next_btn = view.findViewById(R.id.btn_next_add_second);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        next_btn = view.findViewById(R.id.btn_next_add_second);
         //////////////////////////////////////////////////////////////
         name_of_med = view.findViewById(R.id.name_of_med);
         form_of_med = view.findViewById(R.id.form_of_med);
@@ -74,8 +85,8 @@ public class EditMedFragmentOne extends Fragment {
                 android.R.layout.simple_spinner_item, arraySpinner);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         strength_num.setAdapter(adapter);
-        TextView textView = (TextView)strength_num.getSelectedView();
-        String result = textView.getText().toString();
+        /*TextView textView = (TextView)strength_num.getSelectedView();
+        String result = textView.getText().toString();*/
         /////////////////////////////////////
         strength_unit=view.findViewById(R.id.med_concentration_symbol);
         String[] arraySpinner2 = new String[] {
@@ -94,40 +105,50 @@ public class EditMedFragmentOne extends Fragment {
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         form_med_value.setAdapter(adapter3);
 
+         medicine = (Medicine) bundle.getSerializable("med"); /////////////////////////////
+
+        Log.v("MEDICENE_FROM_EDIT_MED",medicine.getMedicineName());
+        medicine.getFirstName();
+        medicine.getEmail();
+        name_med_value.setVisibility(View.INVISIBLE);
+        //name_med_value.setText(medicine.getMedicineName());
+        reason_med_value.setText(medicine.getReason());
+        medicine.setForm(form_med_value.getSelectedItem().toString());
+        medicine.setStrengthValue(Integer.parseInt(strength_num.getSelectedItem().toString()));
+        medicine.getFirstName();
+        medicine.getEmail();
+        medicine.setStrength(strength_unit.getSelectedItem().toString());
+        medicine.setActive(true);
+
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Medicine medicine = (Medicine) bundle.getSerializable("med");
-                Log.v("MEDICENE_FROM_EDIT_MED",medicine.getMedicineName());
-
-               // EditText value_of_name_med = view.findViewById(R.id.value_of_name_med);
-               // EditText value_of_reason_med = view.findViewById(R.id.value_of_reason_med);
-
-              //  value_of_name_med.setText(medicine.getMedicineName());
-               // value_of_reason_med.setText(medicine.getReason());
-
-
-                bundle.putSerializable("med1",med);
-
-                Edit_medActivity.showFragmentSecond(bundle);
+            Bundle bun = new Bundle();
+           bun.putSerializable("med",medicine);      // new code
+                medicine.setReason(reason_med_value.getText().toString());
+                //medicine.setMedicineName(name_med_value.getText().toString());
+                bundle.putSerializable("med",medicine);      // older code
+                Edit_medActivity.showFragmentSecond(bun);
             }
         });
-*/
 
-        return view;
-    }
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        Medicine medicine = (Medicine) bundle.getSerializable("med");
-        Log.v("MEDICENE_FROM_EDIT_MED",medicine.getMedicineName());
 
-        EditText value_of_name_med = view.findViewById(R.id.value_of_name_med);
-        EditText value_of_reason_med = view.findViewById(R.id.value_of_reason_med);
 
-        value_of_name_med.setText(medicine.getMedicineName());
-        value_of_reason_med.setText(medicine.getReason());
-       // medicine.getEmail();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

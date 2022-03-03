@@ -32,7 +32,8 @@
             android:layout_weight="1"
             android:hint="Start Date"
             android:inputType="date"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="#757575" />
         <!--        android:onClick="showDatePickerDialog"-->
 
         <EditText
@@ -95,7 +96,7 @@
             android:hint="additional dose"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-             />
+            />
 
 
     </LinearLayout>
