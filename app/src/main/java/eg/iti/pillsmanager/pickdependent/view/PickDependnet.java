@@ -1,21 +1,22 @@
 package eg.iti.pillsmanager.pickdependent.view;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.database.ConcreteLocalClass;
-import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
 import eg.iti.pillsmanager.model.User;
 import eg.iti.pillsmanager.network.MedicineClient;
@@ -65,7 +66,15 @@ public class PickDependnet extends Fragment implements PickDependentInterface ,O
 
     @Override
     public void pickUser(User user) {
-
+//        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
+//        sharedPreferences.getString("email",null)==null
+      SharedPreferences  sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("user", user.getFirstName());
+        editor.apply();
+        Toast.makeText(getContext(), getString(R.string.picked), Toast.LENGTH_SHORT).show();
+        getParentFragmentManager().popBackStack();
+        
     }
 
     @Override

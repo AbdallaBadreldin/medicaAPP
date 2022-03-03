@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import eg.iti.pillsmanager.auth.singnIn.view.SignInActivity;
@@ -33,5 +32,6 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
             }
         }, 500);
+    finish();
     }
 }

@@ -79,10 +79,10 @@ public class AddMedicationFragment extends Fragment  {
                med.setUser(new User(name,"khaled",0,"","","",""));*/
 
                 sharedPreferences = getActivity().getSharedPreferences(getString(R.string.signup_shared_pre), Context.MODE_PRIVATE);
-                String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"e");
+                String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"default");
 
                 SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
-               String mail= sharedPreferences.getString("email","e");
+               String mail= sharedPreferences.getString("email","default");
 
                 // med.setUser(new User(name,"farag",23,"esraa@gmail.com","123","4","female"));
                  med.setFirstName(name);
