@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import eg.iti.pillsmanager.EditDrug.Edit_medActivity;
@@ -100,11 +99,11 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
         medicinePresenterInterface.getInactiveMedication(this);
 
         //shared pereference  String firstName =
-        medicinePresenterInterface.addMedicineToDataBase(new Medicine("email.com","boda1","cong",true,"test porposel","form",5,"HIFIVE","6564688","684646",565,57,564,true,"64465546","safdsafasdf",5,45,5,new ArrayList<String>()));
-        medicinePresenterInterface.addMedicineToDataBase(new Medicine("emsadail.com","boda2","congestal",false,"test porposel","form",5,"HIFIVE","6564688","684646",565,57,564,true,"64465546","safdsafasdf",5,45,5,new ArrayList<String>()));
-        medicinePresenterInterface.addMedicineToDataBase(new Medicine("email.com","boda3","cong",false,"test porposel","form",5,"HIFour","6564688","684646",565,57,564,true,"64465546","safdsafasdf",5,45,5,new ArrayList<String>()));
-//        medicinePresenterInterface.addMedicineToDataBase(new Medicine("boda","badr","revo",false ,"for testing only","pills",500,"power",2555,65,554,65,true));
-
+//        medicinePresenterInterface.addMedicineToDataBase(new Medicine("email.com","boda1","cong",true,"test porposel","form",5,"HIFIVE","6564688","684646",565,57,564,true,"64465546","safdsafasdf",5,45,5,new ArrayList<String>()));
+//        medicinePresenterInterface.addMedicineToDataBase(new Medicine("emsadail.com","boda2","congestal",false,"test porposel","form",5,"HIFIVE","6564688","684646",565,57,564,true,"64465546","safdsafasdf",5,45,5,new ArrayList<String>()));
+//        medicinePresenterInterface.addMedicineToDataBase(new Medicine("email.com","boda3","cong",false,"test porposel","form",5,"HIFour","6564688","684646",565,57,564,true,"64465546","safdsafasdf",5,45,5,new ArrayList<String>()));
+////        medicinePresenterInterface.addMedicineToDataBase(new Medicine("boda","badr","revo",false ,"for testing only","pills",500,"power",2555,65,554,65,true));
+//
         return in;
     }
 
@@ -120,7 +119,6 @@ public class MediciationsFragment extends Fragment implements AllMedicineViewInt
 
     @Override
     public void openEdit(Medicine medicine) {
-
         showEditManager(medicine);
     }
 

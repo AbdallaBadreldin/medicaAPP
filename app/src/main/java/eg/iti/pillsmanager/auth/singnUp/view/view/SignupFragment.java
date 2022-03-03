@@ -1,10 +1,12 @@
 package eg.iti.pillsmanager.auth.singnUp.view.view;
 
+import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
+
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,12 +17,12 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.model.User;
+import eg.iti.pillsmanager.auth.AuthAsyncCallBackI;
 import eg.iti.pillsmanager.auth.singnIn.view.SignInActivity;
 import eg.iti.pillsmanager.auth.singnUp.presenter.SignUpPresenter;
+import eg.iti.pillsmanager.model.User;
 
 
 public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
@@ -95,16 +97,19 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
 
     @Override
     public void onSuccess(String actionType) {
-
+        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(getActivity().getString(R.string.name_shared_pre), signUpFullName.getText().toString());
-        editor.commit();
-        System.out.println("dddddddddddddddddddddddddddddddd"+signUpFullName.getText());
+        editor.putString("email",signUpEmail.getText().toString());
+        editor.apply();
+//        System.out.println("dddddddddddddddddddddddddddddddd"+signUpFullName.getText());
         signUpFullName.setText(getString(R.string.empty));
         signUpEmail.setText(getString(R.string.empty));
         signUpPassword.setText(getString(R.string.empty));
         signUpConfirmPassword.setText(getString(R.string.empty));
-        startActivity(new Intent(getActivity(),  MainActivity.class));
+
+
+        startActivity(new Intent(getActivity(),  MainActivity.class).addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
 
     @Override

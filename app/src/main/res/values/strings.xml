@@ -22,9 +22,9 @@
     <string name="drug_dose_id">add drug dose in @+id/drug_dose</string>
     <string name="refill">refill</string>
     <string name="mediciations">mediciations</string>
-    <string name="name_of_medicine">Name Of Medicine</string>
+    <string name="name_of_medicine">Name Of Medicine \t</string>
     <string name="form_of_med">Form Of Med</string>
-    <string name="reason_of_taking_medecine">Reason_of_Taking_Medecine</string>
+    <string name="reason_of_taking_medecine">Reason of Taking Medecine</string>
     <string name="alarm_name">Name_of_alarm</string>
     <string name="add">Add</string>
 
@@ -42,7 +42,7 @@
     <string name="male">male</string>
     <string name="female">female</string>
     <string name="other">other</string>
-    <string name="done">done</string>
+    <string name="done">Done</string>
     <string name="todo">TODO</string>
     <string name="edit_dependent">edit dependent</string>
     <string name="empty" />
@@ -88,11 +88,11 @@
     <string name="notification_description">Hello, you got medicines needs refill please give attention</string>
     <string name="name_shared_pre">MyName</string>
     <string name="signup_shared_pre">MyPrefs</string>
-    <string name="total_quantity">total quantity you have of this medicine</string>
+    <string name="total_quantity">total quantity of medicine \t</string>
     <string name="enter_total_quantity">enter total quantity you have</string>
-    <string name="reminder_at">remind me at</string>
+    <string name="reminder_at">remind me at \t</string>
     <string name="enter_remind_at">enter quantity to remind at</string>
-    <string name="cancel">cancel</string>
+    <string name="cancel">Cancel</string>
     <string name="sorry">"sorry "</string>
     <string name="remind_at_quantity_cannot_be_zero">remind at quantity can\'t be 0</string>
     <string name="we_will_remind_you">we will remind you every 15 mins</string>
@@ -108,4 +108,11 @@
     <string name="enter_month_and_day">enter day and month</string>
     <string name="dose_manager_pass_data_id" translatable="false">manageMedicine</string>
     <string name="dose_time">dose time \t</string>
+    <string name="quantity">quantity \t</string>
+    <string name="reminderer">remind \t</string>
+    <string name="enter_both_fields">Enter both quantities</string>
+    <string name="error_call_developer">unexpected error please contact with app owner</string>
+    <string name="exit">Exit</string>
+    <string name="are_yuo_sure_you_want_to_exit">Are you sure you want to close this activity?</string>
+    <string name="yes">Yes</string>
 </resources>

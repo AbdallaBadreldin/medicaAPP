@@ -1,7 +1,6 @@
 package eg.iti.pillsmanager.refill.view;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,34 +65,9 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
             txtFirst=cardView.findViewById(R.id.refill_first_row_text);
             txtSecond=cardView.findViewById(R.id.refill_second_row_text);
             txtThird=cardView.findViewById(R.id.dose_third_row_text);
-//            activeDisactiveBox.setOnClickListener(this);
-//            constraintLayout.setOnClickListener(this);
 
-//            activeDisactiveBox.setOnClickListener(view -> {
-//                onRefillClickListenerInterface.changeRefillReminderStatus(medicineDetails,holder.activeDisactiveBox);
-//            });
-//
-//            constraintLayout.setOnClickListener(view -> {
-//                onRefillClickListenerInterface.refillMedicine(medicineDetails);
-//            });
+
         }
-
-//    @Override
-//    public void onClick(View view) {
-//
-//    }
-
-//        @Override
-//        public void onClick(View view) {
-//            if (view.getId() == activeDisactiveBox.getId()) {
-//                onRefillClickListenerInterface
-//            }
-//            if (view.getId() == constraintLayout.getId()) {
-//
-//            }
-//
-//        }
-
     }
 
     @NonNull
@@ -106,26 +80,8 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Log.i("Tag", "onBindViewHolder: " + position);
         medicineDetails =activeMedicinesList.get(position);
         applyChanges(holder, medicineDetails);
-
-//            holder.activeDisactiveBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//                @Override
-//                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                    onRefillClickListenerInterface.changeRefillReminderStatus(medicineDetails);
-
-//                }
-//            });
-
-//                    view -> {
-//                onRefillClickListenerInterface.changeRefillReminderStatus(this.medicineDetails);
-//                Toast.makeText(view.getContext(), String.valueOf(position), Toast.LENGTH_SHORT).show();
-//            });
-//
-//            holder.constraintLayout.setOnClickListener(view -> {
-//                onRefillClickListenerInterface.refillMedicine(this.medicineDetails);
-//            });
 
     }
 
@@ -140,15 +96,8 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
        holder.medicineIcon.setImageResource(R.drawable.ic_baseline_medical_services_24); //it should be modified by real image from database
 
         holder.txtFirst.setText(String.valueOf( medicineDetails.getMedicineName() ));
-        holder.txtSecond.setText(String.valueOf(  medicineDetails.getTotalQuantity() ));
-        holder.txtThird.setText(String.valueOf(  medicineDetails.getQuantityRemindAt() ));
-
-//        holder.activeDisactiveBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//          onRefillClickListenerInterface.changeRefillReminderStatus(medicineDetails);
-//            }
-//        });
+        holder.txtSecond.setText(String.valueOf(  context.getString(R.string.quantity)+medicineDetails.getTotalQuantity() ));
+        holder.txtThird.setText(String.valueOf( context.getString(R.string.reminderer)+ medicineDetails.getQuantityRemindAt() ));
 
 
         holder.activeDisactiveBox.setOnClickListener(new View.OnClickListener() {
@@ -165,8 +114,6 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
             }
         });
 }
-
-
 
     @Override
     public int getItemCount() {

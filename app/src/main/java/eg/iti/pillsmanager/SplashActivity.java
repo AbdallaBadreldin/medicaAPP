@@ -2,8 +2,10 @@ package eg.iti.pillsmanager;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,8 +26,15 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashActivity.this, SignInActivity.class));
+               SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
+//                SharedPreferences sharedPreferences = getSharedPreferences("sh",MODE_PRIVATE);
+//               String temp = ;
+//                Log.i("TAG", temp);
+                if(sharedPreferences.getString("email",null)==null)
+                    startActivity(new Intent(SplashActivity.this, SignInActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
+                    else
+                startActivity(new Intent(SplashActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
             }
-        }, 5000);
+        }, 500);
     }
 }

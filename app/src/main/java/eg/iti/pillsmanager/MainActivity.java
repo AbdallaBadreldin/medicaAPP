@@ -2,15 +2,15 @@ package eg.iti.pillsmanager;
 
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -18,14 +18,12 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Calendar;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;
-import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 import eg.iti.pillsmanager.databinding.ActivityMainBinding;
 
 
@@ -129,6 +127,24 @@ public class MainActivity extends AppCompatActivity {
     public View onCreateView(@Nullable View parent, @NonNull String name, @NonNull Context context, @NonNull AttributeSet attrs) {
         return super.onCreateView(parent, name, context, attrs);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(getApplicationContext())
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle(    getApplicationContext().getString(R.string.exit))
+                .setMessage(getApplicationContext().getString(R.string.are_yuo_sure_you_want_to_exit))
+                .setPositiveButton(getApplicationContext().getString(R.string.yes), new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+
+                })
+                .setNegativeButton(getApplicationContext().getString(R.string.cancel), null)
+                .show();
     }
 }
 
