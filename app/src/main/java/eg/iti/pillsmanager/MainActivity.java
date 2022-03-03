@@ -2,15 +2,16 @@ package eg.iti.pillsmanager;
 
 
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
@@ -87,9 +88,17 @@ public class MainActivity extends AppCompatActivity {
         headerView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+//                Toast.makeText(MainActivity.this, "sfdsf", Toast.LENGTH_SHORT).show();
             }
         });
+
+        TextView userName= headerView.findViewById(R.id.userName);
+        TextView editName= headerView.findViewById(R.id.editUserName);
+
+        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+
+        editName.setText(getString(R.string.edit_dependent));
+        userName.setText(sharedPreferences.getString("user",getString(R.string.empty)));
 
 //        View headerViewLogout=  navigationView.getHeaderView(4);
 //        headerViewLogout.setOnClickListener(new View.OnClickListener() {
@@ -131,20 +140,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(getApplicationContext())
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle(    getApplicationContext().getString(R.string.exit))
-                .setMessage(getApplicationContext().getString(R.string.are_yuo_sure_you_want_to_exit))
-                .setPositiveButton(getApplicationContext().getString(R.string.yes), new DialogInterface.OnClickListener()
-                {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
-
-                })
-                .setNegativeButton(getApplicationContext().getString(R.string.cancel), null)
-                .show();
+                       finish();
     }
 }
 

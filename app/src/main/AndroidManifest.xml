@@ -54,6 +54,7 @@
             android:exported="false"
             android:screenOrientation="portrait" /> <!-- we changed this with splash screen -->
         <activity
+            android:noHistory = "true"
             android:name=".MainActivity"
             android:configChanges="orientation"
             android:exported="false"

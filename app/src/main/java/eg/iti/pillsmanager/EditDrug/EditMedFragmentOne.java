@@ -2,14 +2,10 @@
 
 package eg.iti.pillsmanager.EditDrug;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,19 +15,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.Observer;
-
-import java.util.List;
 
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
-import eg.iti.pillsmanager.database.LocalSource;
-import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.Medicine;
-import eg.iti.pillsmanager.model.Repository;
-import eg.iti.pillsmanager.model.RepositoryInterface;
-import eg.iti.pillsmanager.network.RemoteSource;
 
 
 public class EditMedFragmentOne extends Fragment {
@@ -42,17 +28,6 @@ public class EditMedFragmentOne extends Fragment {
     Button next_btn;
     Bundle bundle;
     Medicine medicine;
-    RepositoryInterface repo;
-    RemoteSource remoteSource;
-    Medicine med;
-    LocalSource localSource;
-    SharedPreferences  sharedPreferences;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -107,7 +82,6 @@ public class EditMedFragmentOne extends Fragment {
 
          medicine = (Medicine) bundle.getSerializable("med"); /////////////////////////////
 
-        Log.v("MEDICENE_FROM_EDIT_MED",medicine.getMedicineName());
         medicine.getFirstName();
         medicine.getEmail();
         name_med_value.setVisibility(View.INVISIBLE);
@@ -126,8 +100,6 @@ public class EditMedFragmentOne extends Fragment {
             Bundle bun = new Bundle();
            bun.putSerializable("med",medicine);      // new code
                 medicine.setReason(reason_med_value.getText().toString());
-                //medicine.setMedicineName(name_med_value.getText().toString());
-                bundle.putSerializable("med",medicine);      // older code
                 Edit_medActivity.showFragmentSecond(bun);
             }
         });
