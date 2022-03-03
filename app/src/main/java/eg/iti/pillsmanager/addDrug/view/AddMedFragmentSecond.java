@@ -193,7 +193,7 @@ public class AddMedFragmentSecond extends Fragment {
 
 
                 Bundle bundle = getArguments();
-                Medicine medicine = (Medicine) bundle.getSerializable("med1");
+                Medicine medicine = (Medicine) bundle.getSerializable("med");
                // medicine.setFirstName("esraa");
                // medicine.setSecondName("khaled");
                 medicine.setDays(days);
@@ -202,9 +202,9 @@ public class AddMedFragmentSecond extends Fragment {
                 medicine.setDateOfMed(date_of_med.getText().toString());
                 medicine.setDays_of_week(days_chosed);
                 Bundle bundle2 = new Bundle();
-                bundle2.putSerializable("med2", medicine);
-                Log.d("myname", medicine.getMedicineName());
-                System.out.println("sssssssssssssssssssssssssssssssssssssss" + medicine.getMedicineName());
+                bundle2.putSerializable("med", medicine);
+//                Log.d("myname", medicine.getMedicineName());
+//                System.out.println("sssssssssssssssssssssssssssssssssssssss" + medicine.getMedicineName());
                 AddMedActivity.showFragmentThree(bundle2);
             }
         });
