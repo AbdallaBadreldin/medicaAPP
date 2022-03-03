@@ -24,9 +24,6 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
 
     Medicine medicineDetails;
 
-    ImageView medicineIcon;
-    ImageView warningIcon;
-
     public RefillAdapter(Context context,OnRefillClickListenerInterface onRefillClickListenerInterface)
     {
         activeMedicinesList = new ArrayList<>();
@@ -65,7 +62,6 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
             txtFirst=cardView.findViewById(R.id.refill_first_row_text);
             txtSecond=cardView.findViewById(R.id.refill_second_row_text);
             txtThird=cardView.findViewById(R.id.dose_third_row_text);
-
 
         }
     }

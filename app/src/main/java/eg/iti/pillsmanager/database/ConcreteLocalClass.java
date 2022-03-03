@@ -1,7 +1,6 @@
 package eg.iti.pillsmanager.database;
 
 import android.content.Context;
-import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
@@ -28,10 +27,15 @@ public class ConcreteLocalClass implements LocalSource {
     private final LiveData<List<Medicine>> storedMedicine;
     private final LiveData<List<Medicine>> storedActiveMedicine;
     private final LiveData<List<Medicine>> storedInactiveMedicine;
+
+    private  LiveData<List<Medicine>> storedAllActiveMedicineByEmail;
+    private  LiveData<List<Medicine>> storedAllInactiveMedicineByEmail;
+
     private List<Medicine> storedActiveMedicineNeedsRefill;
     private final LiveData<List<Medicine>> storedInactiveMedicineNeedsRefill;
     private final LiveData<List<Medicine>> storedEmptyActiveMedicine;
     private final LiveData<List<Medicine>> storedEmptyInactiveMedicine;
+
 
     private final DoseDao doseDao;
     private final LiveData<List<Dose>> storedDose;
@@ -66,12 +70,13 @@ public class ConcreteLocalClass implements LocalSource {
         storedEmptyInactiveMedicine = medicineDao.getEmptyInactiveMedicine();
         storedActiveMedicine = medicineDao.getAllActiveMedicine();
         storedInactiveMedicine = medicineDao.getAllInactiveMedicine();
+        storedAllActiveMedicineByEmail=medicineDao.getAllActiveMedicineByEmail(email,user);
+        storedAllInactiveMedicineByEmail=medicineDao.getAllInactiveMedicineByEmail(email,user);
 
         //dose things
         DoseDataBase DoseDataBase = eg.iti.pillsmanager.database.DoseDao.DoseDataBase.getDoseDataBaseInstance(context.getApplicationContext());
         doseDao = DoseDataBase.getDoseDao();
         storedDose =doseDao.getAllDoses();
-        Log.i("inside instance",email);
         storedDoseByMedicine =doseDao.getDoseByMedicine(email,medicine);
 
     }
@@ -166,6 +171,35 @@ public class ConcreteLocalClass implements LocalSource {
     public LiveData<List<Medicine>> getAllInactiveMedicine() {
         return storedInactiveMedicine;
     }
+
+    @Override
+    public LiveData<List<Medicine>> getAllActiveMedicineByEmail(String email, String user) {
+        if(this.email.equals(email) && this.medicine.equals(user)){
+            return storedAllActiveMedicineByEmail;
+        }
+
+        this.email=email;
+       this.user =user;
+//        this.medicine =medicine;
+        storedAllActiveMedicineByEmail =medicineDao.getAllActiveMedicineByEmail(email,user);
+
+        return storedAllActiveMedicineByEmail;
+    }
+
+    @Override
+    public LiveData<List<Medicine>> getAllInactiveMedicineByEmail(String email, String user) {
+        if(this.email.equals(email) && this.medicine.equals(user)){
+            return storedAllInactiveMedicineByEmail;
+        }
+
+        this.email=email;
+        this.user =user;
+//        this.medicine =medicine;
+        storedAllInactiveMedicineByEmail =medicineDao.getAllInactiveMedicineByEmail(email,user);
+
+        return storedAllInactiveMedicineByEmail;
+    }
+
     @Override
     public List<Medicine> getActiveMedicineNeedsRefill() { return storedActiveMedicineNeedsRefill; }
     @Override
@@ -215,7 +249,6 @@ public class ConcreteLocalClass implements LocalSource {
 
     @Override
     public LiveData<List<Dose>> getDosesByMedicine(String email, String medicine) {
-//        Log.i("inside getdoseBy",email);
         if(this.email.equals(email) && this.medicine.equals(medicine)){
             return storedDoseByMedicine;
         }
@@ -223,12 +256,7 @@ public class ConcreteLocalClass implements LocalSource {
        this.email=email;
 //       this.user =user;
        this.medicine =medicine;
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-                storedDoseByMedicine =doseDao.getDoseByMedicine(email,medicine);
-//            }
-//        }).start();
+        storedDoseByMedicine =doseDao.getDoseByMedicine(email,medicine);
 
         return storedDoseByMedicine;
     }
