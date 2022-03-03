@@ -7,37 +7,42 @@
     android:orientation="vertical"
     tools:context=".EditDrug.Edit_medActivity">
     <RadioGroup
-        android:layout_height="0dp"
+        android:id="@+id/select_days"
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="1">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
         <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/every_day"
             android:id="@+id/every_day"
-            android:layout_weight="1"/>
-        <RadioButton
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/select_days_from_week"
-            android:text="@string/select_days_from_week"
-            android:layout_weight="1"/>
-        <RadioButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="@string/every_day" />
+
+        <RadioButton
+            android:id="@+id/select_days_from_week"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/select_days_from_week" />
+
+        <RadioButton
             android:id="@+id/select_month"
-            android:text="@string/select_month"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/select_month" />
     </RadioGroup>
-    <TimePicker
+    <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/time_of_med"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:inputType="time"
+        android:hint="Choose the time"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -91,14 +96,15 @@
     </LinearLayout>
 
 
-    <DatePicker
+    <EditText
         android:id="@+id/day_of_month"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:inputType="date"
         android:layout_marginLeft="10dp"
+        android:hint="Choose the date"
         android:layout_marginBottom="10dp"
-
-        android:layout_weight="3" />
+        android:layout_weight="2" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -121,8 +127,6 @@
             android:layout_weight="1"/>
 
     </LinearLayout>
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -135,23 +139,5 @@
             android:text="@string/next"
             android:layout_marginLeft="16dp"
             android:layout_weight="1"/>
-        <Button
-            android:layout_width="0dp"
-            android:id="@+id/btn_back_add_two"
-            android:layout_height="wrap_content"
-            android:text="@string/back"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"/>
-
-
     </LinearLayout>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_add_edit_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:src="@drawable/icon"
-        android:layout_margin="16dp" />
-
 </LinearLayout>

@@ -23,23 +23,36 @@ public class Edit_medActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_med);
         fragmentManager = getSupportFragmentManager();
-       // showFragmentone();
+        // showFragmentone();
         Intent intent = getIntent();
         Medicine medicine = (Medicine) intent.getSerializableExtra("med");
 
-        Log.v("MEDICINE_DATA : ", medicine.toString());
+        Log.v("MEDICINE_DATA : ", medicine.getMedicineName());
+
+      /*  EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
+        editMedicationFragment.bundle = new Bundle();
+        editMedicationFragment.bundle.putSerializable("med",medicine);
+        showFragment(editMedicationFragment,editMedicationFragment.bundle);*/
+        fragmentManager = getSupportFragmentManager();
+//        showFragmentone();
+
+
+
+//        Log.v("MEDICINE_DATA : ", medicine.toString());
 
         EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
         editMedicationFragment.bundle = new Bundle();
         editMedicationFragment.bundle.putSerializable("med",medicine);
         showFragment(editMedicationFragment,null);
 
-
     }
     public static void showFragmentone(){
         EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
         showFragment(editMedicationFragment,null);
+
+
     }
+
 
     public static void showFragmentSecond(Bundle bundle){
         EditMedFragmentSecond editMedFragmentSecond = new EditMedFragmentSecond();

@@ -18,12 +18,12 @@ public class AddMedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_drug);
         fragmentManager = getSupportFragmentManager();
-        showFragmentone();
+        showFragmentone(savedInstanceState);
     }
 
-    public static void showFragmentone(){
+    public static void showFragmentone(Bundle bundle){
         AddMedicationFragment addMedicationFragment = new AddMedicationFragment();
-        showFragment(addMedicationFragment,null);
+        showFragment(addMedicationFragment,bundle);
     }
 
     public static void showFragmentSecond(Bundle bundle){
