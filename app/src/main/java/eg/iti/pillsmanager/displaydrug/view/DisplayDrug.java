@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class DisplayDrug extends AppCompatActivity {
     Repository repo;
     RemoteSource remoteSource;
     LocalSource localSource;
+    Button updateBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +40,7 @@ public class DisplayDrug extends AppCompatActivity {
         pills_left=findViewById(R.id.pills_left);
         when_to_refill =findViewById(R.id.when_to_refill);
         deleteBtn =findViewById(R.id.delete_button);
-
+       updateBtn=findViewById(R.id.active_btn);
 
         Intent intent = getIntent();
         Medicine medicine = (Medicine) intent.getSerializableExtra("med");
@@ -49,6 +51,13 @@ public class DisplayDrug extends AppCompatActivity {
         reason_val.setText(medicine.getReason());
         pills_left.setText("" + medicine.getLastdoseQuantity());
         when_to_refill.setText("" + medicine.getQuantityRemindAt());
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                medicine.setActive(false);
+                repo.updateMedicine(medicine);
+            }
+        });
 
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +71,7 @@ public class DisplayDrug extends AppCompatActivity {
 
             }
         });
+
         deleteBtn.setOnClickListener(new View.OnClickListener() {
                                          @Override
                                          public void onClick(View view) {
