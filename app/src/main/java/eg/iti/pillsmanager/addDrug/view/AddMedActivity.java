@@ -1,11 +1,16 @@
 package eg.iti.pillsmanager.addDrug.view;
 
+import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
+
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import android.os.Bundle;
 
+import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.medicinces.view.MediciationsFragment;
 
@@ -52,4 +57,12 @@ public class AddMedActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Intent intent = new Intent(AddMedActivity.this, MainActivity.class);
+        intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+        startActivity(intent);
+    }
 }
