@@ -8,5 +8,8 @@ public interface AllMedicineViewInterface {
 
     void showActiveMedicines(List<Medicine> medicines);
     void showInactiveMedicines(List<Medicine> medicines);
+    void showDoseManager(Medicine medicine);
+    void showEditManager(Medicine medicine);
+    void showMedicineDetails(Medicine medicine);
 
 }

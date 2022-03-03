@@ -11,7 +11,7 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import eg.iti.pillsmanager.model.Dose;
 
-@Database(entities = {Dose.class}, version = 2)
+@Database(entities = {Dose.class}, version = 4)
 public abstract class DoseDataBase extends RoomDatabase {
     public static DoseDataBase doseDataBase = null;
 

@@ -33,6 +33,7 @@ public interface RepositoryInterface {
 
   ////////////////////////////////////////////////////////////
   LiveData<List<Dose>> getAllDoses();
+  LiveData<List<Dose>> getDosesByMedicine(String email , String medicine);
   void insertDose(Dose dose);
   void deleteDose(Dose dose);
   void updateDose(Dose dose);

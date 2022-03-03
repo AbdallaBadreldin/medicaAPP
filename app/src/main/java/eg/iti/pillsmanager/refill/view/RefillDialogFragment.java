@@ -10,14 +10,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
 
 import eg.iti.pillsmanager.R;
 
 public class RefillDialogFragment  extends DialogFragment {
 
     private static final String TAG = "DialogFragment";
-
 
     public RefillDialogInterface mOnInputListener;
 
@@ -29,10 +27,8 @@ public class RefillDialogFragment  extends DialogFragment {
                              ViewGroup container,
                              Bundle savedInstanceState)
     {
-        View view = inflater.inflate(
-                R.layout.refill_dialog_fragment, container, true);
-        mActionCancel
-                = view.findViewById(R.id.refill_dialog_action_cancel);
+        View view = inflater.inflate(R.layout.refill_dialog_fragment, container, true);
+        mActionCancel = view.findViewById(R.id.refill_dialog_action_cancel);
         mActionOk = view.findViewById(R.id.refill_dialog_action_ok);
         totalQuantityInput = view.findViewById(R.id.total_quantity_edit);
         remindAtQuantityInput = view.findViewById(R.id.reminder_at_edit);
@@ -58,13 +54,10 @@ public class RefillDialogFragment  extends DialogFragment {
                                 = remindAtQuantityInput.getText().toString().trim();
 
                         if ( !(totalQuantityInputString.isEmpty()||remindAtQuantityInputString.isEmpty()) ) {
-
                             if(mOnInputListener instanceof RefillFragment){
-
                                 mOnInputListener.sendTotalQuantity(Integer.parseInt(totalQuantityInputString));
                                 mOnInputListener.sendRemindAtQuantity(Integer.parseInt(remindAtQuantityInputString));
                         }
-
 }
                         getDialog().dismiss();
                     }
@@ -73,7 +66,6 @@ public class RefillDialogFragment  extends DialogFragment {
         return view;
     }
 
-    //todo
     @Override public void onAttach(Context context)
     {
         super.onAttach(context);

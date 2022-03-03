@@ -2,7 +2,6 @@ package eg.iti.pillsmanager.database;
 
 
 import androidx.lifecycle.LiveData;
-import androidx.room.Query;
 
 import java.util.List;
 
@@ -17,8 +16,6 @@ we will modify localSource
  */
 public interface LocalSource {
 
-
-
     //interface for user table
     LiveData<List<User>>  getAllUsers();
     void insertUser(User user);
@@ -26,19 +23,11 @@ public interface LocalSource {
     void updateUser(User user);
 
 
-
-    //interface for dose table
-    LiveData<List<Dose>> getAllDoses();
-    void insertDose(Dose dose);
-    void deleteDose(Dose dose);
-    void updateDose(Dose dose);
-
-
     //interface for medicine table
     LiveData<List<Medicine>> getAllMedicine();
     LiveData<List<Medicine>> getAllActiveMedicine();
     LiveData<List<Medicine>> getAllInactiveMedicine();
-    LiveData<List<Medicine>> getActiveMedicineNeedsRefill();
+    List<Medicine> getActiveMedicineNeedsRefill();
     LiveData<List<Medicine>> getInactiveMedicineNeedsRefill();
     LiveData<List<Medicine>> getEmptyActiveMedicine();
     LiveData<List<Medicine>> getEmptyInactiveMedicine();
@@ -46,8 +35,10 @@ public interface LocalSource {
     void deleteMedicine(Medicine medicine);
     void updateMedicine(Medicine medicine);
 
-    //interface for alarm table
-//    LiveData<List<User>> getAllUsers();
-//    void insertUser(User user);
-//    void deleteUser(User user);
+    //interface for dose table
+    LiveData<List<Dose>> getAllDoses();
+    LiveData<List<Dose>> getDosesByMedicine(String email ,String medicine);
+    void insertDose(Dose dose);
+    void deleteDose(Dose dose);
+    void updateDose(Dose dose);
 }

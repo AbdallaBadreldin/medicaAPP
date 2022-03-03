@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/dose_container_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".dosemanager.view.DoseManagerActivity"
+    tools:showIn="@layout/activity_dose_manager">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--        linear layout for spacific day in the month-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/dose_layout_quantity"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enter_dose_quantity" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/dose_enter_dose_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/dose_quantity"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:layout_margin="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chose_dose_repeat" />
+
+        <RadioGroup
+            android:id="@+id/dose_repeat_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/dose_every_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/every_day" />
+
+            <RadioButton
+                android:id="@+id/dose_pick_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_days_from_week" />
+
+            <RadioButton
+                android:id="@+id/dose_every_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/every_month" />
+
+            <RadioButton
+                android:id="@+id/dose_once_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/once_a_year" />
+        </RadioGroup>
+
+
+        <RadioGroup
+            android:id="@+id/dose_days"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/dose_sat_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sat_day" />
+
+            <RadioButton
+                android:id="@+id/dose_sun_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sun_day" />
+
+            <RadioButton
+                android:id="@+id/dose_mon_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mon_day" />
+
+            <RadioButton
+                android:id="@+id/dose_tues_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tue_day" />
+            <RadioButton
+                android:id="@+id/dose_wed_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wed_day" />
+            <RadioButton
+                android:id="@+id/dose_thu_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/thu_day" />
+
+
+            <RadioButton
+                android:id="@+id/dose_fri_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fri_day" />
+        </RadioGroup>
+
+<!--time-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/dose_linear_enter_time"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/dose_time_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enter_dose_time" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/dose_time_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/enter_dose_time"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+<!--            day-->
+<!--        <androidx.appcompat.widget.LinearLayoutCompat-->
+<!--            android:id="@+id/dose_linear_enter_day"-->
+<!--            android:padding="8dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:weightSum="2">-->
+<!---->
+<!--            <TextView-->
+<!--                android:id="@+id/dose_time_text"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="@string/enter_dose_time" >-->
+<!--            </TextView>-->
+<!---->
+<!--            <EditText-->
+<!--                android:id="@+id/dose_time_edit"-->
+<!--                android:inputType="number"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:hint="@string/enter_dose_time" />-->
+<!---->
+<!--        </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+
+<!--    once month day-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/dose_layout_once_month"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/dose_once_month_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enter_month_day" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/dose_once_month_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/enter_month_day"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+<!--        day and month-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/dose_linear_yearly"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/dose_yearly_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/enter_month_and_day" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/dose_yearly_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/enter_month_and_day"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/dose_management_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

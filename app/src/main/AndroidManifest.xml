@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eg.iti.pillsmanager" >
-
+    package="eg.iti.pillsmanager">
     <!-- add required permission -->
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    //for alarm
-    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
@@ -14,43 +12,53 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PillsManager" >
+        android:theme="@style/Theme.PillsManager">
+        <activity
+            android:name=".dosemanager.view.DoseManagerActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:label="@string/title_activity_dose_manager"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PillsManager.NoActionBar" />
         <activity
             android:name=".displaydrug.view.DisplayDrug"
+            android:configChanges="orientation"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.PillsManager.NoActionBar" />
-
         <activity
             android:name=".auth.singnIn.view.SignInActivity"
-            android:exported="false">
-        </activity>
-
-<!--        convert this with main activity-->
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"></activity> <!-- convert this with main activity -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
+            android:configChanges="orientation"
             android:exported="true"
-            android:theme="@style/Theme.PillsManager.NoActionBar" >
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PillsManager.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-         <activity   android:name=".EditDrug.Edit_medActivity"
-            android:exported="false" />
+        <activity
+            android:name=".EditDrug.Edit_medActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".addDrug.view.AddMedActivity"
-            android:exported="false" />
-
-
-<!--        we changed this with splash screen-->
-        <activity
-            android:name=".MainActivity"
+            android:configChanges="orientation"
             android:exported="false"
-            android:theme="@style/Theme.PillsManager.NoActionBar">
-
-        </activity>
+            android:screenOrientation="portrait" /> <!-- we changed this with splash screen -->
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.PillsManager.NoActionBar"></activity>
     </application>
 
 </manifest>

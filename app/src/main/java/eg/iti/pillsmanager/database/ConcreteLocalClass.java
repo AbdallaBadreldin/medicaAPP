@@ -1,11 +1,13 @@
 package eg.iti.pillsmanager.database;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
-import androidx.room.Query;
 
 import java.util.List;
+
+import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.database.DoseDao.DoseDao;
 import eg.iti.pillsmanager.database.DoseDao.DoseDataBase;
 import eg.iti.pillsmanager.database.medicineTable.MedicineDao;
@@ -19,8 +21,6 @@ import eg.iti.pillsmanager.model.User;
 //here we add all Daos as we will create new daos
 public class ConcreteLocalClass implements LocalSource {
     private static ConcreteLocalClass concreteLocalClass = null;
-
-
     private final UserDao userDao;
     private final LiveData<List<User>> storedUsers;
 
@@ -28,20 +28,24 @@ public class ConcreteLocalClass implements LocalSource {
     private final LiveData<List<Medicine>> storedMedicine;
     private final LiveData<List<Medicine>> storedActiveMedicine;
     private final LiveData<List<Medicine>> storedInactiveMedicine;
-    private final LiveData<List<Medicine>> storedActiveMedicineNeedsRefill;
+    private List<Medicine> storedActiveMedicineNeedsRefill;
     private final LiveData<List<Medicine>> storedInactiveMedicineNeedsRefill;
     private final LiveData<List<Medicine>> storedEmptyActiveMedicine;
     private final LiveData<List<Medicine>> storedEmptyInactiveMedicine;
 
     private final DoseDao doseDao;
     private final LiveData<List<Dose>> storedDose;
+    private  LiveData<List<Dose>> storedDoseByMedicine;
+    private String email = "";
+    private String user="";
+    private String medicine="";
     //for future use
 //    private final AlarmDao movieDao;
 //    private final MedicineDao movieDao;
 //    private final DoseDao movieDao;
 
     //once we add new daos we will edit this constractor
-    public ConcreteLocalClass(Context context) {
+    public ConcreteLocalClass(Context context,String email ,String medicine) {
 //        users things
         UserDataBase userDataBase = UserDataBase.getUserDataBaseInstance(context.getApplicationContext());
         userDao = userDataBase.getUserDao();
@@ -51,31 +55,45 @@ public class ConcreteLocalClass implements LocalSource {
         MedicineDataBase medicineDataBase = MedicineDataBase.getMedicineDataBaseInstance(context.getApplicationContext());
         medicineDao = medicineDataBase.getMedicineDao();
         storedMedicine = medicineDao.getAllMedicine();
-        storedActiveMedicineNeedsRefill=medicineDao.getActiveMedicineNeedsRefill();
-       storedInactiveMedicineNeedsRefill =medicineDao.getInactiveMedicineNeedsRefill();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                storedActiveMedicineNeedsRefill=medicineDao.getActiveMedicineNeedsRefill();
+            }
+        }).start();
+        storedInactiveMedicineNeedsRefill =medicineDao.getInactiveMedicineNeedsRefill();
         storedEmptyActiveMedicine = medicineDao.getEmptyActiveMedicine();
         storedEmptyInactiveMedicine = medicineDao.getEmptyInactiveMedicine();
-
-
-
+        storedActiveMedicine = medicineDao.getAllActiveMedicine();
+        storedInactiveMedicine = medicineDao.getAllInactiveMedicine();
 
         //dose things
         DoseDataBase DoseDataBase = eg.iti.pillsmanager.database.DoseDao.DoseDataBase.getDoseDataBaseInstance(context.getApplicationContext());
         doseDao = DoseDataBase.getDoseDao();
         storedDose =doseDao.getAllDoses();
-        storedActiveMedicine = medicineDao.getAllActiveMedicine();
-        storedInactiveMedicine = medicineDao.getAllInactiveMedicine();
+        Log.i("inside instance",email);
+        storedDoseByMedicine =doseDao.getDoseByMedicine(email,medicine);
 
     }
+
+
 
     //we don't have to edit this
     public static ConcreteLocalClass getConcreteLocalClassInstance(Context context) {
         if (concreteLocalClass == null) {
-            concreteLocalClass = new ConcreteLocalClass(context);
+            concreteLocalClass = new ConcreteLocalClass(context,context.getString(R.string.empty),context.getString(R.string.empty));
         }
         return concreteLocalClass;
     }
 
+    public static ConcreteLocalClass getConcreteLocalClassInstanceDose(Context context, String email, String medicine) {
+//        this.email=email;
+//        this.medicine=medicine;
+        if (concreteLocalClass == null) {
+            concreteLocalClass = new ConcreteLocalClass(context,email,medicine);
+        }
+        return concreteLocalClass;
+    }
 
     // the more daos we will add the more methods we will need
    //once we edited old daos we will mopdifiy localSource then we will modifiy this
@@ -149,7 +167,7 @@ public class ConcreteLocalClass implements LocalSource {
         return storedInactiveMedicine;
     }
     @Override
-    public LiveData<List<Medicine>> getActiveMedicineNeedsRefill() { return storedActiveMedicineNeedsRefill; }
+    public List<Medicine> getActiveMedicineNeedsRefill() { return storedActiveMedicineNeedsRefill; }
     @Override
     public LiveData<List<Medicine>> getInactiveMedicineNeedsRefill() { return storedInactiveMedicineNeedsRefill; }
     @Override
@@ -189,13 +207,30 @@ public class ConcreteLocalClass implements LocalSource {
         }).start();
     }
 
-
-
-
     //dose dao
     @Override
     public LiveData<List<Dose>> getAllDoses() {
         return storedDose;
+    }
+
+    @Override
+    public LiveData<List<Dose>> getDosesByMedicine(String email, String medicine) {
+//        Log.i("inside getdoseBy",email);
+        if(this.email.equals(email) && this.medicine.equals(medicine)){
+            return storedDoseByMedicine;
+        }
+
+       this.email=email;
+//       this.user =user;
+       this.medicine =medicine;
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+                storedDoseByMedicine =doseDao.getDoseByMedicine(email,medicine);
+//            }
+//        }).start();
+
+        return storedDoseByMedicine;
     }
 
     @Override
@@ -204,7 +239,6 @@ public class ConcreteLocalClass implements LocalSource {
             @Override
             public void run() {
                 doseDao.insertDose(dose);
-
             }
         }).start();
 
@@ -216,7 +250,6 @@ public class ConcreteLocalClass implements LocalSource {
             @Override
             public void run() {
                 doseDao.deleteDose(dose);
-
             }
         }).start();
 

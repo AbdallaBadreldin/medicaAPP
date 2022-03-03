@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:weightSum="6"
+    android:weightSum="8"
     tools:context=".addDrug.view.AddMedFragmentThree">
 
     <TextView
@@ -30,6 +30,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginRight="20dp"
             android:layout_weight="1"
+            android:hint="Start Date"
             android:inputType="date"
             android:minHeight="48dp" />
         <!--        android:onClick="showDatePickerDialog"-->
@@ -40,6 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
+            android:hint="End Date"
             android:inputType="date"
             android:minHeight="48dp" />
         <!--        android:onClick="showDatePickerDialog"-->
@@ -61,22 +63,15 @@
             android:layout_weight="1"
             android:text="How much doses do you have?" />
 
-        <TextView
-            android:id="@+id/Quantity_of_med_value"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="16dp"
-            android:layout_weight="1" />
-
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/doses_left"
+        android:id="@+id/total_doses"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
         android:layout_weight="1"
-        android:hint="@string/back" />
+        android:hint="doses you have" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -92,17 +87,73 @@
             android:text="@string/additional_dose" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/display_dose"
+            android:id="@+id/additional_dose"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:inputType="number"
+            android:hint="additional dose"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
              />
 
 
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_refill_reminder_At"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:text="@string/refill_reminder_at" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/refill_at_dose_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:hint="refill at dose number"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txt_last_dose_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:text="last dose quantity" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/last_dose_num"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:inputType="number"
+            android:hint="last dose quantity"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -118,13 +169,23 @@
             android:text="@string/save" />
 
         <Button
-            android:id="@+id/btn_back_add_two"
+            android:id="@+id/btn_back_to_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
             android:text="@string/back" />
+
+        <Button
+            android:id="@+id/btn_display_all_med"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:text="med" />
+
 
 
     </LinearLayout>

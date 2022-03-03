@@ -54,8 +54,7 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
 
         View in =inflater.inflate(R.layout.fragment_refill, container, false);
         triggerNotifyWork();
-
-
+//        RetriggerWorkManager();
         recyclerViewActiveMedicines = in.findViewById(R.id.refill_recycle);
         recyclerViewActiveMedicines.setHasFixedSize(true);
 
@@ -118,7 +117,6 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
                 .build();
         WorkManager.getInstance(getActivity().getApplicationContext()).enqueue(notificationWork);
 
-
     }
 
 
@@ -141,12 +139,9 @@ public class RefillFragment extends Fragment implements RefillFragmentInterface 
     @Override
     public void refillMedicine(Medicine medicine) {
         medicineForDialog = medicine;
-
-
         RefillDialogFragment dialog = new RefillDialogFragment();
         FragmentManager manager = getParentFragmentManager();
                dialog.show(manager,"mydialog");
-
     }
 
     @Override

@@ -67,7 +67,7 @@
     <string name="wed_day">wed</string>
     <string name="thu_day">thu</string>
     <string name="fri_day">fri</string>
-    <string name="dose_quantity">dose quantity</string>
+    <string name="dose_quantity">dose quantity \t</string>
     <string name="next">next</string>
     <string name="name_of_medecine">name of med</string>
     <string name="form_of_medicine">form of med</string>
@@ -97,4 +97,15 @@
     <string name="remind_at_quantity_cannot_be_zero">remind at quantity can\'t be 0</string>
     <string name="we_will_remind_you">we will remind you every 15 mins</string>
     <string name="notification_off">reminder off</string>
+    <string name="refill_reminder_at">Refill Remind At</string>
+    <string name="title_activity_dose_manager">DoseManagerActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="chose_dose_repeat">choose your dose repeate period</string>
+    <string name="once_a_year">once a year</string>
+    <string name="enter_dose_quantity">enter dose quantity</string>
+    <string name="enter_dose_time">enter dose time</string>
+    <string name="enter_month_day">enter day of month</string>
+    <string name="enter_month_and_day">enter day and month</string>
+    <string name="dose_manager_pass_data_id" translatable="false">manageMedicine</string>
+    <string name="dose_time">dose time \t</string>
 </resources>

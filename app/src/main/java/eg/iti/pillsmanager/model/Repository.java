@@ -1,26 +1,14 @@
 package eg.iti.pillsmanager.model;
 
 import android.content.Context;
-import android.view.View;
-
-import androidx.annotation.NonNull;
 
 import androidx.lifecycle.LiveData;
-
-import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
 import eg.iti.pillsmanager.database.LocalSource;
 import eg.iti.pillsmanager.network.NetworkDelegate;
 import eg.iti.pillsmanager.network.RemoteSource;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import eg.iti.pillsmanager.database.LocalSource;
-import eg.iti.pillsmanager.database.medicineTable.MedicineDao;
-import eg.iti.pillsmanager.network.FirebaseDB;
 
 //public class Repository implements RepositoryI{
   //  private static Repository repository;
@@ -39,7 +27,7 @@ public class Repository implements RepositoryInterface {
     RemoteSource remoteResource;//API
     LocalSource localSource;//db
     private Context context;
-//    MovieDAO movieDAO;
+
 
     private Repository(RemoteSource remoteResource, LocalSource localSource, Context context){
         this.remoteResource = remoteResource;
@@ -62,9 +50,7 @@ public class Repository implements RepositoryInterface {
     }
 
     @Override
-    public LiveData<List<Medicine>> getStoredActiveMedicines() {
-        return localSource.getAllActiveMedicine();
-    }
+    public LiveData<List<Medicine>> getStoredActiveMedicines() { return localSource.getAllActiveMedicine(); }
 
     @Override
     public LiveData<List<Medicine>> getStoredInactiveMedicines() { return localSource.getAllInactiveMedicine(); }
@@ -116,23 +102,25 @@ localSource.deleteUser(user);
 localSource.getAllMedicine();
     }
 
+
+
+
+    //doses db
     @Override
     public LiveData<List<Dose>> getAllDoses() {
-        return null;
+        return localSource.getAllDoses();
     }
 
     @Override
-    public void insertDose(Dose dose) {
-
-    }
-
-    @Override
-    public void deleteDose(Dose dose) {
-
-    }
+    public LiveData<List<Dose>> getDosesByMedicine(String email, String medicine) {
+        return localSource.getDosesByMedicine(email,medicine); }
 
     @Override
-    public void updateDose(Dose dose) {
+    public void insertDose(Dose dose) { localSource.insertDose(dose); }
 
-    }
+    @Override
+    public void deleteDose(Dose dose) { localSource.deleteDose(dose); }
+
+    @Override
+    public void updateDose(Dose dose) { localSource.updateDose(dose); }
 }

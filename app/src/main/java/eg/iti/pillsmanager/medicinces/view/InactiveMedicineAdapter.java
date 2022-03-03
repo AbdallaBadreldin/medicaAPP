@@ -1,6 +1,7 @@
 package eg.iti.pillsmanager.medicinces.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,6 +85,7 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
         //handling three buttons we have
         holder.iconOpenAlarms.setOnClickListener(view -> {
             listener.openAlarms(medicineDetails);
+
         });
 
 
@@ -93,6 +95,7 @@ public class InactiveMedicineAdapter extends RecyclerView.Adapter<InactiveMedici
 
         holder.medicineIcon.setOnClickListener(view -> {
             listener.openMedicine(medicineDetails);
+
         });
 
 

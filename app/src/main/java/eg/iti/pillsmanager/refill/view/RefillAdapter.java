@@ -1,23 +1,19 @@
 package eg.iti.pillsmanager.refill.view;
 
 import android.content.Context;
-import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.model.Medicine;
@@ -69,7 +65,7 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
 
             txtFirst=cardView.findViewById(R.id.refill_first_row_text);
             txtSecond=cardView.findViewById(R.id.refill_second_row_text);
-            txtThird=cardView.findViewById(R.id.refill_third_row_text);
+            txtThird=cardView.findViewById(R.id.dose_third_row_text);
 //            activeDisactiveBox.setOnClickListener(this);
 //            constraintLayout.setOnClickListener(this);
 
@@ -137,15 +133,15 @@ public class RefillAdapter extends RecyclerView.Adapter<RefillAdapter.ViewHolder
 
         holder.activeDisactiveBox.setChecked( medicineDetails.isActiveRefillReminder() );
 
-        if(medicineDetails.getQuantityRemindAt()>= medicineDetails.getTotalQuantity())
+        if(medicineDetails.getQuantityRemindAt()>=medicineDetails.getTotalQuantity() )
         holder.alarmIcon.setImageResource(R.drawable.ic_baseline_error_outline_24);
        else holder.alarmIcon.setImageResource(R.drawable.ic_baseline_done_24);
 
        holder.medicineIcon.setImageResource(R.drawable.ic_baseline_medical_services_24); //it should be modified by real image from database
 
-        holder.txtFirst.setText(String.valueOf( medicineDetails.getMedicineName()) );
-        holder.txtSecond.setText(String.valueOf( medicineDetails.getTotalQuantity()) );
-        holder.txtThird.setText(String.valueOf( medicineDetails.getQuantityRemindAt()) );
+        holder.txtFirst.setText(String.valueOf( medicineDetails.getMedicineName() ));
+        holder.txtSecond.setText(String.valueOf(  medicineDetails.getTotalQuantity() ));
+        holder.txtThird.setText(String.valueOf(  medicineDetails.getQuantityRemindAt() ));
 
 //        holder.activeDisactiveBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 //            @Override
