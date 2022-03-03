@@ -1,10 +1,9 @@
 package eg.iti.pillsmanager.addDrug.view;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +15,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.model.Dose;
 import eg.iti.pillsmanager.model.Medicine;
-import eg.iti.pillsmanager.model.User;
 
 
 public class AddMedicationFragment extends Fragment  {
@@ -83,12 +79,14 @@ public class AddMedicationFragment extends Fragment  {
                med.setUser(new User(name,"khaled",0,"","","",""));*/
 
                 sharedPreferences = getActivity().getSharedPreferences(getString(R.string.signup_shared_pre), Context.MODE_PRIVATE);
-                String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"name is null");
-                System.out.println("nameeeeeeeeeeeeeeeeeeeeeeeeeeeeee"+name);
-                Log.i("TAG", "onClick: "+name);
+                String name= sharedPreferences.getString(getString(R.string.name_shared_pre),"e");
+
+                SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
+               String mail= sharedPreferences.getString("email","e");
+
                 // med.setUser(new User(name,"farag",23,"esraa@gmail.com","123","4","female"));
                  med.setFirstName(name);
-                med.setEmail("esraakh400@gmail.com");
+                med.setEmail(mail);
                 //med.setSecondName("khaled");
                 med.setMedicineName(name_med_value.getText().toString());
                 med.setForm(form_med_value.getSelectedItem().toString());
@@ -97,7 +95,7 @@ public class AddMedicationFragment extends Fragment  {
                 med.setStrength(strength_unit.getSelectedItem().toString());
                 med.setActive(true);
                // med.setDose(new Dose());
-                bundle.putSerializable("mede",med);
+                bundle.putSerializable("med",med);
                 AddMedActivity.showFragmentSecond(bundle);
 
             }

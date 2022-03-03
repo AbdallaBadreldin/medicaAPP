@@ -2,7 +2,6 @@ package eg.iti.pillsmanager.EditDrug;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -10,9 +9,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.addDrug.view.AddMedFragmentSecond;
-import eg.iti.pillsmanager.addDrug.view.AddMedFragmentThree;
-import eg.iti.pillsmanager.addDrug.view.AddMedicationFragment;
 import eg.iti.pillsmanager.model.Medicine;
 
 public class Edit_medActivity extends AppCompatActivity {
@@ -27,7 +23,6 @@ public class Edit_medActivity extends AppCompatActivity {
         Intent intent = getIntent();
         Medicine medicine = (Medicine) intent.getSerializableExtra("med");
 
-        Log.v("MEDICINE_DATA : ", medicine.getMedicineName());
 
       /*  EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
         editMedicationFragment.bundle = new Bundle();
@@ -35,10 +30,6 @@ public class Edit_medActivity extends AppCompatActivity {
         showFragment(editMedicationFragment,editMedicationFragment.bundle);*/
         fragmentManager = getSupportFragmentManager();
 //        showFragmentone();
-
-
-
-//        Log.v("MEDICINE_DATA : ", medicine.toString());
 
         EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
         editMedicationFragment.bundle = new Bundle();
@@ -49,7 +40,6 @@ public class Edit_medActivity extends AppCompatActivity {
     public static void showFragmentone(){
         EditMedFragmentOne editMedicationFragment = new EditMedFragmentOne();
         showFragment(editMedicationFragment,null);
-
 
     }
 

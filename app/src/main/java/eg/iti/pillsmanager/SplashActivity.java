@@ -27,9 +27,6 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(SplashActivity.this);
-//                SharedPreferences sharedPreferences = getSharedPreferences("sh",MODE_PRIVATE);
-//               String temp = ;
-//                Log.i("TAG", temp);
                 if(sharedPreferences.getString("email",null)==null)
                     startActivity(new Intent(SplashActivity.this, SignInActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
                     else
