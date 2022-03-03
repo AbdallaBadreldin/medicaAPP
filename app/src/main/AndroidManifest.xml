@@ -32,7 +32,7 @@
             android:exported="false"
             android:screenOrientation="portrait"></activity> <!-- convert this with main activity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:configChanges="orientation"
             android:exported="true"
             android:screenOrientation="portrait"
@@ -54,7 +54,7 @@
             android:exported="false"
             android:screenOrientation="portrait" /> <!-- we changed this with splash screen -->
         <activity
-            android:name=".SplashActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation"
             android:exported="false"
             android:screenOrientation="portrait"
