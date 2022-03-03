@@ -34,7 +34,14 @@ public class SigninFragment extends Fragment implements AuthAsyncCallBackI {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
+
         sharedPreferences = getActivity().getSharedPreferences("sh", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
+        if(sharedPreferences.getString("email",null)==null){}
+//            startActivity(new Intent(getContext(), SignInActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
+        else
+            startActivity(new Intent(getContext(), MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
 
 
         signInPresenter = new SignInPresenter();
@@ -89,6 +96,7 @@ public class SigninFragment extends Fragment implements AuthAsyncCallBackI {
        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("email",signInEmail.getText().toString().trim());
+        editor.putString("user","default");
         editor.apply();
         startActivity(new Intent(getActivity(), MainActivity.class ).addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT));
     }
@@ -98,4 +106,14 @@ public class SigninFragment extends Fragment implements AuthAsyncCallBackI {
         Toast.makeText(getActivity(), erorrMessage, Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        sharedPreferences = getActivity().getSharedPreferences("sh", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
+        if(sharedPreferences.getString("email",null)==null){}
+//            startActivity(new Intent(getContext(), SignInActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
+        else
+            getActivity().finish();
+    }
 }

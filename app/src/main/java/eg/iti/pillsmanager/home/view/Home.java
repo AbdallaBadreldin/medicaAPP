@@ -1,10 +1,6 @@
 package eg.iti.pillsmanager.home.view;
 
-import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,61 +63,10 @@ public class Home extends Fragment {
             public void onDateSelected(Calendar date, int position) {
 //                 on below line we are printing date
 //                 in the logcat which is selected.
-                Log.i("TAG", "CURRENT DATE IS " + date);
             }
         });
     }
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-
-
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-    }
-
-    @Override
-    public void onResume() {
-
-        super.onResume();
-
-    }
-
-    @Override
-    public void onInflate(@NonNull Context context, @NonNull AttributeSet attrs, @Nullable Bundle savedInstanceState) {
-        super.onInflate(context, attrs, savedInstanceState);
-
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-//        binding = null;
-    }
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
-
-    @NonNull
-    @Override
-    public LayoutInflater onGetLayoutInflater(@Nullable Bundle savedInstanceState) {
-        return super.onGetLayoutInflater(savedInstanceState);
-
-    }
-
-    @Override
-    public void onInflate(@NonNull Activity activity, @NonNull AttributeSet attrs, @Nullable Bundle savedInstanceState) {
-        super.onInflate(activity, attrs, savedInstanceState);
-
-    }
 
 
 }
