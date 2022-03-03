@@ -70,7 +70,6 @@ public class EditMedFragmentThree extends Fragment {
         total_doses=view.findViewById(R.id.total_doses);
         additional_dose = view.findViewById(R.id.btn_add_additional_dose);
         add_dose_quantity = view.findViewById(R.id.additional_dose);
-        med_btn = view.findViewById(R.id.btn_display_all_med);
         ///////////////////////////////////////////
         refill_at_dose=view.findViewById(R.id.txt_refill_reminder_At);
         refill_at_dose_num=view.findViewById(R.id.refill_at_dose_no);
@@ -134,13 +133,7 @@ public class EditMedFragmentThree extends Fragment {
 
             }
         });
-        med_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                AddMedActivity.showFragmentAllMed(bundle);
-            }
-        });
+
     }
 
     public void openDatePicker() {

@@ -1,5 +1,7 @@
 package eg.iti.pillsmanager.displaydrug.view;
 
+import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,13 +14,14 @@ import eg.iti.pillsmanager.EditDrug.Edit_medActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.database.LocalSource;
+import eg.iti.pillsmanager.medicinces.view.MediciationsFragment;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
 import eg.iti.pillsmanager.network.NetworkDelegate;
 import eg.iti.pillsmanager.network.RemoteSource;
 
 public class DisplayDrug extends AppCompatActivity {
-    ImageView imgView,deleteBtn;
+    ImageView imgView,deleteBtn,back_btn;
     TextView drug_name,drug_dose,reminder_val,reason_val,pills_left,when_to_refill;
     Repository repo;
     RemoteSource remoteSource;
@@ -27,7 +30,7 @@ public class DisplayDrug extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_drug);
-        imgView = findViewById(R.id.edit_button);
+        back_btn = findViewById(R.id.back_button);
         drug_name= findViewById(R.id.drug_name);
         drug_dose=findViewById(R.id.drug_dose);
         reminder_val=findViewById(R.id.reminders_val);
@@ -47,10 +50,15 @@ public class DisplayDrug extends AppCompatActivity {
         pills_left.setText("" + medicine.getLastdoseQuantity());
         when_to_refill.setText("" + medicine.getQuantityRemindAt());
 
-        imgView.setOnClickListener(new View.OnClickListener() {
+        back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DisplayDrug.this,Edit_medActivity.class));
+                //startActivity(new Intent(DisplayDrug.this,Edit_medActivity.class));
+                Intent intent = new Intent(DisplayDrug.this,  MediciationsFragment.class);
+                finish();
+               /* intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
+                intent.putExtra("med",medicine);
+                startActivity(intent);*/
 
             }
         });
@@ -58,6 +66,7 @@ public class DisplayDrug extends AppCompatActivity {
                                          @Override
                                          public void onClick(View view) {
                                              repo.deleteMedicine(medicine);
+                                             finish();
                                          }
                                      }
         );

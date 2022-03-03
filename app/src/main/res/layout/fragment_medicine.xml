@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="80dp"
-        android:src="@drawable/icon"
+        android:src="@drawable/ic_baseline_alarm_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -47,6 +47,7 @@
         android:id="@+id/display_drug"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Display" />
+        android:text="Display"
+       />
 
 </LinearLayout>
