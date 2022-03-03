@@ -97,7 +97,7 @@ public class AddMedicationFragment extends Fragment  {
                 med.setStrength(strength_unit.getSelectedItem().toString());
                 med.setActive(true);
                // med.setDose(new Dose());
-                bundle.putSerializable("mede",med);
+                bundle.putSerializable("med",med);
                 AddMedActivity.showFragmentSecond(bundle);
 
             }
