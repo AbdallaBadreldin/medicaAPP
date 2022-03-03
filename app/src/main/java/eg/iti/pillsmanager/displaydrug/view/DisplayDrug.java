@@ -54,7 +54,7 @@ public class DisplayDrug extends AppCompatActivity {
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                medicine.setActive(false);
+                medicine.setActive(true);
                 repo.updateMedicine(medicine);
             }
         });
@@ -63,8 +63,8 @@ public class DisplayDrug extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(DisplayDrug.this,Edit_medActivity.class));
-                Intent intent = new Intent(DisplayDrug.this,  MediciationsFragment.class);
-                finish();
+//                Intent intent = new Intent(DisplayDrug.this,  MediciationsFragment.class);
+
                /* intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
                 intent.putExtra("med",medicine);
                 startActivity(intent);*/

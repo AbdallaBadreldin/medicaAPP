@@ -115,4 +115,5 @@
     <string name="exit">Exit</string>
     <string name="are_yuo_sure_you_want_to_exit">Are you sure you want to close this activity?</string>
     <string name="yes">Yes</string>
+    <string name="picked">Picked</string>
 </resources>

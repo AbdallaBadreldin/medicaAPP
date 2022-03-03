@@ -39,6 +39,7 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
        signUpPresenter = new SignUpPresenter();
        signupFragment = this;
        View view = inflater.inflate(R.layout.fragment_signup, container, false);
@@ -117,4 +118,14 @@ public class SignupFragment extends Fragment implements AuthAsyncCallBackI {
         Toast.makeText(getActivity(), erorrMessage, Toast.LENGTH_LONG).show();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        sharedPreferences = getActivity().getSharedPreferences("sh", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
+        if(sharedPreferences.getString("email",null)==null){}
+//            startActivity(new Intent(getContext(), SignInActivity.class).addFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT));
+        else
+            getActivity().finish();
+    }
 }
