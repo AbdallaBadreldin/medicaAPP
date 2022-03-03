@@ -27,6 +27,9 @@ public interface LocalSource {
     LiveData<List<Medicine>> getAllMedicine();
     LiveData<List<Medicine>> getAllActiveMedicine();
     LiveData<List<Medicine>> getAllInactiveMedicine();
+    LiveData<List<Medicine>> getAllActiveMedicineByEmail(String email ,String user);
+    LiveData<List<Medicine>> getAllInactiveMedicineByEmail(String email ,String user);
+
     List<Medicine> getActiveMedicineNeedsRefill();
     LiveData<List<Medicine>> getInactiveMedicineNeedsRefill();
     LiveData<List<Medicine>> getEmptyActiveMedicine();
