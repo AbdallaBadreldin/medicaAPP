@@ -24,7 +24,7 @@ public class DoseAdapter extends RecyclerView.Adapter<DoseAdapter.ViewHolder> {
 
     Dose doseDetails;
 
-    ImageView imageView;
+    ImageView doseDeleteIcon;
     OnDoseClickListener listener;
 
     public DoseAdapter(Context context, OnDoseClickListener listener) {
@@ -46,7 +46,7 @@ public class DoseAdapter extends RecyclerView.Adapter<DoseAdapter.ViewHolder> {
 
         View cardView;
 
-        ImageView iconOpenAlarms;
+        ImageView doseDeleteIcon;
         ImageView iconOpenEdit;
 
 
@@ -54,7 +54,7 @@ public class DoseAdapter extends RecyclerView.Adapter<DoseAdapter.ViewHolder> {
             super(itemView);
             cardView = itemView;
             constraintLayout = cardView.findViewById(R.id.dose_container_view);
-//            medicineIcon = cardView.findViewById(R.id.dose);
+            doseDeleteIcon = cardView.findViewById(R.id.dose_image_medicine);
 
             txtFirst=cardView.findViewById(R.id.dose_first_row_text);
             txtSecond=cardView.findViewById(R.id.dose_second_row_text);
@@ -80,17 +80,17 @@ public class DoseAdapter extends RecyclerView.Adapter<DoseAdapter.ViewHolder> {
         applyChanges(holder, doseDetails);
 
         //handling three buttons we have
-//        holder.iconOpenAlarms.setOnClickListener(view -> {
-//            listener.openAlarms(medicineDetails);
-//        });
+        holder.doseDeleteIcon.setOnClickListener(view -> {
+            listener.deleteDose(doseDetails);
+        });
 
 //        holder.iconOpenEdit.setOnClickListener(view -> {
 //            listener.openEdit(medicineDetails);
 //        });
 
-        holder.constraintLayout.setOnClickListener(view -> {
+//        holder.constraintLayout.setOnClickListener(view -> {
 //            listener.openMedicine(medicineDetails);
-        });
+//        });
 
     }
 
@@ -107,14 +107,17 @@ public class DoseAdapter extends RecyclerView.Adapter<DoseAdapter.ViewHolder> {
 
     public void applyChanges(@NonNull DoseAdapter.ViewHolder holder, @NonNull Dose doseDetails) {
 
-        imageView = holder.medicineIcon;
-        holder.medicineIcon.setImageResource(R.drawable.ic_baseline_medical_services_24); //it should be modified by real image from database
+//        imageView = holder.medicineIcon;
+//        holder.medicineIcon.setImageResource(R.drawable.ic_baseline_medical_services_24); //it should be modified by real image from database
+            if(doseDetails.getDay()==1)
+                holder.txtFirst.setText(context.getString(R.string.every_day));   //get flag and so on
+            else
+                holder.txtFirst.setText(context.getString(R.string.every_day));   //get flag and so on
 
-        holder.txtFirst.setText(String.valueOf(doseDetails.getDose()));   //get flag and so on
-        holder.txtSecond.setText(String.valueOf(doseDetails.getDoseTime()));
-        holder.txtThird.setText(String.valueOf(doseDetails.getDose()));
-
-
+        double tempTime=doseDetails.getDoseTime();
+        tempTime/=100;
+        holder.txtSecond.setText(context.getString(R.string.dose_time)+String.valueOf(tempTime));
+        holder.txtThird.setText(context.getString(R.string.dose_quantity) +String.valueOf(doseDetails.getDose()));
     }
 
     @Override

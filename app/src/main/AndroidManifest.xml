@@ -15,19 +15,27 @@
         android:theme="@style/Theme.PillsManager">
         <activity
             android:name=".dosemanager.view.DoseManagerActivity"
+            android:configChanges="orientation"
             android:exported="false"
             android:label="@string/title_activity_dose_manager"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.PillsManager.NoActionBar" />
         <activity
             android:name=".displaydrug.view.DisplayDrug"
+            android:configChanges="orientation"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.PillsManager.NoActionBar" />
         <activity
             android:name=".auth.singnIn.view.SignInActivity"
-            android:exported="false"></activity> <!-- convert this with main activity -->
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"></activity> <!-- convert this with main activity -->
         <activity
             android:name=".MainActivity"
+            android:configChanges="orientation"
             android:exported="true"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.PillsManager.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,13 +45,19 @@
         </activity>
         <activity
             android:name=".EditDrug.Edit_medActivity"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".addDrug.view.AddMedActivity"
-            android:exported="false" /> <!-- we changed this with splash screen -->
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait" /> <!-- we changed this with splash screen -->
         <activity
             android:name=".SplashActivity"
+            android:configChanges="orientation"
             android:exported="false"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.PillsManager.NoActionBar"></activity>
     </application>
 

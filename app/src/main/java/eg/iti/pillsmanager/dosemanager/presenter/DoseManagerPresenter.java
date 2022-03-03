@@ -30,13 +30,18 @@ public class DoseManagerPresenter implements DoseManagerPresenterInterface{
     }
 
     @Override
-    public void getDosesByMedicine(String email, String user, String medicine, LifecycleOwner owner) {
-        repository.getDosesByMedicine(email,user,medicine).observe(owner, new Observer<List<Dose>>() {
+    public void getDosesByMedicine(String email, String medicine, LifecycleOwner owner) {
+        repository.getDosesByMedicine(email,medicine).observe(owner, new Observer<List<Dose>>() {
             @Override
             public void onChanged(List<Dose> doses) {
                 doseManagerInterface.updateRecycler(doses);
             }
         });
+    }
+
+    @Override
+    public void insertDose(Dose dose) {
+        repository.insertDose(dose);
     }
 
 

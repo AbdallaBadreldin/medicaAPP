@@ -112,8 +112,8 @@ localSource.getAllMedicine();
     }
 
     @Override
-    public LiveData<List<Dose>> getDosesByMedicine(String email, String user, String medicine) {
-        return localSource.getDosesByMedicine(email,user,medicine); }
+    public LiveData<List<Dose>> getDosesByMedicine(String email, String medicine) {
+        return localSource.getDosesByMedicine(email,medicine); }
 
     @Override
     public void insertDose(Dose dose) { localSource.insertDose(dose); }

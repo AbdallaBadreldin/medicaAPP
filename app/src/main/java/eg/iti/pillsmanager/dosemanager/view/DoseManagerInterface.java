@@ -6,4 +6,5 @@ import eg.iti.pillsmanager.model.Dose;
 
 public interface DoseManagerInterface {
     void updateRecycler(List<Dose> doses);
+    void showToast(String message);
 }

@@ -67,7 +67,7 @@
     <string name="wed_day">wed</string>
     <string name="thu_day">thu</string>
     <string name="fri_day">fri</string>
-    <string name="dose_quantity">dose quantity</string>
+    <string name="dose_quantity">dose quantity \t</string>
     <string name="next">next</string>
     <string name="name_of_medecine">name of med</string>
     <string name="form_of_medicine">form of med</string>
@@ -107,4 +107,5 @@
     <string name="enter_month_day">enter day of month</string>
     <string name="enter_month_and_day">enter day and month</string>
     <string name="dose_manager_pass_data_id" translatable="false">manageMedicine</string>
+    <string name="dose_time">dose time \t</string>
 </resources>

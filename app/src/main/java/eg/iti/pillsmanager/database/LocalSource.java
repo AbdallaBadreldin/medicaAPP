@@ -23,14 +23,6 @@ public interface LocalSource {
     void updateUser(User user);
 
 
-    //interface for dose table
-    LiveData<List<Dose>> getAllDoses();
-    LiveData<List<Dose>> getDosesByMedicine(String email , String user ,String medicine);
-    void insertDose(Dose dose);
-    void deleteDose(Dose dose);
-    void updateDose(Dose dose);
-
-
     //interface for medicine table
     LiveData<List<Medicine>> getAllMedicine();
     LiveData<List<Medicine>> getAllActiveMedicine();
@@ -43,8 +35,10 @@ public interface LocalSource {
     void deleteMedicine(Medicine medicine);
     void updateMedicine(Medicine medicine);
 
-    //interface for alarm table
-//    LiveData<List<User>> getAllUsers();
-//    void insertUser(User user);
-//    void deleteUser(User user);
+    //interface for dose table
+    LiveData<List<Dose>> getAllDoses();
+    LiveData<List<Dose>> getDosesByMedicine(String email ,String medicine);
+    void insertDose(Dose dose);
+    void deleteDose(Dose dose);
+    void updateDose(Dose dose);
 }

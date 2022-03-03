@@ -1,9 +1,13 @@
 package eg.iti.pillsmanager.dosemanager.view;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +18,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
+import java.util.Calendar;
 import java.util.List;
 
 import eg.iti.pillsmanager.R;
@@ -47,6 +51,13 @@ public class DoseManagerActivity extends AppCompatActivity implements DoseManage
 
     LinearLayoutCompat layoutOnceMonth;
     LinearLayoutCompat doseLinearYearly;
+    EditText dayEdit;
+    EditText doseEdit;
+    EditText timeEdit;
+    int hour;
+            int minutes;
+    TimePickerDialog picker;
+    Medicine med;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +69,37 @@ public class DoseManagerActivity extends AppCompatActivity implements DoseManage
         setSupportActionBar(toolbar);
         CollapsingToolbarLayout toolBarLayout = binding.toolbarLayout;
         toolBarLayout.setTitle(getTitle());
+
+        //day edit
+        dayEdit = myLayout.findViewById(R.id.dose_once_month_edit);
+        //dose edit
+        doseEdit = myLayout.findViewById(R.id.dose_enter_dose_quantity);
+        timeEdit = myLayout.findViewById(R.id.dose_time_edit);
+
+        timeEdit.setInputType(InputType.TYPE_NULL);
+        timeEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                 hour = cldr.get(Calendar.HOUR);
+                 minutes = cldr.get(Calendar.DATE);
+
+                // time picker dialog
+                picker = new TimePickerDialog(DoseManagerActivity.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
+                                if (sMinute<10)
+                                    sMinute*=10;
+                                timeEdit.setText(sHour + ":" + sMinute);
+                            }
+                        }, hour, minutes, true);
+                picker.show();
+            }
+        });
+
+        Intent i = getIntent();
+        med = (Medicine) i.getSerializableExtra(getString(R.string.dose_manager_pass_data_id));
 
         radioGroupPeriod = myLayout.findViewById(R.id.dose_repeat_period);
 
@@ -118,8 +160,16 @@ public class DoseManagerActivity extends AppCompatActivity implements DoseManage
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (radioGroupPeriod.getCheckedRadioButtonId()){
+
+if(timeEdit.getText().toString().trim().isEmpty()|| doseEdit.getText().toString().trim().isEmpty())
+    showToast(getString(R.string.please_enter_valid_data));
+
+else
+    switch (radioGroupPeriod.getCheckedRadioButtonId()){
                     case R.id.dose_every_day:
+    Dose everyDayDose =new Dose(med.getEmail(), med.getFirstName(),med.getMedicineName() ,0,0,1,Integer.parseInt(doseEdit.getText().toString().trim()),true,Integer.parseInt(timeEdit.getText().toString().trim().replaceAll(":", "") ),med.getStart_date(),med.getEnd_date(),0,getString(R.string.empty) );
+showToast(getString(R.string.done));
+doseManagerPresenterInterface.insertDose(everyDayDose);
 
                         break;
                     case R.id.dose_pick_days :
@@ -135,11 +185,11 @@ public class DoseManagerActivity extends AppCompatActivity implements DoseManage
                         break;
 
                     default:
-
+                        showToast(getString(R.string.please_enter_valid_data));
                 }
 
-                Snackbar.make(view, "add dose to medicine", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "add dose to medicine", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
             }
         });
 
@@ -153,16 +203,15 @@ public class DoseManagerActivity extends AppCompatActivity implements DoseManage
         recyclerViewDose.setLayoutManager(activeRefillLayout);
         recyclerViewDose.setAdapter(doseAdapter);
 
-        concreteLocalClass = ConcreteLocalClass.getConcreteLocalClassInstance(this);
+        concreteLocalClass = ConcreteLocalClass.getConcreteLocalClassInstanceDose(this, med.getEmail(), med.getMedicineName());
 
         repository = Repository.getInstance(MedicineClient.getMedicineClientInstance(), concreteLocalClass,this);
 
         doseManagerPresenterInterface = new DoseManagerPresenter(this, repository);
-        Intent i = getIntent();
-        Medicine med = (Medicine) i.getSerializableExtra(getString(R.string.dose_manager_pass_data_id));
-//        Toast.makeText(this,med.getEmail(),Toast.LENGTH_LONG).show();
-        doseManagerPresenterInterface.getDosesByMedicine(med.getEmail(), med.getFirstName(),med.getMedicineName(),this);
 
+//        Toast.makeText(this,med.getEmail(),Toast.LENGTH_LONG).show();
+        doseManagerPresenterInterface.getDosesByMedicine(med.getEmail(), med.getMedicineName(),this);
+//        doseManagerPresenterInterface.getAllDoses(this);
     }
 
 
@@ -173,7 +222,17 @@ public class DoseManagerActivity extends AppCompatActivity implements DoseManage
     }
 
     @Override
+    public void showToast(String message) {
+        Toast.makeText(DoseManagerActivity.this,message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    @Override
+    public void deleteDose(Dose dose) {
+        repository.deleteDose(dose);
     }
 }

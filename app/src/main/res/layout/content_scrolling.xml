@@ -31,11 +31,13 @@
 
             <EditText
                 android:id="@+id/dose_enter_dose_quantity"
-                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/dose_quantity" />
+                android:hint="@string/dose_quantity"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -143,11 +145,13 @@
 
             <EditText
                 android:id="@+id/dose_time_edit"
-                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/enter_dose_time" />
+                android:hint="@string/enter_dose_time"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -197,11 +201,13 @@
 
             <EditText
                 android:id="@+id/dose_once_month_edit"
-                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/enter_month_day" />
+                android:hint="@string/enter_month_day"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -224,19 +230,20 @@
 
             <EditText
                 android:id="@+id/dose_yearly_edit"
-                android:inputType="number"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="@string/enter_month_and_day" />
+                android:hint="@string/enter_month_and_day"
+                android:inputType="number"
+                android:maxLength="7"
+                android:minHeight="48dp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dose_management_recycler"
-            android:layout_width="50dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </LinearLayout>
