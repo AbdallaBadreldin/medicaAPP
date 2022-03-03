@@ -13,6 +13,8 @@ public interface RepositoryInterface {
   LiveData<List<Medicine>> getStoredMedicines();
   LiveData<List<Medicine>> getStoredActiveMedicines();
   LiveData<List<Medicine>> getStoredInactiveMedicines();
+  LiveData<List<Medicine>> getStoredActiveMedicinesByEmail(String email, String user);
+  LiveData<List<Medicine>> getStoredInactiveMedicinesByEmail(String email, String user);
   LiveData<List<Medicine>> getAllMedicine();
   void insertMedicine(Medicine medicine);
   void deleteMedicine(Medicine medicine);

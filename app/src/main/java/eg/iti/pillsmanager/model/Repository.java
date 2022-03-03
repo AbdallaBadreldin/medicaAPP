@@ -56,6 +56,16 @@ public class Repository implements RepositoryInterface {
     public LiveData<List<Medicine>> getStoredInactiveMedicines() { return localSource.getAllInactiveMedicine(); }
 
     @Override
+    public LiveData<List<Medicine>> getStoredActiveMedicinesByEmail(String email, String user) {
+        return localSource.getAllActiveMedicineByEmail(email,user);
+    }
+
+    @Override
+    public LiveData<List<Medicine>> getStoredInactiveMedicinesByEmail(String email, String user) {
+        return localSource.getAllInactiveMedicineByEmail(email,user);
+    }
+
+    @Override
     public LiveData<List<Medicine>> getAllMedicine() {
         return null;
     }
@@ -90,19 +100,12 @@ localSource.insertUser(user);
 localSource.deleteUser(user);
     }
 
-
-
-
-
-
     
     //******************************************
     @Override
     public void getAllMedicine(NetworkDelegate networkDelegate) {
 localSource.getAllMedicine();
     }
-
-
 
 
     //doses db

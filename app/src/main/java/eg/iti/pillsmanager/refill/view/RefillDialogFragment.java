@@ -2,7 +2,6 @@ package eg.iti.pillsmanager.refill.view;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,6 @@ import androidx.fragment.app.DialogFragment;
 import eg.iti.pillsmanager.R;
 
 public class RefillDialogFragment extends DialogFragment {
-
-    private static final String TAG = "DialogFragment";
 
     public RefillDialogInterface mOnInputListener;
 
@@ -37,7 +34,6 @@ public class RefillDialogFragment extends DialogFragment {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Log.d(TAG, "onClick: closing dialog");
                         getDialog().dismiss();
                     }
                 });

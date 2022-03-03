@@ -31,6 +31,12 @@ public interface MedicineDao {
     @Query("Select * From medicine WHERE activeRefillReminder LIKE 0 AND quantityRemindAt<=totalQuantity")
     LiveData<List<Medicine>> getInactiveMedicineNeedsRefill();
 
+    @Query("Select * From medicine WHERE email = :email AND firstName = :firstName")
+    LiveData<List<Medicine>> getAllActiveMedicineByEmail(String email, String firstName);
+
+    @Query("Select * From medicine WHERE email = :email AND firstName = :firstName")
+    LiveData<List<Medicine>> getAllInactiveMedicineByEmail(String email, String firstName);
+
     @Query("Select * From medicine WHERE activeRefillReminder LIKE 1 AND totalQuantity==0")
     LiveData<List<Medicine>> getEmptyActiveMedicine();
 
@@ -43,6 +49,8 @@ public interface MedicineDao {
     void deleteMedicine(Medicine medicine);
     @Update(onConflict = OnConflictStrategy.REPLACE)
     void updateMedicine(Medicine medicine);
+
+
 }
 
 
