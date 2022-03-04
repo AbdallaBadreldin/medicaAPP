@@ -74,7 +74,7 @@ public class PickDependnet extends Fragment implements PickDependentInterface ,O
         editor.apply();
         Toast.makeText(getContext(), getString(R.string.picked), Toast.LENGTH_SHORT).show();
         getParentFragmentManager().popBackStack();
-        
+
     }
 
     @Override

@@ -1,9 +1,5 @@
 package eg.iti.pillsmanager.displaydrug.view;
 
-import static android.content.Intent.FLAG_ACTIVITY_REORDER_TO_FRONT;
-
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,14 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import eg.iti.pillsmanager.EditDrug.Edit_medActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
-import eg.iti.pillsmanager.addDrug.view.AddMedActivity;
 import eg.iti.pillsmanager.database.LocalSource;
-import eg.iti.pillsmanager.medicinces.view.MediciationsFragment;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
-import eg.iti.pillsmanager.network.NetworkDelegate;
 import eg.iti.pillsmanager.network.RemoteSource;
 
 public class DisplayDrug extends AppCompatActivity {
@@ -54,7 +49,7 @@ public class DisplayDrug extends AppCompatActivity {
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                medicine.setActive(true);
+                medicine.setActive(false);
                 repo.updateMedicine(medicine);
             }
         });
@@ -63,8 +58,8 @@ public class DisplayDrug extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(DisplayDrug.this,Edit_medActivity.class));
-//                Intent intent = new Intent(DisplayDrug.this,  MediciationsFragment.class);
-
+                Intent intent = new Intent(DisplayDrug.this,  MediciationsFragment.class);
+                finish();
                /* intent.addFlags(FLAG_ACTIVITY_REORDER_TO_FRONT );
                 intent.putExtra("med",medicine);
                 startActivity(intent);*/
