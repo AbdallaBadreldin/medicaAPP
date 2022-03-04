@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import eg.iti.pillsmanager.MainActivity;
 import eg.iti.pillsmanager.R;
 import eg.iti.pillsmanager.database.LocalSource;
+import eg.iti.pillsmanager.medicinces.view.MediciationsFragment;
 import eg.iti.pillsmanager.model.Medicine;
 import eg.iti.pillsmanager.model.Repository;
 import eg.iti.pillsmanager.network.RemoteSource;
